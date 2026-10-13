@@ -17,10 +17,13 @@ description: Design the first-run setup and tour - start straight at the first u
 
 - **No step counters.** "Step 2 of 4" adds reading and makes setup feel like paperwork. The
   progress is the screens getting shorter.
-- **One decision per screen.** A project is its name, its colour and who it is for. Billing is
-  its own screen: "Do you bill for *Client work*?" with three big answers (by the hour, a fixed
-  price, not billable); the amount appears only when it is needed, large, with the currency beside
-  it and the client's rate already filled in.
+- **A project fits on one screen.** Its name, its colour, who it is for, and billing as two
+  lines: Billable on or off, then hourly or fixed with the amount and the currency (the client's
+  rate already in). Don't send billing to a screen of its own; the amount belongs with the project.
+- **Setup is a taste of the app.** Each step is set on the app's real surfaces: the focus dial with
+  the candle for the rhythm (tap to try a block), the notifications as they will arrive for the
+  reminders, the real Lock Screen and Dynamic Island for the live session. People learn the app
+  while they set it up, and the tour that follows has less to explain.
 - **In-app menus, never the browser's dropdown.** A native select draws outside the phone on a
   design board and looks broken; build the platform menu anchored to its field.
 
