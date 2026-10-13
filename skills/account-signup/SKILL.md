@@ -1,6 +1,6 @@
 ---
 name: account-signup
-description: Place and design the sign-up so it feels like saving progress, not a wall - after the plan and right before the paywall, Apple then Google then email, Apple's login and deletion rules, a calm ground, the product still visible, and trust lines that are true. Use for sign-up, sign-in, "create account" or "save your progress" screens.
+description: Place and design the sign-up so it feels like saving progress, not a wall - at the end of the personal setup, before the plan and the paywall, showing what they keep; Apple then Google then email, Apple's login and deletion rules, a calm ground, the product still visible, and trust lines that are true. Use for sign-up, sign-in, "create account" or "save your progress" screens.
 ---
 
 # Account sign-up
