@@ -35,6 +35,14 @@ description: Show real app icons and real-looking devices on design screens - fe
 - **Into the screen.** To go inside a device, scale the rig about the glass until the glass fills
   the view while the frame fades. The content then becomes the next screen in place.
 
+- **The screen fills the device, like the real app.** On the phone, the content fills the glass
+  under the status bar (the phone's own stacked layout); on the laptop, the product's wide desktop
+  layout fills the glass beside its sidebar. A phone-shaped card floating in a laptop reads as a
+  mock-up. Carry one copy per layout and hand over mid-turn, one fading out before the other comes
+  in, never both at once.
+- **Shrink while it turns.** A rotating phone's bounding box is wider than either pose; scale the
+  device about its centre so the box stays inside the frame with a margin, then let it settle.
+
 ## Anti-patterns
 
 - A static phone mockup in the middle of every screen.
