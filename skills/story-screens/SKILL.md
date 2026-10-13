@@ -40,3 +40,8 @@ dropped from 2.3× scale in 230 ms with one rigid haptic and a 240 ms shake of t
 - A stat card grid.
 - "Did you know…?" facts that are not theirs.
 - Persona illustrations that could belong to any app.
+
+## Holding it together
+
+A story is only as good as its joins. Plan them with `continuity`: what carries from each beat to
+the next, and which way the story moves.

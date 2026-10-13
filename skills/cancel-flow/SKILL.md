@@ -10,6 +10,25 @@ leave, and part well with everyone. A flow that traps people saves a few this mo
 the trust that would have brought them back. A good one changes the mind of roughly one in five
 to one in three people who start it.
 
+## Why it works
+
+- **People arrive defensive.** Someone who had to hunt for Cancel comes in angry and refuses
+  everything. Someone who found it where they expected comes in calm and actually reads the offer.
+  That's why easy cancelling saves more people, not fewer.
+- **Leaving is a decision about one reason.** Ask for that reason and answer it: a price problem
+  gets a price, a time problem gets a pause, a product problem gets a person. A generic "50% off"
+  answers a question nobody asked, and it costs you the most.
+- **The answers teach you.** A specific list ("My team uses another tracker") tells you something
+  you can act on. "Other" and long surveys tell you nothing, and every extra question loses people
+  who were about to stay.
+- **Their own numbers feel like theirs.** "412 hours since March" is something they made; an
+  average is marketing. People value what they made, so say what they keep, not only what they lose.
+- **Cheap offers wear out.** An offer shown every time becomes the price. People who stay at a
+  price that fits (a smaller plan, yearly billing) stay longest; deep discounts hold people only
+  until they run out.
+- **The goodbye is the first screen of coming back.** A clear, warm, exact goodbye is what people
+  remember when they need the product again.
+
 ## The screens
 
 1. **Where they expect it.** Settings → the plan. The plan, its price, the next charge date and

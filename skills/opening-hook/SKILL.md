@@ -48,3 +48,8 @@ whole flow.
 - A phone mockup in the middle of every beat.
 - Five logos, a tagline, and "Get started" on the first screen.
 - Text explaining what the animation already shows.
+
+## Holding it together
+
+Plan the beats with `continuity` before animating: write the thread sheet, give every change of
+beat a baton, and keep one ground and one direction.

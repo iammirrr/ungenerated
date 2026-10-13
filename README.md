@@ -43,6 +43,8 @@ before you see it. You review on the board with Pick and Note; the next pass rea
 | [`design-kit`](skills/design-kit/SKILL.md) | Build the design kit before any screen. |
 | [`motion-system`](skills/motion-system/SKILL.md) | The motion rules and engine for app screens. |
 | [`interaction-feel`](skills/interaction-feel/SKILL.md) | Make controls feel physical and fluid. |
+| [`bubbly-motion`](skills/bubbly-motion/SKILL.md) | Give an app soft, bubbly, alive motion that still feels calm and expensive. |
+| [`continuity`](skills/continuity/SKILL.md) | Make a flow feel like one continuous thing instead of a deck of screens. |
 | [`real-icons-and-devices`](skills/real-icons-and-devices/SKILL.md) | Show real app icons and real-looking devices on design screens. |
 | [`human-copy`](skills/human-copy/SKILL.md) | Write app copy that sounds like a person. |
 
@@ -82,7 +84,7 @@ before you see it. You review on the board with Pick and Note; the next pass rea
 ## The design board
 
 `skills/design-board/template/` is a working board: the motion engine, the parts (buttons, rows,
-toggles, sliders, segmented controls, reels, coach marks), six screen transitions, Play the flow,
+toggles, sliders, segmented controls, reels, coach marks), live bubbly and continuity demos, six screen transitions, Play the flow,
 Pick and Note saved to the repo, and the tools that capture real-time screenshots and contact
 sheets. Copy it into your project and run `node tools/serve.mjs`.
 

@@ -55,6 +55,11 @@ never bounces: a card, a chart, a title arrive on a curve.
 
 Only transform, opacity, blur and clip move on the board, so every move has a native twin.
 
+## Going further
+
+- `bubbly-motion`: the soft, alive layer for what the finger touches (squish, pop, goo, stretch).
+- `continuity`: planning a flow so one thing carries into the next (the thread sheet, the baton).
+
 ## How to fix "it's jerky"
 
 1. Capture the move frame by frame (`visual-qa`).

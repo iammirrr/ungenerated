@@ -7,6 +7,8 @@ window.BOARD = {
   startView: 'screens',
   sections: [
     { id: 'kit-foundations', view: 'kit', title: 'Foundations', intent: 'Type, colour, buttons: what every screen is drawn with.' },
+    { id: 'kit-bubbly', view: 'kit', title: 'Bubbly', intent: 'Squish, pop, goo and stretch: soft, alive motion for what the finger touches (the bubbly-motion skill).' },
+    { id: 'kit-continuity', view: 'kit', title: 'Continuity', intent: 'One thing becomes the next: a choice flying into its place, a camera instead of a cut (the continuity skill).' },
     { id: 'opening', title: 'The opening', intent: 'What the app is, in one short story, with the button only at the end.' },
     { id: 'questions', title: 'Questions', intent: 'A few quick answers that shape what comes next.' },
   ],

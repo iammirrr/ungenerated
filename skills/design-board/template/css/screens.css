@@ -7,3 +7,39 @@
 .kit-swatches div { display: flex; flex-direction: column; gap: 6px; font-size: 11px; color: var(--ink-muted); }
 .kit-swatches i { height: 48px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--hair); }
 .kit-stack { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+
+/* The motion kit (js/screens/motion.js): bubbly and continuity, live. */
+.mo-head { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.mo-balls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 120px; }
+.mo-ball-col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.mo-ball { display: grid; place-items: center; width: 84px; height: 84px; margin-bottom: 12px; border-radius: 50%; background: var(--accent); color: #fff; box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.12), inset 0 2px 0 rgba(255, 255, 255, 0.22); }
+.mo-ball-ic { display: grid; place-items: center; }
+.mo-ball-col b { font-size: 15px; font-weight: 600; color: var(--ink-strong); }
+.mo-ball-col small { font-size: 12px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.mo-pop { position: relative; display: flex; flex-direction: column; justify-content: flex-end; height: 420px; }
+.mo-pop .btn { width: 100%; }
+.mo-toast { position: absolute; left: 50%; bottom: 76px; display: flex; align-items: center; gap: 8px; height: 40px; margin-left: -60px; padding: 0 16px 0 8px; border-radius: 999px; background: var(--ink-strong); color: var(--ground); font-size: 14.5px; font-weight: 500; }
+.mo-toast-ic { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--good); color: #fff; }
+.mo-defs { position: absolute; width: 0; height: 0; }
+.mo-goo { position: relative; height: 64px; margin-top: 150px; }
+.mo-goo-layer { position: absolute; inset: -30px -20px; display: grid; place-items: center; }
+.mo-blob { grid-area: 1 / 1; width: 150px; height: 58px; border-radius: 29px; background: var(--accent); }
+.mo-goo-label { position: absolute; left: 50%; top: 50%; width: 140px; margin: -11px 0 0 -70px; text-align: center; font-size: 16px; font-weight: 600; line-height: 22px; color: #fff; pointer-events: none; }
+.mo-goo-hit { position: absolute; inset: 0; }
+.mo-tabs { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); height: 46px; margin-top: 150px; padding: 0; border-radius: 999px; background: var(--inset); }
+.mo-tab-pill { position: absolute; left: 0; top: 4px; bottom: 4px; width: 85.5px; border-radius: 999px; background: var(--panel); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); transform-origin: 50% 50%; }
+.mo-tabs .mo-tab { position: relative; font-size: 14px; font-weight: 500; color: var(--ink-muted); transition: color 160ms ease; }
+.mo-tabs .mo-tab.is-on { color: var(--ink-strong); }
+.mo-card { display: flex; flex-direction: column; gap: 6px; margin-top: 40px; padding: 20px; border-radius: 22px; background: var(--panel); box-shadow: inset 0 0 0 1px var(--hair); }
+.mo-card span { font-size: 13px; color: var(--ink-muted); }
+.mo-slot-v { align-self: flex-start; font-size: 26px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; color: var(--ink-strong); white-space: nowrap; }
+.mo-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 160px; }
+.mo-chip { height: 40px; padding: 0 16px; font-size: 15px; transition: opacity 240ms ease; }
+.mo-chip.is-gone { opacity: 0.35; }
+.mo-view { position: relative; height: 360px; margin: 24px -24px 0; overflow: hidden; }
+.mo-rig { position: absolute; left: 0; top: 0; display: grid; grid-template-columns: 300px 300px; gap: 20px; width: 620px; }
+.mo-scr { display: flex; flex-direction: column; gap: 14px; height: 330px; padding: 22px; box-sizing: border-box; border-radius: 28px; background: var(--panel); box-shadow: inset 0 0 0 1px var(--hair); }
+.mo-scr b { font-size: 24px; font-weight: 600; color: var(--ink-strong); }
+.mo-bars { flex: 1; display: flex; align-items: flex-end; gap: 10px; }
+.mo-bars i { flex: 1; border-radius: 8px; background: var(--accent); opacity: 0.85; }
+.mo-cam-words { margin-top: 16px; text-align: center; }

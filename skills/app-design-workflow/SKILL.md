@@ -14,7 +14,8 @@ reviewed with Picks and Notes, and only approved screens are built natively. Thi
    Nothing else starts until this fits on one screen.
 2. **Research** (`app-research`): how the best apps in the category structure the same journey.
    Take the flow, never the look.
-3. **Kit** (`design-kit`, `motion-system`, `interaction-feel`, `real-icons-and-devices`): tokens,
+3. **Kit** (`design-kit`, `motion-system`, `interaction-feel`, `bubbly-motion`, `continuity`,
+   `real-icons-and-devices`): tokens,
    type, motion curves, the feel of every control. The kit is made before any screen.
 4. **Board** (`design-board`): scaffold the board, one row per part of the flow, the kit in its
    own view, research in its own view.

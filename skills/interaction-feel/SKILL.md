@@ -41,6 +41,9 @@ When the reviewer cannot say what they want, show it. Build a Kit row with two o
 of the same control side by side (A · quiet, B · springy, C · liquid) as a Pick group, and let them
 choose by feel. Record the choice as a standing rule.
 
+For the playful character on top of these (squash and stretch, goo, follow-through), see
+`bubbly-motion`.
+
 ## Anti-patterns
 
 - Every element bouncing on entrance.
