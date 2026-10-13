@@ -15,6 +15,15 @@ description: Design the first-run setup and tour - start straight at the first u
 4. A live preview of where the entity will appear in the app (a calendar block in its colour).
 5. Consent and permissions come before setup (`consent-and-permissions`).
 
+- **No step counters.** "Step 2 of 4" adds reading and makes setup feel like paperwork. The
+  progress is the screens getting shorter.
+- **One decision per screen.** A project is its name, its colour and who it is for. Billing is
+  its own screen: "Do you bill for *Client work*?" with three big answers (by the hour, a fixed
+  price, not billable); the amount appears only when it is needed, large, with the currency beside
+  it and the client's rate already filled in.
+- **In-app menus, never the browser's dropdown.** A native select draws outside the phone on a
+  design board and looks broken; build the platform menu anchored to its field.
+
 ## Tour
 
 - Its own part of the flow, after setup, on the **real app screens**, not illustrations.

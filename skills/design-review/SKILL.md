@@ -35,6 +35,14 @@ rules file the next session will read (for example "No segmented bar at the top 
 "Devices are never cut off"; "Money rolls, time flows"). Check every new screen against the rules
 before showing it. A broken standing rule costs more trust than any new idea earns.
 
+## Trim, never strip
+
+When the reviewer says a liked screen has "too much text" or "too much motion", or should be "more
+subtle", remove the extras they named and keep everything that makes the screen work: its motion
+graphics, its composition, its hero. A screen stripped bare looks worse than the busy one, and the
+reviewer will say so. When they pick one variant ("I like the third one"), make it the screen and
+retire the others.
+
 ## Anti-patterns
 
 - Re-litigating a decision the reviewer already made.

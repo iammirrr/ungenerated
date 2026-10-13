@@ -18,6 +18,16 @@ description: Design onboarding questions that are quick and varied - one questio
 7. **No typing** unless the answer is a name. No login before value.
 8. A thin progress bar at the top, a back chevron. Nothing else in the top bar.
 
+## Ask it plainly
+
+- The question must be understood in one read. Clever framings ("How long is *just a minute*?")
+  make people stop and decode; ask the thing itself ("How much of your workday goes to
+  distractions?") with three or four plain answers.
+- Pick the familiar control for the kind of answer. Days: a calendar, where the pick lights up
+  across the whole month. Times: the platform's time wheel. People read both without thinking.
+- One decision per screen. A form that grows toggles and sub-fields is two screens.
+- Default to the answer that makes the story land, then let them change it; never hide the choice.
+
 ## Format catalogue
 
 | Format | Use for | Feel |

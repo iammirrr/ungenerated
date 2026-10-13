@@ -13,4 +13,8 @@ Tick each line for this screen, in light and dark.
 - [ ] Motion: no pop, no swap, no bounce on content; leaving is faster than arriving.
 - [ ] Captured mid-motion and at rest; looked at the frames.
 - [ ] If money is involved: every price is visible, and Cancel is one tap away.
+- [ ] No line runs through an icon: timelines are short links between the steps.
+- [ ] No lines drawn across content for effect (sweeps, scanners).
+- [ ] Nothing merges by swapping: a merge reads as one shape growing.
+- [ ] No step counters in setup; no tab bar where the steps can play by themselves.
 - [ ] Matches every standing rule from the reviewer.

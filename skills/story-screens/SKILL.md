@@ -41,6 +41,18 @@ dropped from 2.3× scale in 230 ms with one rigid haptic and a 240 ms shake of t
 - "Did you know…?" facts that are not theirs.
 - Persona illustrations that could belong to any app.
 
+## Merges and numbers
+
+- **A merge is one shape growing.** When pieces gather (minutes into an hour, slips into a block),
+  one block grows from where they collect and each piece slides into its edge and becomes part of
+  it, one after another. Never fade the pieces out and pop a finished block in.
+- **No lines drawn across the content** to show time passing; let the pieces appear in time order.
+- **Keep the margins.** Pieces that gather inside a container stop at its inner padding, left and
+  right alike.
+- **Make the default dramatic, keep the answer theirs.** Default the estimate to the answer that
+  makes the story land (two hours a day reads as ten hours a week back), and always use what the
+  person picks.
+
 ## Holding it together
 
 A story is only as good as its joins. Plan them with `continuity`: what carries from each beat to

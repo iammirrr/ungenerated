@@ -44,6 +44,13 @@ choose by feel. Record the choice as a standing rule.
 For the playful character on top of these (squash and stretch, goo, follow-through), see
 `bubbly-motion`.
 
+## Press feedback must compose with position
+
+A control that slides (a segmented thumb, a knob) and also squeezes under the finger must squeeze
+with a separate property (the CSS `scale` property, or a separate scale modifier natively), never
+by replacing its whole transform. A held "scale only" transform throws away the slide and parks the
+thumb on the first option the moment someone taps.
+
 ## Anti-patterns
 
 - Every element bouncing on entrance.
