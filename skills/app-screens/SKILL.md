@@ -27,6 +27,10 @@ description: Design the app's own screens after onboarding - tab bar, home or da
 - A ring for a daily goal with its parts (productive, idle, break) in their own colours.
 - A week as seven columns with the goal as a line.
 
+- **A ring split by project is one continuous band.** The colours meet edge to edge with flat
+  joins (butt caps, no gaps); only the start and the moving tip are round. Drawn in, it is one
+  stroke that changes colour as it passes each project, not separate pills appearing with gaps.
+
 ## Anti-patterns
 
 - Dashboards of identical stat cards.

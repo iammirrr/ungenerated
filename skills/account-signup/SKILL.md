@@ -13,15 +13,20 @@ description: Place and design the sign-up so it feels like saving progress, not 
    every platform). One door serves new and returning people.
 2. **Order:** Continue with Apple, Continue with Google, then Continue with email as a text button.
 3. **Say why:** "Save your setup for your phone and computer." One line.
-4. **Show what they keep.** "Almost done." at the top (title size, not a poster), the product's
-   own hero in the centre (its mascot or symbol, never the App Store icon), and the things they
-   just set up (their hours, their rhythm, the apps they picked, their goal) floating round it on
-   slow waves, the way the opening floats things. No device, no dividing curve; the buttons below.
-   It turns a wall into saving their work.
-5. **Less rounded than the marketing screens**, so it sits with the app (16 pt buttons).
-6. **True trust lines only**: "We never sell your data." and the terms line.
-7. The email path: one field, then a six-digit code. No password.
-8. **Required or skippable is a product decision.** App Store guideline 5.1.1(v) asks for a way in
+4. **Play the use case in the centre.** "Almost done." at the top (title size, not a poster), then
+   the opening's own picture playing the product in three short beats, one caption line each. For
+   a focus tracker: the hero lights ("Light the candle."), the distracting apps float in round it
+   with their badges; a focus ring draws, a clock runs and the apps fade ("Focus. The pull
+   fades."); the ring becomes today's projects and the hours count up ("Every minute, tracked.").
+   Chips listing their settings looked static and said nothing about what the product does; the
+   App Store icon alone said even less. The same picture that opened onboarding now saves it.
+5. **Clean.** Three blocks and air between them: the words at the top, the one picture in the
+   middle, the buttons at the bottom. No dividing curve, no device frame, no cards, no second
+   caption, one small terms line. Clean is what makes the moving picture read as the product.
+6. **Less rounded than the marketing screens**, so it sits with the app (16 pt buttons).
+7. **True trust lines only**: "We never sell your data." and the terms line.
+8. The email path: one field, then a six-digit code. No password.
+9. **Required or skippable is a product decision.** App Store guideline 5.1.1(v) asks for a way in
    without a login only when the app has no significant account-based features. Sync across
    devices, a companion app or a subscription that follows the person all count, so a required
    account is fine; say so plainly ("By continuing, you accept the Terms and Privacy Policy.").
