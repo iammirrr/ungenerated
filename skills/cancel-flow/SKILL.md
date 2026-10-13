@@ -56,7 +56,7 @@ to one in three people who start it.
 
 | They say | Offer | Watch for |
 |---|---|---|
-| It doesn't fit my budget right now | Ask what would feel fair (three price ranges), then match: a cheaper plan or yearly billing first, a discount second | Discounts at most 40%, about three months, once a year |
+| It doesn't fit my budget right now | Either ask what would feel fair (three price ranges) and match it, or show the whole menu once: a free month, a few months at a discount, a discounted year, every price visible, the best value picked | Never one offer after another. Up to about 40% keeps value best; deeper cuts and free months save more people this month and fewer a year on, so measure the cohort. Once a year |
 | I'm taking a break | A pause with a cap (three months at most) and the resume date on screen | Where the store can't pause (App Store), the honest version: renewal off, data kept, a reminder on the day they pick, nothing charges by itself |
 | It's missing something | No discount. A line of feedback, "Tell me when it ships", or a person to talk to | Name wishes, never promise unshipped features |
 | We moved to another tool | No offer. Let them take their data (export now or later) | Pretending an offer will help is slop |
@@ -68,18 +68,25 @@ reasons only your customers have; specific answers make people stop and think.
 
 ## Rules
 
-1. **Cancel is one tap away on every screen of the flow.** It does not lower saves; it raises
+1. **Resistance comes from value, never from obstacles.** Make staying look like the product:
+   their own numbers big on the plan screen and again before the platform sheet, the offers on the
+   paywall's own ground, the button that keeps the plan made like the plan. Cancel stays a proper
+   button at the bottom of every screen, never a grey link and never missing.
+
+2. **Cancel is one tap away on every screen of the flow.** It does not lower saves; it raises
    trust. Several US states require it.
-2. **One question.** Every extra question costs saves.
-3. **No "Other".** It becomes a second cancel button, and its answers are made up.
-4. **One offer per person, matched.** Discounts no deeper than 40%, for about three months, at
-   most once a year; nobody with an active discount gets another; no stacking pauses. An offer
-   every time turns Cancel into a coupon machine.
-5. **Their own numbers, never an average.** "412 hours since March", not "users save 5 hours".
+3. **One question.** Every extra question costs saves.
+4. **No "Other".** It becomes a second cancel button, and its answers are made up.
+5. **One offer screen per person, matched to the reason.** At most once a year; nobody with an
+   active discount gets another; no stacking pauses. An offer every time turns Cancel into a
+   coupon machine.
+6. **Yearly plans are different.** No refund is needed: cancelling stops the renewal and every
+   paid day stays. Offer a discounted next year, and remind them a week before it ends.
+7. **Their own numbers, never an average.** "412 hours since March", not "users save 5 hours".
    If they saved nothing, don't show the counter.
-6. **Say what stays** as clearly as what stops. If the data or the free tier stays, that is the
+8. **Say what stays** as clearly as what stops. If the data or the free tier stays, that is the
    strongest honest line you have.
-7. **No discount for leaving.** A win-back offer is for people long gone, not the ones who left
+9. **No discount for leaving.** A win-back offer is for people long gone, not the ones who left
    this week; otherwise you teach everyone to cancel.
 
 ## Never
