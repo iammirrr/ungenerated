@@ -37,7 +37,8 @@
         "paywall",
         "consent-and-permissions",
         "setup-and-tour",
-        "app-screens"
+        "app-screens",
+        "cancel-flow"
       ]
     },
     {

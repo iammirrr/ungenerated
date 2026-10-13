@@ -34,6 +34,12 @@ Run `references/checklist.md` on every screen before showing it.
 - No headings that could belong to any app. Specific nouns and the person's numbers.
 - No paragraphs on onboarding screens.
 
+## Leaving
+
+- Cancel is where people expect it and one tap away; never behind support or a chat.
+- No confirmshaming, guilt, countdowns or spin-the-wheel offers. One honest offer, matched to
+  the reason (`cancel-flow`).
+
 ## Data
 
 - No invented statistics, reviews or user counts.

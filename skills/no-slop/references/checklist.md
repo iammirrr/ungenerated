@@ -12,4 +12,5 @@ Tick each line for this screen, in light and dark.
 - [ ] Every number traces to the person's answers or says it is an example.
 - [ ] Motion: no pop, no swap, no bounce on content; leaving is faster than arriving.
 - [ ] Captured mid-motion and at rest; looked at the frames.
+- [ ] If money is involved: every price is visible, and Cancel is one tap away.
 - [ ] Matches every standing rule from the reviewer.

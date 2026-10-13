@@ -20,7 +20,8 @@ reviewed with Picks and Notes, and only approved screens are built natively. Thi
    own view, research in its own view.
 5. **The flow, part by part**, each on the board:
    `opening-hook` → `onboarding-questions` → `story-screens` → `plan-reveal` →
-   `account-signup` → `paywall` → `consent-and-permissions` → `setup-and-tour` → `app-screens`.
+   `account-signup` → `paywall` → `consent-and-permissions` → `setup-and-tour` → `app-screens` →
+   `cancel-flow` (the way out is designed with the way in).
 6. **Words** (`human-copy`) on every screen, as they are made, not after.
 7. **Check** every screen with `visual-qa` (real screenshots, mid-motion frames) and `no-slop`
    before showing it. `accessibility-pass` before anything is approved.

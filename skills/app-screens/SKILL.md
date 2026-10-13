@@ -18,6 +18,8 @@ description: Design the app's own screens after onboarding - tab bar, home or da
 6. **Empty states** say what will appear and offer the one action that fills them.
 7. **Loading** keeps the layout (skeletons shaped like the content), never a centred spinner.
 8. **Settings** in plain groups; destructive actions last and red.
+9. **The plan lives in Settings**, where people look: price, next charge, who bills it, a cheaper
+   way to pay, then Cancel as a plain row with its true consequence (`cancel-flow`).
 
 ## Patterns worth reusing
 

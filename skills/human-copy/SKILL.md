@@ -34,6 +34,13 @@ People read the heading, glance at one line, and tap. Write for that.
 - "Simply", "just", "easily" before an instruction.
 - Fake social proof ("Join 10,000+ happy users") unless it is true and measured.
 
+## Leaving words
+
+When people cancel, unsubscribe or delete, write so neither they nor the product are wrong:
+"It doesn't fit my budget right now", not "Too expensive"; "I'm taking a break", not "I don't use
+it anymore". The goodbye uses their name, the exact date and what they keep. Never "No, I don't
+want to save money" or a sad mascot.
+
 ## Errors and empty states
 
 - Errors say what happened and what to do, in one line: "Give the project a name."

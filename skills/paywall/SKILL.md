@@ -21,6 +21,12 @@ description: Design an honest, high-converting paywall - one value beat before t
 5. **What you get**: three or four lines with weight, not ten ticks.
 6. **One button**, the outcome ("Start my free week"), then a quiet "Restore purchases".
 
+## The way out
+
+- Say how to cancel on the paywall, in its small print ("Cancel anytime in Settings"), and make
+  it true: Cancel sits where people expect it and is never more than a tap away (`cancel-flow`).
+- On a trial, the reminder on the timeline is a promise. Send it.
+
 ## Never
 
 - Laurels, invented reviews, "#1 app" claims you cannot prove.

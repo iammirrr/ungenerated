@@ -1,21 +1,21 @@
-# App design skills
+# Ungenerated
 
-Skills for designing mobile apps with Claude, from the concept to the store listing: a live design
-board for every screen, a motion system, the onboarding and paywall patterns that work, and a
-checklist that keeps the result from looking generated.
+Skills for designing mobile apps with Claude, from the concept to the store listing and the way
+out: a live design board for every screen, a motion system, the onboarding, paywall and cancel-flow
+patterns that work, and a checklist that keeps the result from looking generated.
 
 They come from designing a real app screen by screen with a demanding reviewer. Every rule in here
 was a correction once.
 
-**Page:** https://iammirrr.github.io/app-design-skills/ · **Example board:** https://iammirrr.github.io/app-design-skills/board/
+**Page:** https://iammirrr.github.io/ungenerated/ · **Example board:** https://iammirrr.github.io/ungenerated/board/
 
 ## Install
 
 In Claude Code:
 
 ```
-/plugin marketplace add iammirrr/app-design-skills
-/plugin install app-design-skills@app-design-skills
+/plugin marketplace add iammirrr/ungenerated
+/plugin install ungenerated@ungenerated
 ```
 
 Or copy the folders you want from `skills/` into `~/.claude/skills/` (all projects) or
@@ -68,6 +68,7 @@ before you see it. You review on the board with Pick and Note; the next pass rea
 | [`consent-and-permissions`](skills/consent-and-permissions/SKILL.md) | Ask for consent and system permissions honestly and in context. |
 | [`setup-and-tour`](skills/setup-and-tour/SKILL.md) | Design the first-run setup and tour. |
 | [`app-screens`](skills/app-screens/SKILL.md) | Design the app's own screens after onboarding. |
+| [`cancel-flow`](skills/cancel-flow/SKILL.md) | Design the cancel flow for a subscription app. |
 
 ### Quality
 

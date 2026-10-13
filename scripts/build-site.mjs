@@ -9,7 +9,7 @@ import { execSync } from 'node:child_process';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'site');
-const REPO = 'https://github.com/iammirrr/app-design-skills';
+const REPO = 'https://github.com/iammirrr/ungenerated';
 const groups = JSON.parse(readFileSync(join(root, 'scripts/groups.json'), 'utf8')).groups;
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -125,14 +125,14 @@ const catalogue = groups.map((g) => `
   </ol>
 </section>`).join('');
 
-writeFileSync(join(out, 'index.html'), shell('App design skills', 'Skills for designing mobile apps with Claude.', `
+writeFileSync(join(out, 'index.html'), shell('Ungenerated', 'Skills for designing mobile apps with Claude that don’t look generated.', `
 <header class="hero">
-  <p class="eyebrow">For Claude Code · ${total} skills</p>
+  <p class="eyebrow">Ungenerated · ${total} skills for Claude Code</p>
   <h1>Design apps that don’t look <em>generated.</em></h1>
-  <p class="lede">A live design board for every screen, a motion system, the onboarding and paywall patterns that work, and a checklist that keeps the result honest. Every rule here was a correction once.</p>
+  <p class="lede">A live design board for every screen, a motion system, the onboarding, paywall and cancel-flow patterns that work, and a checklist that keeps the result honest. Every rule here was a correction once.</p>
   <div class="install">
-    <pre id="install"><code>/plugin marketplace add iammirrr/app-design-skills
-/plugin install app-design-skills@app-design-skills</code></pre>
+    <pre id="install"><code>/plugin marketplace add iammirrr/ungenerated
+/plugin install ungenerated@ungenerated</code></pre>
     <button type="button" class="copy" data-copy="install">Copy</button>
   </div>
   <p class="links"><a href="board/">Open the example board</a><a href="${REPO}">Source on GitHub</a></p>
@@ -147,7 +147,7 @@ writeFileSync(join(out, 'index.html'), shell('App design skills', 'Skills for de
 groups.forEach((g) => g.skills.forEach((name, i) => {
   const s = skills[name];
   const prev = g.skills[i - 1], next = g.skills[i + 1];
-  writeFileSync(join(out, 'skills', `${name}.html`), shell(`${name} · App design skills`, s.short, `
+  writeFileSync(join(out, 'skills', `${name}.html`), shell(`${name} · Ungenerated`, s.short, `
 <header class="top"><a href="../">← All skills</a><span>${esc(g.title)}</span></header>
 <article class="skill">
   <p class="eyebrow">${esc(g.title)}</p>
