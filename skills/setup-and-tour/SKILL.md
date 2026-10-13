@@ -1,9 +1,21 @@
 ---
 name: setup-and-tour
-description: Design the first-run setup and tour - start straight at the first useful entity (clients, projects, a goal), let people add several or skip, then a short tour of coach marks on the real app screens. Use for "set up your account", "add your first X", workspace setup, product tours or coach marks.
+description: Design the first-run setup and tour - personal setup (how their day goes, permissions) before the price, work admin and the widget after it; start straight at the first useful entity (clients, projects, a goal), let people add several or skip, then a short tour of coach marks on the real app screens. Use for "set up your account", "add your first X", workspace setup, product tours or coach marks.
 ---
 
 # Setup and tour
+
+## The order: personal before the price, admin after it
+
+The top-earning screen-time apps (studied 2026) all run the *personal* setup before the paywall and
+none run work admin there. Split setup in two:
+
+1. **Make it yours, before the plan:** how their day goes, the permissions, the things that pull
+   them away. They build something of their own, the plan can use it, and leaving now costs more.
+2. Then the plan, the account and the paywall.
+3. **After they commit** (paid, or closed the paywall): consent, the entities (clients, projects),
+   reminders, the widget, then the tour. By now it feels like unpacking, not a hurdle. A long
+   hands-on setup after paying doesn't hurt; one before the price does.
 
 ## Setup
 
@@ -13,17 +25,23 @@ description: Design the first-run setup and tour - start straight at the first u
    Each added item appears as a row with its own colour and its key detail.
 3. **One entity per screen**, in dependency order (clients before projects).
 4. A live preview of where the entity will appear in the app (a calendar block in its colour).
-5. Consent and permissions come before setup (`consent-and-permissions`).
+5. Consent comes first after the paywall (`consent-and-permissions`).
 
 - **No step counters.** "Step 2 of 4" adds reading and makes setup feel like paperwork. The
   progress is the screens getting shorter.
 - **A project fits on one screen.** Its name, its colour, who it is for, and billing as two
   lines: Billable on or off, then hourly or fixed with the amount and the currency (the client's
   rate already in). Don't send billing to a screen of its own; the amount belongs with the project.
-- **Setup is a taste of the app.** Each step is set on the app's real surfaces: the focus dial with
-  the candle for the rhythm (tap to try a block), the notifications as they will arrive for the
-  reminders, the real Lock Screen and Dynamic Island for the live session. People learn the app
-  while they set it up, and the tour that follows has less to explain.
+- **Setup is a taste of the app.** Each step is set on the app's real surfaces, drawn at their
+  real size and without a device frame: the notifications as they will arrive for the reminders,
+  the widgets as they sit on the Home Screen. People learn the app while they set it up, and the
+  tour that follows has less to explain. A phone drawn inside the phone reads as a demo.
+- **Ask how they work, not which technique.** Draw each answer as a day (a calendar strip of work,
+  breaks and meetings) and let them tap the one that looks like theirs. The pick sets the numbers,
+  said in plain words underneath ("90-minute blocks and 20-minute breaks"). No method names, and
+  pre-pick from anything they already answered.
+- **The widget ask:** after paying, the widgets at real size on a home-screen ground, the three
+  steps to add one, Done and Later. iOS can't add a widget for the person, so never pretend to.
 - **In-app menus, never the browser's dropdown.** A native select draws outside the phone on a
   design board and looks broken; build the platform menu anchored to its field.
 
@@ -41,3 +59,5 @@ description: Design the first-run setup and tour - start straight at the first u
 - A checklist screen that lists the setup steps before doing them.
 - Tours over screenshots.
 - Ten coach marks.
+- Work admin (clients, rates, projects) before the price.
+- A technique list ("Pomodoro, 52/17…") where a picture of their day would do.

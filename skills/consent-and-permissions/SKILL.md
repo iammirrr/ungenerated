@@ -1,21 +1,35 @@
 ---
 name: consent-and-permissions
-description: Ask for consent and system permissions honestly and in context - a plain "does and never does" screen with explicit ticks first, then permissions as rows with toggles that open the real system sheet, each with a one-line reason. Covers what iOS and Android actually allow. Use for privacy, terms, consent, notifications, Screen Time, location, camera or tracking prompts.
+description: Ask for consent and system permissions honestly and in context - an unmistakable "does and never does" screen with explicit ticks right after the paywall, every line checked against the privacy policy; permissions before the price as rows with toggles that open the real system sheet, each with a one-line reason. Covers what iOS and Android actually allow. Use for privacy, terms, consent, notifications, Screen Time, location, camera or tracking prompts.
 ---
 
 # Consent and permissions
 
-## Consent first
+## Consent, right after they commit
 
-Before anything is saved, one screen in plain words:
+Put it first after the paywall (paid or closed), before anything is saved. Before the price every
+extra screen is friction; after it, a clear promise reassures them about what they chose.
 
-- **The app does**: three lines, each a concrete thing ("Keeps your sessions on your device first").
-- **The app never does**: three lines ("Read your messages", "Sell your data").
+It must be **unmistakable**:
+
+- **Two big cards:** a green tick with "The app does", a red cross with "The app never". Green
+  means does, red means never, and the colours mean nothing else on the screen.
+- **Three short bold lines each, one line of detail under each.** Someone who reads only the bold
+  still understands. One line of detail, never two: shorten until it fits.
+- **The app does**: concrete things ("Tracks your work time" / "On this phone, and on your computer").
+- **The app never does**: ("Records what you type" / "No keystrokes, screenshots or audio").
+- **No "may", no "might", no legal words.** The legal text is one tap away.
+- **Check every line against the privacy policy, for every platform the account touches.** Easy
+  traps: "never sees your screen" when a companion app records window titles; "nothing leaves your
+  device" when crash reports are on by default. One broken promise costs more than none.
 - **Two unticked boxes**: "I accept the Terms of Use" and "I've read the Privacy Policy", each
   linking to the document. Continue stays disabled until both are ticked.
 - Optional choices (marketing email, analytics) are separate and **off by default**; in the EU they
   must be opt-in. Keep them on the privacy page or as separate toggles, never bundled with terms.
-- Everything on this screen must be true for every platform the account touches.
+- **Legal footing:** the core processing runs on the contract, so the ticks acknowledge, they don't
+  permit. Acceptance still belongs before money changes hands: the sign-up line says continuing
+  accepts the terms, and the paywall links the Terms of Use and the Privacy Policy (App Store
+  guideline 3.1.2).
 
 ## Permissions
 
@@ -26,6 +40,8 @@ Before anything is saved, one screen in plain words:
 - **Ask what the next screen needs first.** On iOS, Screen Time access (Family Controls) must be
   granted before the app can show the app picker.
 - **Never ask at launch.** Ask where the reason is visible.
+- **Personal permissions go before the price** (with the rest of "make it yours"); the top
+  screen-time apps all do it, and the plan can then use what was allowed.
 - Show the real system sheet text on the board; don't redesign Apple's or Google's dialogs.
 
 ## Platform facts worth knowing
