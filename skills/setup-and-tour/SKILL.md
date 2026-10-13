@@ -11,8 +11,10 @@ The top-earning screen-time apps (studied 2026) all run the *personal* setup bef
 none run work admin there. Split setup in two:
 
 1. **Make it yours, before the plan:** how their day goes, the permissions, the things that pull
-   them away. They build something of their own, the plan can use it, and leaving now costs more.
-2. Then the plan, the account and the paywall.
+   them away, closed by the account that saves it (`account-signup`). They build something of
+   their own, the plan can use it, and leaving now costs more. Give these screens the same
+   progress bar and answer rows as the questions, so it reads as one journey.
+2. Then the plan, right before the paywall, then the paywall.
 3. **After they commit** (paid, or closed the paywall): consent, the entities (clients, projects),
    reminders, the widget, then the tour. By now it feels like unpacking, not a hurdle. A long
    hands-on setup after paying doesn't hurt; one before the price does.
@@ -36,8 +38,9 @@ none run work admin there. Split setup in two:
   real size and without a device frame: the notifications as they will arrive for the reminders,
   the widgets as they sit on the Home Screen. People learn the app while they set it up, and the
   tour that follows has less to explain. A phone drawn inside the phone reads as a demo.
-- **Ask how they work, not which technique.** Draw each answer as a day (a calendar strip of work,
-  breaks and meetings) and let them tap the one that looks like theirs. The pick sets the numbers,
+- **Ask how they work, not which technique.** Use the questions' answer rows, each with the day
+  it describes drawn underneath as a thin calendar strip (work, breaks, meetings); the tap answers
+  and moves on. The pick sets the numbers,
   said in plain words underneath ("90-minute blocks and 20-minute breaks"). No method names, and
   pre-pick from anything they already answered.
 - **The widget ask:** after paying, the widgets at real size on a home-screen ground, the three

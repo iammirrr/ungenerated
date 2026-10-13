@@ -7,14 +7,16 @@ description: Place and design the sign-up so it feels like saving progress, not 
 
 ## Rules
 
-1. **Never first.** The account comes after the person has seen value: after the plan, right
-   before the paywall, so the purchase belongs to a person and not a phone (it restores on a new
-   device and unlocks every platform). One door serves new and returning people.
+1. **Never first.** The account closes the personal setup ("make it yours"): they have just built
+   something worth keeping, so saving it is the obvious next step. Then the plan and the paywall,
+   so the purchase belongs to a person and not a phone (it restores on a new device and unlocks
+   every platform). One door serves new and returning people.
 2. **Order:** Continue with Apple, Continue with Google, then Continue with email as a text button.
 3. **Say why:** "Save your setup for your phone and computer." One line.
-4. **Keep the product visible**: the top of the screen shows the app working (a device under a
-   camera, cropped by a gentle curve), on a calm ground: soft gradient, fine grain or a faint
-   texture. Offer two or three grounds as a Pick.
+4. **Show what they keep.** "Almost done." big at the top, the app icon in the centre, and the
+   things they just set up (their hours, their rhythm, the apps they picked, their goal) floating
+   in around it and gathering into the icon one by one, then a tick: "Everything you made, kept."
+   No device, no dividing curve; the buttons below. It turns a wall into saving their work.
 5. **Less rounded than the marketing screens**, so it sits with the app (16 pt buttons).
 6. **True trust lines only**: "We never sell your data." and the terms line.
 7. The email path: one field, then a six-digit code. No password.
