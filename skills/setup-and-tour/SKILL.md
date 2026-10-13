@@ -47,15 +47,15 @@ none run work admin there. Split setup in two:
   pre-pick from anything they already answered.
 - **The widget ask:** after paying, the widgets at real size on a home-screen ground, the three
   steps to add one, Done and Later. iOS can't add a widget for the person, so never pretend to.
-- **The project screen starts with the project tracking.** On top, the project as the app shows
-  it while it runs (its colour, name, client, a running clock and, when billed, what today is
-  worth, rolling); the form under it updates it live. Billing is one control (Not billed · Hourly
-  · Fixed price) and one large amount line with the currency.
-- **Reminders as cards that hold their notification.** Each card is the switch and the
-  notification it sends; switching off folds the notification away. Compact beats a stack of
-  previews above a stack of switches.
-- **The widget ask is the platform's own widget gallery:** one card with the app's icon, the
-  widget's name and one line, the widget at real size; the sizes slide past with page dots, each
+- **Containerless.** Don't wrap setup content in cards. Switches are plain rows; real surfaces
+  (a notification, a widget) stand on the ground by themselves, drawn as the platform draws them.
+- **The project screen is the form, cleanly:** name, colour, client, then billing as one control
+  (Not billed · Hourly · Fixed price) and one large amount line with the currency. A fake
+  "tracking now" preview on top only adds noise.
+- **Reminders as rows that own their notification.** Each row is the switch, with the notification
+  it sends right under it; switching off folds the notification away.
+- **The widget ask is the platform's own widget gallery, without the card:** the app's icon, the
+  widget's name and one line, the widget at real size on the ground; the sizes slide past with page dots, each
   coming alive. The how-to is three small steps in one row.
 - **In-app menus, never the browser's dropdown.** A native select draws outside the phone on a
   design board and looks broken; build the platform menu anchored to its field.
