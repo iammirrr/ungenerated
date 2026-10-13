@@ -1,0 +1,53 @@
+{
+  "groups": [
+    {
+      "title": "Start here",
+      "skills": [
+        "app-design-workflow",
+        "app-concept"
+      ]
+    },
+    {
+      "title": "Foundation",
+      "skills": [
+        "design-kit",
+        "motion-system",
+        "interaction-feel",
+        "real-icons-and-devices",
+        "human-copy"
+      ]
+    },
+    {
+      "title": "The board",
+      "skills": [
+        "design-board",
+        "app-research",
+        "design-review",
+        "visual-qa"
+      ]
+    },
+    {
+      "title": "The flow",
+      "skills": [
+        "opening-hook",
+        "onboarding-questions",
+        "story-screens",
+        "plan-reveal",
+        "account-signup",
+        "paywall",
+        "consent-and-permissions",
+        "setup-and-tour",
+        "app-screens"
+      ]
+    },
+    {
+      "title": "Quality",
+      "skills": [
+        "no-slop",
+        "accessibility-pass",
+        "native-port",
+        "app-store-assets"
+      ]
+    }
+  ]
+}

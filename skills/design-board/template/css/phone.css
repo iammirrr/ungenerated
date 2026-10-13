@@ -1,0 +1,798 @@
+/* The phone: a 390 × 844 pt frame, the system chrome, type and the controls. Values come from
+ * css/tokens.css; nothing here names a colour of its own except the device frames. */
+
+/* ------------------------------------------------------------------ the phone (390 × 844 pt) */
+
+.ph {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  overflow: hidden;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  isolation: isolate;
+}
+.ph *,
+.ph *::before,
+.ph *::after {
+  box-sizing: border-box;
+}
+/* The reset sits at zero specificity, so every component's own rule wins. */
+:where(.ph) :where(button) {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ph button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.ph em {
+  font-style: italic;
+  font-weight: inherit;
+  color: var(--accent-text);
+}
+.ph .ic {
+  flex: none;
+  display: block;
+}
+.ph .brand {
+  flex: none;
+  display: block;
+  object-fit: contain;
+}
+.ph .brand.is-light-variant {
+  display: none;
+}
+:root[data-theme="dark"] .ph .brand.has-light-variant {
+  display: none;
+}
+:root[data-theme="dark"] .ph .brand.is-light-variant {
+  display: block;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ph .brand.has-light-variant {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .ph .brand.is-light-variant {
+    display: block;
+  }
+}
+.ph .num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The system's own chrome. */
+.ph-status {
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 30px 0 52px;
+  color: var(--ink-strong);
+  font: 600 16.5px/1 -apple-system, "SF Pro Text", system-ui, sans-serif;
+  letter-spacing: -0.2px;
+  pointer-events: none;
+}
+.ph-status.is-light {
+  color: #fff;
+}
+.ph-sys {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ph-island {
+  position: absolute;
+  z-index: 60;
+  top: 11px;
+  left: 50%;
+  width: 126px;
+  height: 37px;
+  margin-left: -63px;
+  border-radius: 20px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px 0 12px;
+  color: #fff;
+  font: 600 15px/1 -apple-system, "SF Pro Text", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  transition: width 420ms cubic-bezier(0.32, 0.72, 0, 1), margin-left 420ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.ph-island.is-live {
+  width: 212px;
+  margin-left: -106px;
+}
+.ph-island .isl-trail {
+  color: var(--accent-text);
+}
+.ph-island .isl-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.ph-home {
+  position: absolute;
+  z-index: 50;
+  bottom: 8px;
+  left: 50%;
+  width: 136px;
+  height: 5px;
+  margin-left: -68px;
+  border-radius: 3px;
+  background: var(--home-ind);
+  opacity: 0.88;
+  pointer-events: none;
+}
+.ph-home.is-light {
+  background: #fff;
+}
+
+/* The page inside the safe area. */
+.ph-body {
+  position: absolute;
+  inset: 0;
+  padding: 59px 24px 34px;
+  display: flex;
+  flex-direction: column;
+}
+.ph-fill {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.ph-foot {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0 8px;
+}
+
+/* ------------------------------------------------------------------ type  */
+
+.t-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+}
+.t-q {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+  color: var(--ink-strong);
+  text-wrap: balance;
+}
+.t-hero {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+  color: var(--ink-strong);
+  text-wrap: balance;
+}
+.t-sub {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  text-wrap: pretty;
+}
+.t-small {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-quiet);
+}
+.t-center {
+  text-align: center;
+}
+
+
+/* ------------------------------------------------------------------ controls */
+
+/* The primary: a pill with a point of depth when pressed. */
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--btn);
+  color: var(--btn-ink);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: background-color 120ms ease, box-shadow 120ms ease, opacity 200ms ease;
+}
+.btn.is-down {
+  background: var(--btn-down);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.16);
+}
+.btn[aria-disabled="true"] {
+  opacity: 0.38;
+  cursor: default;
+}
+.btn.is-dark {
+  background: var(--ink-strong);
+  color: var(--ground);
+  box-shadow: none;
+}
+.btn.is-quiet {
+  background: var(--inset);
+  color: var(--ink-strong);
+  box-shadow: none;
+}
+.btn.is-quiet.is-down {
+  background: var(--hover);
+}
+.btn-link {
+  align-self: center;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: var(--ink-muted);
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.btn-link.is-down {
+  background: var(--inset);
+  color: var(--ink-strong);
+}
+
+/* The question frame's top: the chevron, the progress, a balancing slot. */
+.q-top {
+  flex: none;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  height: 44px;
+  margin: 0 -14px;
+}
+.q-back {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--ink-muted);
+  transition: background-color 120ms ease;
+}
+.q-back.is-down {
+  background: var(--inset);
+}
+.q-track {
+  position: relative;
+  height: 4px;
+  margin: 0 6px;
+  border-radius: 4px;
+  background: var(--hair-2);
+}
+.q-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 4px;
+  background: var(--accent);
+  transform-origin: 0 50%;
+}
+/* An answer: a quiet card that highlights under the finger and lights up when chosen. */
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 60px;
+  padding: 10px 16px 10px 12px;
+  border-radius: 16px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 15.5px;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: -0.01em;
+  box-shadow: inset 0 0 0 1.5px transparent;
+  transition: background-color 120ms ease, box-shadow 160ms ease, color 160ms ease;
+}
+.row.is-down {
+  background: var(--hover);
+}
+.row.is-on {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+  color: var(--ink-strong);
+}
+.row .row-label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.row .row-label small {
+  display: block;
+  margin-top: 1px;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+.tile {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--tone, var(--accent)) 13%, transparent);
+  color: var(--tone, var(--accent-text));
+}
+.tile.is-plain {
+  background: var(--inset);
+  color: var(--ink-muted);
+}
+.tone-good { --tone: var(--good); }
+.tone-info { --tone: var(--info); }
+.tone-warn { --tone: var(--warn); }
+.tone-bad { --tone: var(--bad); }
+.tone-accent { --tone: var(--accent); }
+.tone-muted { --tone: var(--ink-quiet); }
+.check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--hair-2);
+  color: transparent;
+  transition: background-color 140ms ease, box-shadow 140ms ease, color 140ms ease;
+}
+.is-on > .check,
+.is-on .check {
+  background: var(--accent);
+  box-shadow: none;
+  color: var(--ground);
+}
+.radio {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--hair-2);
+  display: grid;
+  place-items: center;
+}
+.radio > i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: scale(0);
+  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.is-on .radio {
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+.is-on .radio > i {
+  transform: scale(1);
+}
+
+/* A choice card (multi-pick grids). */
+.card-pick {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 124px;
+  padding: 14px;
+  border-radius: 20px;
+  background: var(--panel);
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px transparent;
+  transition: background-color 140ms ease, box-shadow 160ms ease;
+}
+.card-pick.is-down {
+  background: var(--hover);
+}
+.card-pick.is-on {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+  color: var(--ink-strong);
+}
+.card-pick .check {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.card-pick .soon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--inset);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+/* A chip. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: inset 0 0 0 1px var(--hair);
+  transition: background-color 120ms ease, box-shadow 140ms ease, color 140ms ease;
+}
+.chip.is-down {
+  background: var(--hover);
+}
+.chip.is-on {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+  color: var(--ink-strong);
+}
+.dot {
+  display: inline-block;
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c, var(--accent));
+}
+
+/* The slider: a 6 pt track, the accent fill, a thumb that grows under the finger. */
+.slider {
+  position: relative;
+  height: 44px;
+  touch-action: none;
+  cursor: grab;
+}
+.slider-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 6px;
+  background: var(--hair-2);
+}
+.slider-fill {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 6px;
+  background: var(--accent);
+}
+.slider-knob {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+.slider-thumb {
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fffdf9;
+  box-shadow: 0 2px 6px rgba(40, 24, 10, 0.22), 0 0 0 0.5px rgba(40, 24, 10, 0.12);
+}
+.slider-halo {
+  position: absolute;
+  left: -24px;
+  top: -24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--btn) 24%, transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+.slider-bubble {
+  position: absolute;
+  bottom: calc(50% + 26px);
+  left: 0;
+  translate: -50% 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--ink-strong);
+  color: var(--ground);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transform-origin: 50% 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.rl {
+  display: inline-block;
+}
+.slider-ticks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% + 12px);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.slider-ticks > i {
+  width: 2px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--hair-2);
+  transform-origin: 50% 0;
+  transition: background-color 160ms ease;
+}
+.slider-ticks > i.is-on {
+  background: var(--btn);
+}
+
+/* The segmented control: a sliding thumb. */
+.seg {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  height: 40px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--inset);
+}
+.seg-thumb {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  border-radius: 999px;
+  background: var(--panel);
+  box-shadow: 0 1px 3px rgba(40, 24, 10, 0.12), 0 0 0 0.5px rgba(40, 24, 10, 0.06);
+}
+.seg button {
+  position: relative;
+  z-index: 1;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  transition: color 160ms ease;
+}
+.seg button[aria-pressed="true"] {
+  color: var(--ink-strong);
+  font-weight: 600;
+}
+.seg button {
+  transition: color 200ms ease, font-weight 200ms ease;
+}
+
+/* A toggle (iOS geometry). */
+.tog {
+  position: relative;
+  flex: none;
+  width: 51px;
+  height: 31px;
+  border-radius: 999px;
+  background: var(--hair-2);
+  transition: background-color 200ms ease;
+}
+.tog > i {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.16);
+}
+.tog.is-on {
+  background: var(--good);
+}
+
+
+/* A panel and a stat. */
+.panel {
+  border-radius: 20px;
+  background: var(--panel);
+}
+.hair {
+  height: 1px;
+  background: var(--hair);
+}
+
+/* The tap-to-continue hint of the story screens. */
+.hint {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-quiet);
+  letter-spacing: 0.01em;
+}
+.tap-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ touch */
+
+.touch {
+  position: absolute;
+  z-index: 80;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55), 0 4px 14px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+
+/* ------------------------------------------------------------------ devices (the intro) */
+
+.dev-phone {
+  position: relative;
+  border-radius: calc(var(--k) * 74px);
+  padding: calc(var(--k) * 19.5px);
+  background: linear-gradient(145deg, #8b8580 0%, #4c4844 18%, #2a2826 50%, #4d4945 82%, #908a84 100%);
+  box-shadow: 0 1px 0 0.5px rgba(255, 255, 255, 0.2) inset, 0 30px 60px -18px rgba(40, 22, 8, 0.45), 0 12px 24px -12px rgba(40, 22, 8, 0.35);
+}
+.dev-phone::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--k) * 4px);
+  border-radius: calc(var(--k) * 70px);
+  background: #0b0b0b;
+}
+.dev-glass {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--k) * 55px);
+  overflow: hidden;
+  background: #000;
+}
+.dev-screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 393px;
+  height: 852px;
+  transform: scale(var(--k));
+  transform-origin: 0 0;
+  overflow: hidden;
+}
+.dev-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 32%);
+  pointer-events: none;
+}
+.dev-btn {
+  position: absolute;
+  width: calc(var(--k) * 5px);
+  border-radius: 2px;
+  background: linear-gradient(90deg, #3d3a37, #6f6a65);
+}
+.dev-btn.is-action { left: calc(var(--k) * -3px); top: 16%; height: 4%; }
+.dev-btn.is-up { left: calc(var(--k) * -3px); top: 23%; height: 7.4%; }
+.dev-btn.is-down { left: calc(var(--k) * -3px); top: 32%; height: 7.4%; }
+.dev-btn.is-power { right: calc(var(--k) * -3px); top: 26%; height: 11%; background: linear-gradient(270deg, #3d3a37, #6f6a65); }
+
+.dev-mac {
+  position: relative;
+}
+.dev-mac-lid {
+  position: relative;
+  margin: 0 auto;
+  width: 84%;
+  padding: 2.2% 2.2% 3.4%;
+  border-radius: calc(var(--w) * 0.03) calc(var(--w) * 0.03) calc(var(--w) * 0.006) calc(var(--w) * 0.006);
+  background: #0c0c0c;
+  box-shadow: 0 0 0 1px #6d6a67, 0 0 0 2px #2b2928;
+}
+.dev-mac-glass {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: calc(var(--w) * 0.012);
+  overflow: hidden;
+  background: #111;
+}
+.dev-mac-screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.dev-mac-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 13%;
+  height: 4.2%;
+  margin-left: -6.5%;
+  border-radius: 0 0 calc(var(--w) * 0.008) calc(var(--w) * 0.008);
+  background: #0c0c0c;
+}
+.dev-mac-base {
+  position: relative;
+  height: calc(var(--w) * 0.034);
+  border-radius: 0 0 calc(var(--w) * 0.03) calc(var(--w) * 0.03) / 0 0 calc(var(--w) * 0.024) calc(var(--w) * 0.024);
+  background: linear-gradient(180deg, #d9d7d3 0%, #bcb9b4 38%, #8f8c87 100%);
+  box-shadow: 0 18px 30px -14px rgba(40, 22, 8, 0.45);
+}
+.dev-mac-lip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 16%;
+  height: 34%;
+  margin-left: -8%;
+  border-radius: 0 0 calc(var(--w) * 0.012) calc(var(--w) * 0.012);
+  background: linear-gradient(180deg, #a8a5a0, #c9c6c1);
+}
+
+

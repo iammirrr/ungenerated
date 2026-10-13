@@ -1,0 +1,11 @@
+{
+  "name": "app-design-skills",
+  "owner": { "name": "Mir", "url": "https://github.com/iammirrr" },
+  "plugins": [
+    {
+      "name": "app-design-skills",
+      "source": "./",
+      "description": "Design mobile apps with Claude: a live design board, a motion system, onboarding and paywall patterns, and a no-slop checklist."
+    }
+  ]
+}

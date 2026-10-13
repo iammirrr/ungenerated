@@ -1,0 +1,354 @@
+/* Part styles the screens share: the selection bloom, tiles, app tiles, coach marks, reels. */
+
+.q-head-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.answers.is-compact .tile {
+  width: 32px;
+  height: 32px;
+}
+.grid-2.is-tiles .card-pick {
+  min-height: 92px;
+  gap: 10px;
+  padding: 12px;
+}
+.grid-2.is-tiles .card-pick .check {
+  top: 10px;
+  right: 10px;
+}
+.card-label {
+  display: block;
+  padding-right: 18px;
+}
+.tile.is-brand {
+  background: var(--inset);
+}
+.chip-ic {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--tone, var(--accent)) 14%, transparent);
+  color: var(--tone, var(--accent-text));
+}
+.cmp-item .tile {
+  width: 34px;
+  height: 34px;
+}
+.ic-grid .tile {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+.mark-row .tile {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+.role-tile .check {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.role-tile.is-on .check {
+  background: var(--c);
+}
+.app-tile {
+  display: grid;
+  place-items: center;
+  border-radius: var(--r, 14px);
+  box-shadow: 0 1px 2px rgba(40, 24, 10, 0.12), 0 6px 14px -8px rgba(40, 24, 10, 0.35), inset 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+  transition: filter 200ms ease, opacity 200ms ease;
+}
+.app-tile img {
+  display: block;
+  object-fit: contain;
+}
+.app-tile.is-dashed {
+  box-shadow: none;
+  border: 2px dashed var(--hair-2);
+  color: var(--ink-quiet);
+}
+.app-pick.is-on .app-tile {
+  box-shadow: 0 0 0 2.5px var(--ground), 0 0 0 4.5px var(--accent);
+}
+.tile.is-big {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+}
+.dk-row .tile {
+  width: 34px;
+  height: 34px;
+}
+.coach {
+  position: absolute;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+}
+.coach-hole {
+  position: absolute;
+  box-shadow: 0 0 0 2px rgba(239, 182, 109, 0.95), 0 0 0 1400px rgba(18, 10, 4, 0.6);
+}
+.coach-hole::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  border: 2px solid rgba(239, 182, 109, 0.7);
+  animation: coach-pulse 1.8s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+.coach-tip {
+  position: absolute;
+  padding: 14px 16px 12px;
+  border-radius: 20px;
+  background: var(--panel);
+  box-shadow: var(--float);
+  color: var(--ink);
+  pointer-events: auto;
+}
+.coach-arrow {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-radius: 3px;
+  background: var(--panel);
+  transform: rotate(45deg);
+}
+.coach-tip.is-below .coach-arrow {
+  top: -6px;
+}
+.coach-tip.is-above .coach-arrow {
+  bottom: -6px;
+}
+.coach-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.coach-head img {
+  width: 11px;
+  height: 16px;
+}
+.coach-head small {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+.coach-title {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink-strong);
+}
+.coach-text {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+.coach-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.coach-skip {
+  padding: 6px 2px;
+  font-size: 13px;
+  color: var(--ink-quiet);
+}
+.coach-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--btn);
+  color: var(--btn-ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.row,
+.card-pick,
+.chip.is-pick {
+  isolation: isolate;
+  outline: 1.5px solid transparent;
+  outline-offset: -1.5px;
+  transition: background-color 260ms cubic-bezier(0.23, 1, 0.32, 1), outline-color 300ms cubic-bezier(0.23, 1, 0.32, 1), color 200ms ease;
+}
+.chip.is-pick {
+  position: relative;
+}
+.chip.is-pick.is-big {
+  box-shadow: none;
+}
+.row.is-on,
+.card-pick.is-on,
+.chip.is-pick.is-on,
+.chip.is-pick.is-big.is-on {
+  background: var(--sel-bg);
+  box-shadow: none;
+  outline-color: var(--accent);
+}
+.row.is-down:not(.is-on),
+.card-pick.is-down:not(.is-on),
+.chip.is-pick.is-down:not(.is-on) {
+  background: var(--hover);
+  transition-duration: 90ms;
+}
+.row.is-on.is-down,
+.card-pick.is-on.is-down,
+.chip.is-pick.is-on.is-down {
+  background: var(--sel-down);
+}
+.row.is-on.is-blooming,
+.card-pick.is-on.is-blooming,
+.chip.is-pick.is-on.is-blooming {
+  background: var(--panel);
+  transition: outline-color 300ms cubic-bezier(0.23, 1, 0.32, 1), color 200ms ease;
+}
+.row.is-draining,
+.card-pick.is-draining,
+.chip.is-pick.is-draining {
+  transition: outline-color 220ms ease, color 200ms ease;
+}
+.sel-bloom {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+.sel-bloom > i {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--sel-bg);
+}
+.check {
+  transition: background-color 240ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 240ms ease, color 120ms ease;
+}
+.check svg path,
+.app-check svg path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  transition: stroke-dashoffset 340ms cubic-bezier(0.23, 1, 0.32, 1) 80ms;
+}
+.is-on .check svg path,
+.is-on .app-check svg path {
+  stroke-dashoffset: 0;
+}
+.app-tile {
+  transition: filter 200ms ease, opacity 200ms ease, box-shadow 280ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hk-ping .app-tile {
+  border-radius: 7px;
+}
+.app-tile.is-mark {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: #fff;
+}
+.hk-slot .app-tile {
+  width: 28px !important;
+  height: 28px !important;
+}
+.row,
+.card-pick,
+.chip.is-pick,
+.role-tile {
+  isolation: isolate;
+  outline: 1.5px solid transparent;
+  outline-offset: -1.5px;
+  transition: background-color 220ms cubic-bezier(0.23, 1, 0.32, 1), outline-color 300ms cubic-bezier(0.23, 1, 0.32, 1), color 200ms ease;
+}
+.row.is-on:has(> .sel-bloom),
+.card-pick.is-on:has(> .sel-bloom),
+.chip.is-pick.is-on:has(> .sel-bloom),
+.role-tile.is-on:has(> .sel-bloom) {
+  background: var(--panel);
+}
+.sel-bloom {
+  transition: opacity 220ms ease;
+}
+.row:not(.is-on) > .sel-bloom,
+.card-pick:not(.is-on) > .sel-bloom,
+.chip:not(.is-on) > .sel-bloom,
+.role-tile:not(.is-on) > .sel-bloom {
+  opacity: 0;
+}
+.sel-bloom > i {
+  transition: background-color 120ms ease;
+}
+.is-down > .sel-bloom > i {
+  background: var(--sel-down);
+}
+.src-item.is-open > .row > .sel-bloom {
+  opacity: 0;
+}
+.app-tile.is-real {
+  overflow: hidden;
+  background: #fff;
+}
+.app-tile.is-real img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reel {
+  display: inline-flex;
+  align-items: flex-start;
+  font-variant-numeric: tabular-nums;
+}
+.reel-col {
+  display: inline-block;
+  height: 1.12em;
+  overflow: hidden;
+}
+.reel-strip {
+  display: flex;
+  flex-direction: column;
+}
+.reel-strip > span,
+.reel-ch {
+  display: block;
+  height: 1.12em;
+  line-height: 1.12em;
+}
+.reel-ch {
+  display: inline-block;
+}
+.hk-app .app-tile {
+  box-shadow: 0 10px 22px -10px rgba(40, 20, 6, 0.45), 0 0 0 0.5px rgba(0, 0, 0, 0.08);
+}
+.src-item.is-open > .row,
+.src-item.is-open > .row.is-on:has(> .sel-bloom) {
+  background: transparent;
+}
+.row > .app-tile {
+  flex: none;
+  border-radius: 10px;
+}
+
+/* An app the board has no icon for yet: a neutral tile with its first letter. */
+.app-tile.is-letter { display: grid; place-items: center; background: var(--inset); color: var(--ink-muted); box-shadow: inset 0 0 0 1px var(--hair); }
+.app-tile.is-letter b { font-size: 42%; font-weight: 600; }
+.app-tile img { width: 100%; height: 100%; border-radius: var(--r); display: block; }
+.coach-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: 6px; }
+.q-head-block { margin: 18px 0 22px; display: flex; flex-direction: column; gap: 8px; }
+.q-head-block .t-sub { margin: 0; }

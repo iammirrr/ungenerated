@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+site/
+skills/design-board/template/review/store.json
+skills/design-board/template/assets/appicons/*.png

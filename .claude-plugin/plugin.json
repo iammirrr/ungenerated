@@ -1,0 +1,9 @@
+{
+  "name": "app-design-skills",
+  "version": "0.1.0",
+  "description": "Design mobile apps with Claude: a live design board, a motion system, onboarding and paywall patterns, and a no-slop checklist.",
+  "author": { "name": "Mir", "url": "https://github.com/iammirrr" },
+  "homepage": "https://iammirrr.github.io/app-design-skills/",
+  "repository": "https://github.com/iammirrr/app-design-skills",
+  "license": "MIT"
+}
