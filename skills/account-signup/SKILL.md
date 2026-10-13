@@ -13,15 +13,19 @@ description: Place and design the sign-up so it feels like saving progress, not 
    every platform). One door serves new and returning people.
 2. **Order:** Continue with Apple, Continue with Google, then Continue with email as a text button.
 3. **Say why:** "Save your setup for your phone and computer." One line.
-4. **Show what they keep.** "Almost done." big at the top, the app icon in the centre, and the
-   things they just set up (their hours, their rhythm, the apps they picked, their goal) floating
-   in around it and gathering into the icon one by one, then a tick: "Everything you made, kept."
-   No device, no dividing curve; the buttons below. It turns a wall into saving their work.
+4. **Show what they keep.** "Almost done." at the top (title size, not a poster), the product's
+   own hero in the centre (its mascot or symbol, never the App Store icon), and the things they
+   just set up (their hours, their rhythm, the apps they picked, their goal) floating round it on
+   slow waves, the way the opening floats things. No device, no dividing curve; the buttons below.
+   It turns a wall into saving their work.
 5. **Less rounded than the marketing screens**, so it sits with the app (16 pt buttons).
 6. **True trust lines only**: "We never sell your data." and the terms line.
 7. The email path: one field, then a six-digit code. No password.
-8. **If the product works without an account, offer a quiet "Not now".** App Store guideline
-   5.1.1(v) can reject a forced login when the core isn't account-based.
+8. **Required or skippable is a product decision.** App Store guideline 5.1.1(v) asks for a way in
+   without a login only when the app has no significant account-based features. Sync across
+   devices, a companion app or a subscription that follows the person all count, so a required
+   account is fine; say so plainly ("By continuing, you accept the Terms and Privacy Policy.").
+   Google Play has no such rule. Plan for a first launch with no signal.
 
 ## Platform facts worth knowing
 

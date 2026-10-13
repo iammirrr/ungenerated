@@ -15,8 +15,10 @@ none run work admin there. Split setup in two:
    their own, the plan can use it, and leaving now costs more. Give these screens the same
    progress bar and answer rows as the questions, so it reads as one journey.
 2. Then the plan, right before the paywall, then the paywall.
-3. **After they commit** (paid, or closed the paywall): consent, the entities (clients, projects),
-   reminders, the widget, then the tour. By now it feels like unpacking, not a hurdle. A long
+3. **After they commit** (paid, or closed the paywall): the workspace first (its name, and who it
+   is for: just me or my team, the team option marked Soon if teams aren't live, pre-picked from
+   the team-size question), then the entities (clients, projects), reminders, the widget, then the
+   tour. Show the workspace live as the app's switcher will. By now it feels like unpacking, not a hurdle. A long
    hands-on setup after paying doesn't hurt; one before the price does.
 
 ## Setup
