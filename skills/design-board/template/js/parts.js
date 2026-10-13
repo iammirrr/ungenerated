@@ -546,13 +546,25 @@
   F.seg = (ctx, options, value, onChange) => {
     const thumb = h('span.seg-thumb');
     const el = h('div.seg', { role: 'group' }, thumb);
+    let squeeze = null;
     const btns = options.map(([v, label]) => {
       const b = h('button', { type: 'button', 'aria-pressed': String(v === value) }, label);
       ctx.on(b, 'click', () => select(v, true));
+      // The press squeezes the thumb with the separate `scale` property, so it never replaces the
+      // thumb's translate (a held scale-only transform would park the thumb on the first option).
       ctx.on(b, 'pointerdown', () => {
-        if (b.getAttribute('aria-pressed') === 'true') F.move(thumb, { s: 1 }, { s: 0.95 }, { duration: 90, curve: 'strong', ctx, fill: 'forwards' });
+        if (b.getAttribute('aria-pressed') !== 'true' || F.reduced()) return;
+        squeeze && squeeze.cancel();
+        squeeze = thumb.animate([{ scale: '1' }, { scale: '0.95' }], { duration: 90 * F.k(), easing: F.css('strong'), fill: 'forwards' });
+        ctx.track(squeeze);
       });
-      ctx.on(b, 'pointerup', () => F.move(thumb, { s: 0.95 }, { s: 1 }, { spring: { response: 0.3, damping: 0.6 }, ctx, fill: 'forwards' }));
+      ctx.on(b, 'pointerup', () => {
+        if (!squeeze) return;
+        squeeze.cancel();
+        squeeze = null;
+        const sc = F.springCurve(0.3, 0.6);
+        ctx.track(thumb.animate(sc.values.map((v) => ({ scale: String(0.95 + 0.05 * v) })), { duration: sc.duration * F.k(), easing: 'linear' }));
+      });
       el.append(b);
       return b;
     });
