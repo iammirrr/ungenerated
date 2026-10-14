@@ -5,32 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{TITLE}}</title>
 <meta name="description" content="{{DESC}}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{{FONTS}}">
 <link rel="stylesheet" href="../base.css">
 <link rel="stylesheet" href="../home.css">
 <link rel="stylesheet" href="../skill.css">
 </head>
 <body>
 
-<header class="bar" id="bar">
-  <div class="wrap bar-in">
-    <a class="mark" href="../" aria-label="Ungenerated, home"><b>Un</b>generated</a>
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="logo" href="../">Ungenerated</a>
     <nav class="nav" aria-label="Sections">
-      <a href="../#before-after">Before and after</a>
-      <a href="../#kits">Kits</a>
+      <a href="../#projects">Projects</a>
       <a href="../#skills">Skills</a>
-      <a href="../board/">Example board</a>
+      <a href="{{REPO}}">GitHub</a>
     </nav>
-    <a class="bar-cta" href="../#install">Install</a>
   </div>
 </header>
 
 <main class="wrap sk-page">
   <aside class="sk-side" aria-label="All skills">{{SIDE}}</aside>
   <article class="sk-main">
-    <p class="eyebrow">{{GROUP}}</p>
+    <p class="sk-group">{{GROUP}}</p>
     <h1 class="sk-title">{{NAME}}</h1>
     <p class="sk-lede">{{LEDE}}</p>
     <p class="sk-meta">{{META}}</p>
@@ -38,11 +33,10 @@
     <div class="prose">{{BODY}}</div>
     <nav class="pager" aria-label="Skills in order">{{PAGER}}</nav>
   </article>
-  <aside class="sk-toc" aria-label="On this page">{{TOC}}</aside>
 </main>
 
 <footer class="foot">
-  <div class="wrap foot-in"><span>Rebuilt from <a href="{{REPO}}">the repository</a> on every change. Last update {{WHEN}} · <a href="{{REPO}}/commit/{{COMMIT}}">{{COMMIT}}</a></span><span>MIT licence</span></div>
+  <div class="wrap foot-in"><span>Rebuilt from <a href="{{REPO}}">the repository</a> on every change · {{WHEN}} · <a href="{{REPO}}/commit/{{COMMIT}}">{{COMMIT}}</a></span><span>MIT licence</span></div>
 </footer>
 <script>{{DATA}}</script>
 <script src="../flows.js"></script>

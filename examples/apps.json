@@ -33,7 +33,8 @@
       "Emoji where icons should be",
       "rounded-2xl and shadow-lg on every card",
       "A glow behind the hero"
-    ]
+    ],
+    "sample": "Your Personalized Plan is Ready! 🎉"
   },
   "apps": [
     {
@@ -82,7 +83,10 @@
           ]
         ],
         "mood": "Warm, slow, a kitchen at seven in the morning",
-        "weight": 400
+        "weight": 400,
+        "sample": "Bread on its own clock.",
+        "iconBg": "#BF4F1A",
+        "iconInk": "#FBF6EC"
       },
       "before": {
         "id": "loaf-generated",
@@ -195,7 +199,10 @@
         "weight": 800,
         "case": "uppercase",
         "track": "0",
-        "tone": "light"
+        "tone": "light",
+        "sample": "Week one, from your run.",
+        "iconBg": "#0E0F0C",
+        "iconInk": "#D4FF3F"
       },
       "before": {
         "id": "stride-generated",
@@ -304,7 +311,10 @@
             "#22161A"
           ]
         ],
-        "mood": "Fresh, bright, a fruit stall in the morning"
+        "mood": "Fresh, bright, a fruit stall in the morning",
+        "sample": "How you’ll get to 66 kg.",
+        "iconBg": "#FFF4D6",
+        "iconInk": "#E0315B"
       },
       "before": {
         "id": "ripe-generated",
@@ -413,7 +423,10 @@
         "mood": "Plain, exact, a kitchen table with the bills on it",
         "body": "same",
         "weight": 700,
-        "track": "-0.045em"
+        "track": "-0.045em",
+        "sample": "This is how your month will work.",
+        "iconBg": "#F2B705",
+        "iconInk": "#111110"
       },
       "before": {
         "id": "halves-generated",
@@ -523,7 +536,10 @@
           ]
         ],
         "mood": "Quiet, unhurried, the hour before sleep",
-        "weight": 600
+        "weight": 600,
+        "sample": "Here’s tonight.",
+        "iconBg": "#121D33",
+        "iconInk": "#D9822B"
       },
       "before": {
         "id": "lull-generated",
@@ -635,7 +651,10 @@
         "mood": "Bright, bubbly, a café counter in Bologna",
         "body": "same",
         "weight": 800,
-        "tone": "light"
+        "tone": "light",
+        "sample": "Say it out loud.",
+        "iconBg": "#E4472E",
+        "iconInk": "#FFFFFF"
       },
       "before": {
         "id": "parla-generated",
@@ -739,7 +758,10 @@
           ]
         ],
         "mood": "Green, patient, a windowsill in spring",
-        "weight": 400
+        "weight": 400,
+        "sample": "Your plants are all here.",
+        "iconBg": "#DFE6D8",
+        "iconInk": "#16221A"
       },
       "before": {
         "id": "fern-generated",

@@ -37,8 +37,9 @@ Full tokens, the move for every helper, and the SwiftUI and Compose twins are in
    bubbly, not precise; a meditation app for athletes may be snappy in its timer and calm
    everywhere else (see Mixing).
 3. **Show it, don't describe it.** Put the style tiles on the board's Kit view (the template has
-   them: the same screen moving seven ways) and let the reviewer pick by feel. Write the pick
-   down as a standing rule.
+   them: the same four parts, a heading, a button, a toggle and a value, moving seven ways, with
+   no screen around them) and let the reviewer pick by feel. Write the pick down as a standing
+   rule.
 
 ## Apply it on the board
 

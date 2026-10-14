@@ -46,7 +46,8 @@ F.def({
 - **Motion style.** `style: 'calm'` on a screen (or on `window.BOARD` for the whole app) makes the
   engine's helpers move in that personality and picks the screen-to-screen move: `fade`, `push`,
   `step`, `carry`, `iris` or `grow` (`motion-styles`). The Kit view's Motion styles row shows the
-  same screen in all seven, so the reviewer can pick by feel.
+  same four parts (a heading, a button, a toggle, a value) in all seven, so the reviewer can pick
+  by feel.
 
 ## The board's layout (keep it)
 

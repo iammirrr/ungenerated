@@ -1,36 +1,37 @@
-// A skill page: the bar's line when scrolled, the section you are reading lit in the margin, and
-// the live phones (motion styles) loading when they come into view.
+// A skill page: the bar's line when scrolled, this skill brought into view in the list, and the
+// sheets (the motion styles, a kit) loading near view, fitting their height, playing in view.
 (() => {
   'use strict';
-  const bar = document.getElementById('bar');
-  const onScroll = () => bar && bar.classList.toggle('is-stuck', scrollY > 8);
+  const top = document.getElementById('top');
+  const onScroll = () => top && top.classList.toggle('is-stuck', scrollY > 8);
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   // Bring this skill into view in the list, without moving the page.
   const side = document.querySelector('.sk-side'), cur = side && side.querySelector('[aria-current]');
   if (cur) side.scrollTop = cur.offsetTop - side.clientHeight / 2;
 
-  // Live phones: each iframe is drawn at 390 × 844 and scaled to its glass; it loads when it is
-  // near the screen and pauses when it leaves.
-  const fit = (screen) => screen.style.setProperty('--k', (screen.clientWidth / 390).toFixed(4));
-  const ro = new ResizeObserver((es) => es.forEach((e) => fit(e.target)));
   const post = (f, m) => { try { f.contentWindow && f.src && f.contentWindow.postMessage(m, '*'); } catch {} };
-  const io = new IntersectionObserver((es) => es.forEach((e) => {
-    const f = e.target;
-    if (e.isIntersecting && !f.src) f.src = f.dataset.src.replace('?paused', '');
-    else post(f, { cmd: e.isIntersecting ? 'play' : 'pause' });
-  }), { rootMargin: '120px 0px' });
-  document.querySelectorAll('iframe[data-src]').forEach((f) => {
-    const screen = f.closest('.dev-screen');
-    if (screen) { fit(screen); ro.observe(screen); }
-    io.observe(f);
-  });
+  const sheet = document.querySelector('.sk-sheet');
+  if (sheet) {
+    let seen = false;
+    window.addEventListener('message', (e) => {
+      if (e.source !== sheet.contentWindow || !e.data) return;
+      if (e.data.type === 'height') sheet.style.height = e.data.h + 'px';
+    });
+    sheet.addEventListener('load', () => seen && setTimeout(() => post(sheet, { cmd: 'play' }), 300));
+    new IntersectionObserver((es) => es.forEach((e) => {
+      seen = e.isIntersecting && e.intersectionRatio > 0.2;
+      if (e.isIntersecting && !sheet.src) sheet.src = sheet.dataset.src;
+      post(sheet, { cmd: seen ? 'play' : 'pause' });
+    }), { threshold: [0, 0.2] }).observe(sheet);
+    // A kit per project: the tabs swap the sheet.
+    const tabs = [...document.querySelectorAll('.sk-tabs button')];
+    tabs.forEach((b) => b.addEventListener('click', () => {
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t === b)));
+      // A new query, not just a new hash, so the sheet loads afresh.
+      sheet.dataset.src = sheet.dataset.src.replace(/[?#].*$/, '') + '?app=' + b.dataset.kit + '#' + b.dataset.kit;
+      sheet.src = sheet.dataset.src;
+    }));
+  }
 
-  const links = [...document.querySelectorAll('.sk-toc a')];
-  if (!links.length) return;
-  const tocIo = new IntersectionObserver((es) => es.forEach((e) => {
-    if (!e.isIntersecting) return;
-    links.forEach((a) => a.toggleAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id));
-  }), { rootMargin: '-20% 0px -70% 0px' });
-  links.forEach((a) => { const t = document.getElementById(a.getAttribute('href').slice(1)); if (t) tocIo.observe(t); });
 })();

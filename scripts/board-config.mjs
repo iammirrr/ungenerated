@@ -74,31 +74,62 @@ window.BOARD = {
 `;
 };
 
-/** The image prompts, for whoever makes the pictures (ChatGPT, a photographer, an illustrator). */
-export const imagePrompts = ({ APPS, IMAGES, PICS }) => {
-  const appName = (id) => (APPS.apps.find((a) => a.id === id) || { name: id }).name;
+/**
+ * The pictures as ChatGPT prompts. one(img): a picture whole (its style, the picture, its size),
+ * to paste anywhere. set(id): a whole set as one message (who it is for, the style once, then each
+ * picture in order), for one chat; set(appId, {icon: true}) adds the app's icon at the end, and
+ * set('icons') is every app's icon.
+ */
+export const prompts = ({ APPS, IMAGES }) => {
+  const G = Object.fromEntries((IMAGES.groups || []).map((g) => [g.app, g]));
+  const sizeOf = (i) => `${i.size}${i.transparent ? ', transparent background (PNG)' : ''}.`;
+  const pics = (id) => IMAGES.images.filter((i) => i.app === id);
+  const iconOf = (a) => IMAGES.images.find((i) => i.id === a.icon);
+  const ORDER = 'Make them one at a time, each as its own image, in this order. Start with 1; when I say “next”, make the next one.';
+  const one = (i) => `${G[i.app].style}\n\n${i.prompt}\n\n${sizeOf(i)}`;
+  const set = (id, o = {}) => {
+    if (id === 'icons') {
+      const list = APPS.apps.filter(iconOf);
+      return [`I’m making the app icons for ${list.length} different apps, each its own brand. Every icon follows this style:\n\n${G.icons.style}`, G.icons.note, ORDER,
+        list.map((a, n) => `${n + 1}. ${a.name} (${a.category.toLowerCase()}). ${iconOf(a).prompt} ${sizeOf(iconOf(a))}`).join('\n\n')].filter(Boolean).join('\n\n');
+    }
+    const a = APPS.apps.find((x) => x.id === id), g = G[id];
+    const items = pics(id).map((i, n) => `${n + 1}. ${i.label}. ${sizeOf(i)} ${i.prompt}`);
+    if (o.icon && iconOf(a)) items.push(`${items.length + 1}. ${a.name}’s app icon, in its own style: ${G.icons.style} ${iconOf(a).prompt}`);
+    return [`I’m making the pictures for an app called ${a.name}. ${a.what}`, `Every picture shares this style:\n\n${g.style}`, g.note, ORDER, items.join('\n\n')].filter(Boolean).join('\n\n');
+  };
+  const files = (id) => (id === 'icons' ? APPS.apps.map(iconOf).filter(Boolean) : pics(id));
+  return { one, set, files, pics, iconOf, groups: G, sizeOf };
+};
+
+/** IMAGE-PROMPTS.md: every set, most visible first, ready to paste into ChatGPT. */
+export const imagePrompts = (EX) => {
+  const { APPS, IMAGES, PICS } = EX;
+  const P = prompts(EX);
+  const name = (id) => (id === 'icons' ? 'App icons' : `${APPS.apps.find((a) => a.id === id).name}: ${P.groups[id].title}`);
+  // The icons show on every page; Tazza carries Parla; then the apps whose screens show the most pictures.
+  const sets = ['icons', 'parla', 'ripe', 'loaf', 'fern', 'lull', 'stride', 'halves'].filter((id) => P.groups[id]);
   const out = [`# Image prompts
 
-Every picture the example apps use. Until a picture exists, the screens show a labelled
-placeholder in its place. To add one: make it, save the original as \`examples/images-src/<id>.png\`
-(or .jpg), run \`node scripts/images.mjs\` (it writes a light WebP to \`examples/images/\`), then
-rebuild. The screens pick it up by its id.
+The pictures the example projects use, as ChatGPT prompts: ${Object.keys(PICS).length} of ${IMAGES.images.length} made.
 
-Made with ChatGPT: each block below is a whole prompt (the app's style, the picture, its size),
-ready to paste. Make one app's pictures in one chat, in order, so they match; for the mascot, make
-the first pose, then paste the others in the same chat.
+1. Open a new ChatGPT chat for each set and paste the set. It makes picture 1; say “next” for each one after.
+2. Save each picture as \`examples/images-src/<name>.png\`, with the names listed under its set, in order.
+3. Run \`node scripts/images.mjs\` (it writes light WebP files to \`examples/images/\`), then rebuild.
 
-Done: ${Object.keys(PICS).length} of ${IMAGES.images.length}.
+Until a picture exists, the screens show a placeholder in its place. To redo one picture, copy it
+alone from its project page on the site: each prompt there carries the style.
 `];
-  const groups = IMAGES.groups || [];
-  for (const g of groups) {
-    const imgs = IMAGES.images.filter((i) => i.app === g.app);
-    if (!imgs.length) continue;
-    out.push(`\n## ${appName(g.app)}${g.title ? ': ' + g.title : ''}\n\n${g.note || ''}\n`);
-    for (const i of imgs) {
-      const size = `${i.size}${i.transparent ? ', transparent background (PNG)' : ''}.`;
-      out.push(`### \`${i.id}\`${PICS[i.id] ? ' (done)' : ''}\n\n${i.label}. Save as \`examples/images-src/${i.id}.png\`. Used in: ${i.used}.\n\n\`\`\`\n${g.style}\n\n${i.prompt}\n\n${size}\n\`\`\`\n`);
-    }
-  }
+  sets.forEach((id, n) => {
+    const list = P.files(id);
+    out.push(`## ${n + 1}. ${name(id)}
+
+\`\`\`text
+${P.set(id)}
+\`\`\`
+
+Save as: ${list.map((i) => `\`${i.id}.png\`${PICS[i.id] ? ' (done)' : ''}`).join(', ')}.
+`);
+  });
   return out.join('\n');
 };

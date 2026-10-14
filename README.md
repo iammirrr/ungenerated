@@ -1,87 +1,57 @@
-<a href="https://iammirrr.github.io/ungenerated/"><img src="examples/shots/readme-hero.webp" alt="Ungenerated: design apps that don’t look generated. A phone shows a generated draft and the same screen made with the skills, split down the middle." width="100%"></a>
+<a href="https://iammirrr.github.io/ungenerated/"><img src="examples/shots/readme-hero.webp" alt="Before and after. A diet app’s plan screen as Claude draws it alone: purple gradients, emoji, a fake countdown. The same screen with the skills: the person’s own numbers on a cream page." width="100%"></a>
 
 # Ungenerated
 
-Left alone, Claude designs the same app every time: indigo gradients, emoji for icons, one bounce
-for everything. These skills are the corrections: a live design board for every screen, a design
-kit and a motion style before any screen, the onboarding, paywall and cancel flows that work, and a
-checklist for the tells. They come from designing real apps screen by screen with a demanding
-reviewer. Every rule in here was a correction once.
+Design skills for Claude Code, for mobile apps that don’t look generated.
 
-**[The page](https://iammirrr.github.io/ungenerated/)** · **[The example board](https://iammirrr.github.io/ungenerated/board/)** · [Install](#install) · [The skills](#the-skills)
-
-## This is what happens to your app
-
-Seven made-up apps, fifteen full flows, every screen live. Each kind of flow is shown three times,
-in three apps that look and move three different ways.
-
-<img src="examples/shots/readme-paywalls.webp" alt="Three paywalls playing side by side: Lull, calm and blue; Ripe, fluid and raspberry; Stride, loud, black and volt." width="100%">
-
-**Paywalls.** Lull (calm), Ripe (fluid), Stride (snappy). One value beat made from the person’s own
-answers, every price before any tap, the trial on a timeline with real dates, one button, and then
-the permission the trial promised, asked in context.
-
-<img src="examples/shots/readme-leaving.webp" alt="Three ways out playing side by side: Fern’s plan and offer, Halves’ export, Parla’s break with its mascot." width="100%">
-
-**Leaving.** One question, three answers, three different screens. Budget gets the whole menu once
-(Fern). Someone who moved to another app gets their data and no offer (Halves). A break gets the
-honest version the App Store allows: renewal off, everything kept, a reminder (Parla).
-
-<img src="examples/shots/readme-openings.webp" alt="Three openings playing side by side: Stride’s kinetic type, Parla’s mascot and microphone, Loaf’s jar of starter rising." width="100%">
-
-**Openings.** Kinetic type on the beat (Stride), a mascot and a microphone you hold (Parla), a
-camera that moves from the crumb to the jar (Loaf). The button arrives on the last beat.
-
-| Kind | The apps (steps) | Shaped by |
-|---|---|---|
-| Openings | Stride, Parla, Loaf | [`opening-hook`](skills/opening-hook/SKILL.md), [`continuity`](skills/continuity/SKILL.md) |
-| Onboarding | Ripe (5), Stride (4), Halves (4) | [`onboarding-questions`](skills/onboarding-questions/SKILL.md), [`plan-reveal`](skills/plan-reveal/SKILL.md) |
-| Paywalls | Lull (4), Ripe (3), Stride (3) | [`paywall`](skills/paywall/SKILL.md), [`consent-and-permissions`](skills/consent-and-permissions/SKILL.md) |
-| Setup and permissions | Parla (3), Fern (3), Loaf (3) | [`setup-and-tour`](skills/setup-and-tour/SKILL.md), [`consent-and-permissions`](skills/consent-and-permissions/SKILL.md) |
-| Leaving | Fern (7), Halves (3), Parla (3) | [`cancel-flow`](skills/cancel-flow/SKILL.md), [`human-copy`](skills/human-copy/SKILL.md) |
-
-<a href="https://iammirrr.github.io/ungenerated/#flows"><img src="examples/shots/readme-flows.webp" alt="The flow player on the page: a live phone playing a flow, with every step listed beside it and what the step does." width="100%"></a>
-
-On [the page](https://iammirrr.github.io/ungenerated/#flows), a live phone plays each flow step by
-step, and every step says what it does and which rule it follows. Each skill’s own page plays the
-flows that show it at work.
-
-## Seven ways to move
-
-<img src="examples/shots/readme-styles.webp" alt="One screen moving four ways: calm, snappy, precise and cinematic." width="100%">
-
-Generated motion is one bounce for everything. [`motion-styles`](skills/motion-styles/SKILL.md)
-gives an app a personality instead, and one line on the board (`style: 'calm'`) moves every
-heading, list, press, value and screen change in it.
-
-| Style | It feels | Use for | Seen in |
-|---|---|---|---|
-| Calm | Nothing hurries. | sleep, meditation, health, journaling | Lull |
-| Snappy | Every move lands on the beat. | fitness, sport, games, music | Stride |
-| Bubbly | Soft, round, alive. | language, kids, habits, social | Parla |
-| Precise | Measured, like a ledger. | money, productivity, tools | Halves |
-| Fluid | One shape becomes the next. | diet, health tracking, utilities | Ripe |
-| Cinematic | A camera, not a cursor. | food, travel, reading, fashion | Loaf |
-| Organic | Things grow. | plants, gardening, wellbeing, nature | Fern |
+**[See the projects](https://iammirrr.github.io/ungenerated/)** · [Install](#install) · [The skills](#the-skills)
 
 ## Same brief, twice
 
-<img src="examples/shots/readme-scan.webp" alt="Seven phones. A red line sweeps across them; behind it, seven purple look-alike screens become seven different apps." width="100%">
+<img src="examples/shots/readme-lineup.webp" alt="Seven apps, twice. Above, as Claude draws them alone: seven purple look-alikes. Below, with the skills: seven different apps." width="100%">
 
-The same prompt drew both rows; only the skills changed. Generated, every app shares one default
-kit (indigo to pink, Inter, emoji, glass), so seven apps look like one. With the skills, each gets
-its own kit, its own motion and its own words.
+Above, Claude alone: seven apps that look like one. Below, the same seven with the skills.
 
-<img src="examples/shots/readme-pairs.webp" alt="Two rows of seven phones: the generated drafts above, the same apps with the skills below." width="100%">
+## Seven projects
 
-## Design kits, before and after
+Each project page plays every flow live, shows the kit part by part, and gives the ChatGPT prompts
+for its pictures.
 
-<img src="examples/shots/readme-kits.webp" alt="The default kit, with each of its habits struck through, beside seven kits made for the seven apps." width="100%">
+| Project | | Motion | Flows |
+|---|---|---|---|
+| [Ripe](https://iammirrr.github.io/ungenerated/projects/ripe.html) | Diet | Fluid | Questions to a plan, the paywall |
+| [Stride](https://iammirrr.github.io/ungenerated/projects/stride.html) | Running | Snappy | The opening, questions to week one, the paywall |
+| [Halves](https://iammirrr.github.io/ungenerated/projects/halves.html) | Money for two | Precise | Questions to the month, leaving |
+| [Parla](https://iammirrr.github.io/ungenerated/projects/parla.html) | Language | Bubbly | The opening, the microphone, leaving |
+| [Lull](https://iammirrr.github.io/ungenerated/projects/lull.html) | Sleep | Calm | The paywall |
+| [Fern](https://iammirrr.github.io/ungenerated/projects/fern.html) | Plant care | Organic | The first plant, leaving |
+| [Loaf](https://iammirrr.github.io/ungenerated/projects/loaf.html) | Baking | Cinematic | The opening, the first bake |
 
-[`design-kit`](skills/design-kit/SKILL.md) makes the kit before any screen: colour tokens, one type
-pairing, one radius scale, the parts in every state, and the motion style. The kits live in
-[`examples/apps.json`](examples/apps.json); change a token there and the board, the page and these
-pictures follow.
+<img src="examples/shots/readme-paywalls.webp" alt="Three paywalls playing side by side: Lull, calm and blue; Ripe, fluid and raspberry; Stride, loud, black and volt." width="100%">
+
+Three paywalls: Lull, Ripe, Stride.
+
+<img src="examples/shots/readme-leaving.webp" alt="Three ways out playing side by side: Fern’s plan and offer, Halves’ export, Parla’s break with its mascot." width="100%">
+
+Three ways out: Fern, Halves, Parla.
+
+<img src="examples/shots/readme-openings.webp" alt="Three openings playing side by side: Stride’s kinetic type, Parla’s mascot and microphone, Loaf’s jar of starter rising." width="100%">
+
+Three openings: Stride, Parla, Loaf.
+
+## The kit, part by part
+
+<img src="examples/shots/readme-kit.webp" alt="Claude’s default kit beside Ripe’s, part by part: colour, type, buttons, toggles, slider, choice, chips and a value." width="100%">
+
+Left, the kit Claude uses for every app. Right, Ripe’s, made by [`design-kit`](skills/design-kit/SKILL.md)
+before any screen.
+
+## Seven ways to move
+
+<img src="examples/shots/readme-motion.webp" alt="A heading, a button, a toggle and a value, moving in Claude’s default and in seven motion styles: calm, snappy, bubbly, precise, fluid, cinematic and organic." width="100%">
+
+[`motion-styles`](skills/motion-styles/SKILL.md): one line on the board, `style: 'calm'`, and every
+heading, press, toggle and value moves that way.
 
 ## Install
 
@@ -93,14 +63,8 @@ In Claude Code:
 ```
 
 Or copy the folders you want from `skills/` into `~/.claude/skills/` (all projects) or
-`.claude/skills/` (one project).
-
-## Use
-
-Start with “design the paywall for my sleep app” or “set up a design board”, and Claude follows
-`app-design-workflow`: concept, research, kit and motion style, board, then the flow screen by
-screen, each checked before you see it. You review on the board with Pick and Note; the next pass
-reads your notes.
+`.claude/skills/` (one project). Then ask for “the paywall for my sleep app” or “a design board”,
+and Claude follows `app-design-workflow`.
 
 ## The skills
 
@@ -162,35 +126,30 @@ reads your notes.
 
 <a href="https://iammirrr.github.io/ungenerated/board/"><img src="examples/shots/board.webp" alt="The example board: a row per flow, each led by a card that plays the flow whole, then its screens as live phones." width="100%"></a>
 
-`skills/design-board/template/` is a working board: the motion engine with its seven styles, the
-parts (buttons, rows, toggles, sliders, segmented controls, reels, coach marks), screen
-transitions, Play the flow, Pick and Note saved to the repo, and the tools that capture real-time
-screenshots. Copy it into your project and run `node tools/serve.mjs`. The
-[example board](https://iammirrr.github.io/ungenerated/board/) is that template running the seven
-apps from `examples/`.
+`skills/design-board/template/` is a working board: every screen a live phone, the motion engine
+and its seven styles, the parts, Play the flow, and Pick and Note for review. Copy it into your
+project and run `node tools/serve.mjs`. The
+[example board](https://iammirrr.github.io/ungenerated/board/) runs the seven projects.
 
 ## In this repository
 
 | Folder | What is in it |
 |---|---|
 | `skills/` | The skills, one folder each, with a `SKILL.md` and any references or templates. |
-| `examples/` | The seven example apps: their kits and motion styles (`apps.json`), their fifteen flows (`flows.json`), the pictures they use (`images.json`), one screen file per app on the board engine, and the screenshots. |
-| `site-src/` | The page, the flow player and the skill pages. |
-| `scripts/` | `build-site.mjs` builds the page and the board into `site/` on every push; `dev.mjs` serves the board live while you work; `shots.mjs` retakes the screenshots and recordings; `images.mjs` turns pictures into light WebP files. |
+| `examples/` | The seven projects: kits and motion styles (`apps.json`), flows (`flows.json`), pictures (`images.json`), and their screens on the board engine. |
+| `site-src/` | The site: the home page, the project pages and the skill pages. |
+| `scripts/` | `build-site.mjs` builds the site into `site/` on every push; `dev.mjs` serves the board while you work; `shots.mjs` retakes the screenshots; `images.mjs` turns pictures into light WebP files. |
 
-The pictures (the mascot, the food, the plants, the app icons) are made from the prompts in
-[`examples/IMAGE-PROMPTS.md`](examples/IMAGE-PROMPTS.md). Until a picture exists, the screens show
-a labelled placeholder in its place.
+The pictures (the mascot, the food, the plants, the app icons) come from the ChatGPT prompts in
+[`examples/IMAGE-PROMPTS.md`](examples/IMAGE-PROMPTS.md). Until one exists, the screens show a
+placeholder.
 
 ## Contributing
 
-Each skill is one folder with a `SKILL.md`. Keep them specific: a rule, why it holds, and what to do
-instead. If a rule came from a real correction, it belongs here. The page rebuilds itself from the
-skills on every push. If you change an example app, run `node scripts/build-site.mjs` and then
-`node scripts/shots.mjs` so the pictures match.
+Each skill is one folder with a `SKILL.md`: a rule, why it holds, and what to do instead. If you
+change an example, run `node scripts/build-site.mjs`, then `node scripts/shots.mjs`.
 
 ## Licence
 
-MIT for this repository. The icon subset in the board template is from Lucide (ISC). App icons are
-not included: `tools/fetch-appicons.mjs` fetches them for your private use. The seven example apps
-are made up; any resemblance to a real app’s name is a coincidence.
+MIT. The icon subset in the board template is from Lucide (ISC). App icons are not included:
+`tools/fetch-appicons.mjs` fetches them for your private use. The seven projects are made up.

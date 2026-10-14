@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ungenerated · design apps that don’t look generated</title>
-<meta name="description" content="{{TOTAL}} skills that teach Claude how real apps are designed. {{N_APPS}} example apps, {{N_FLOWS}} full flows, {{N_STEPS}} screens, seven motion styles: openings, onboarding, paywalls, permissions and the way out.">
+<title>Ungenerated · design skills for Claude Code</title>
+<meta name="description" content="{{TOTAL}} skills for Claude Code that design mobile apps that don’t look generated. Seven example projects, each before and after.">
 <meta property="og:title" content="Ungenerated">
-<meta property="og:description" content="Design apps that don’t look generated. {{TOTAL}} skills for Claude Code, shown through {{N_FLOWS}} full flows in {{N_APPS}} apps.">
+<meta property="og:description" content="Design skills for Claude Code. Seven projects, before and after.">
 <meta property="og:image" content="https://iammirrr.github.io/ungenerated/shots/readme-hero.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,225 +17,59 @@
 </head>
 <body>
 
-<header class="bar" id="bar">
-  <div class="wrap bar-in">
-    <a class="mark" href="./" aria-label="Ungenerated, home"><b>Un</b>generated</a>
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="logo" href="./">Ungenerated</a>
     <nav class="nav" aria-label="Sections">
-      <a href="#flows">Flows</a>
-      <a href="#motion">Motion</a>
-      <a href="#before-after">Before and after</a>
-      <a href="#kits">Kits</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="board/">Example board</a>
+      <a href="{{REPO}}">GitHub</a>
     </nav>
-    <a class="bar-gh" href="{{REPO}}" aria-label="Source on GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
-    <a class="bar-cta" href="#install">Install</a>
   </div>
 </header>
 
 <main>
 
-<!-- ============================================================ the hero -->
-<section class="hero">
-  <div class="wrap hero-in">
-    <div class="hero-words">
-      <p class="eyebrow">{{TOTAL}} skills for Claude Code</p>
-      <h1 class="hero-title">Design apps that don’t look <span class="fix" id="fix"><span class="fix-word"><span class="fix-slop">generated</span><span class="fix-plain" aria-hidden="true">generated</span></span><span class="fix-spark" aria-hidden="true">✨</span><svg class="fix-strike" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 C 30 8, 70 13, 98 9" pathLength="1"/></svg>.</span></h1>
-      <p class="fix-note" id="fix-note"><span class="pin">1</span><span>No gradient text, no emoji.</span> <a href="skills/no-slop.html">no-slop</a></p>
-      <p class="hero-lede">Left alone, Claude designs the same app every time: indigo gradients, emoji for icons, one bounce for everything. These skills are the corrections, and every one is shown working: {{N_APPS}} apps, {{N_FLOWS}} full flows, seven ways to move.</p>
-      <div class="install" id="install-hero">
-        <pre><code><span class="dim">/</span>plugin marketplace add iammirrr/ungenerated
-<span class="dim">/</span>plugin install ungenerated@ungenerated</code></pre>
-        <button type="button" class="copy" data-copy="install-hero">Copy</button>
-      </div>
-      <div class="hero-links">
-        <a class="btn-solid" href="#flows">Watch the flows</a>
-        <a class="btn-line" href="board/">Open the example board</a>
-      </div>
-    </div>
+<section class="intro wrap">
+  <h1>Design apps that don’t look generated</h1>
+  <p class="lead">{{TOTAL}} skills for Claude Code.</p>
+  <div class="install" id="install">
+    <pre><code>/plugin marketplace add iammirrr/ungenerated
+/plugin install ungenerated@ungenerated</code></pre>
+    <button type="button" class="copy" data-copy="install">Copy</button>
+  </div>
+</section>
 
-    <figure class="cmp" id="cmp" aria-label="One screen, generated and with the skills. Drag to compare.">
-      <div class="cmp-tags" aria-hidden="true"><span class="tag is-gen">Generated</span><span class="tag is-ung">With the skills</span></div>
-      <div class="dev">
-        <div class="dev-screen" id="cmp-screen">
-          <div class="cmp-layer is-after"><iframe title="With the skills" tabindex="-1" data-src="board/embed.html?paused#{{FIRST_AFTER}}"></iframe></div>
-          <div class="cmp-layer is-before"><iframe title="The generated draft" tabindex="-1" data-src="board/embed.html?paused#{{FIRST_BEFORE}}"></iframe></div>
-          <div class="cmp-rule" id="cmp-rule"></div><button type="button" class="cmp-knob" aria-label="Drag to compare"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6-6 6 6 6"/><path d="m15 6 6 6-6 6"/></svg></button>
-        </div>
-      </div>
-      <figcaption class="cmp-apps" role="tablist" aria-label="Example apps">{{HERO_TABS}}</figcaption>
+<section class="hero wrap" aria-label="Before and after">
+  <div class="stage hero-stage">
+    <figure class="side">
+      <figcaption><b>Before</b><span>Claude alone</span></figcaption>
+      <div class="phone"><iframe id="hero-before" title="Before: Claude alone" tabindex="-1" data-src="board/embed.html?paused#{{FIRST_BEFORE}}"></iframe></div>
+    </figure>
+    <figure class="side">
+      <figcaption><b>After</b><span>With the skills</span></figcaption>
+      <div class="phone"><iframe id="hero-after" title="After: with the skills" tabindex="-1" data-src="board/embed.html?paused#{{FIRST_AFTER}}"></iframe></div>
     </figure>
   </div>
+  <div class="hero-tabs" role="tablist" aria-label="Example projects">{{HERO_TABS}}</div>
 </section>
 
-<!-- ============================================================ every screen, drifting -->
-<section class="drift" aria-label="Every screen of the example apps">
-  <div class="drift-row" style="--dur: 120s">{{DRIFT_A}}</div>
-  <div class="drift-row is-back" style="--dur: 140s">{{DRIFT_B}}</div>
-  <p class="wrap drift-cap"><b>{{N_STEPS}} screens, {{N_APPS}} apps, {{N_FLOWS}} flows.</b> Every one made with these skills, every one live on the <a href="board/">example board</a>.</p>
+<section class="projects wrap" id="projects">
+  <h2>Projects</h2>
+  {{PROJECTS}}
 </section>
 
-<!-- ============================================================ the apps -->
-<section class="sec apps-sec" id="apps">
-  <div class="wrap sec-head">
-    <p class="eyebrow">Seven apps, nothing in common</p>
-    <h2 class="h2">The rules are the same. <em>The apps never are.</em></h2>
-    <p class="sec-lede">A diet app, a running coach, a budget for two, a sleep app, a language app, a plant app, a baking app. Each has its own kit and its own way to move. Pick one to watch its flows.</p>
-  </div>
-  <div class="wrap apps">{{APPS_ROW}}</div>
-</section>
-
-<!-- ============================================================ the flows -->
-<section class="sec flows-sec" id="flows">
-  <div class="wrap sec-head">
-    <p class="eyebrow">Every flow, start to finish</p>
-    <h2 class="h2">This is what happens <em>to your app.</em></h2>
-    <p class="sec-lede">The opening, the questions, the paywall, the permissions, the way out: each one three times, in three apps that move three different ways. The phone plays the real screens; every step says which rule it follows.</p>
-  </div>
-  <div class="wrap"><div class="fl" id="player" data-player data-kinds></div></div>
-</section>
-
-<!-- ============================================================ motion styles -->
-<section class="sec motion-sec" id="motion">
-  <div class="wrap sec-head">
-    <p class="eyebrow">Motion, generic no more</p>
-    <h2 class="h2">Not one bounce. <em>Seven ways to move.</em></h2>
-    <p class="sec-lede">The same screen in seven personalities. Pick the one your app should feel like and set one line on the board; every heading, list, press, value and screen change follows it (<a href="skills/motion-styles.html">motion-styles</a>).</p>
-  </div>
-  <div class="wrap styles">{{STYLE_TILES}}</div>
-</section>
-
-<!-- ============================================================ before and after -->
-<section class="sec strip-sec" id="before-after">
-  <div class="wrap sec-head">
-    <p class="eyebrow">Same brief, twice</p>
-    <h2 class="h2">Generated, every app looks like <em>one app.</em></h2>
-    <p class="sec-lede">The same prompt drew both rows; only the skills changed. The red line applies them.</p>
-    <div class="seg" id="strip-seg" role="group" aria-label="Show">
-      <button type="button" data-mode="gen">Generated</button>
-      <button type="button" data-mode="scan" aria-pressed="true">Scan</button>
-      <button type="button" data-mode="ung">With the skills</button>
-    </div>
-  </div>
-  <div class="strip" id="strip">
-    <div class="strip-row" style="--n: {{N_PAIRS}}">{{STRIP}}</div>
-    <div class="scan" id="scan" aria-hidden="true"><span>skills applied</span></div>
-  </div>
-</section>
-
-<!-- ============================================================ corrections, app by app -->
-<section class="sec fix-sec" id="corrections">
-  <div class="wrap sec-head">
-    <p class="eyebrow">Corrections, app by app</p>
-    <h2 class="h2">Every change has a reason, and the reason <em>is a skill.</em></h2>
-  </div>
-  <div class="wrap">
-    <div class="tabs" id="tabs" role="tablist" aria-label="Example apps">{{APP_TABS}}</div>
-    <div class="fixer" id="fixer">
-      <figure class="fx-phone is-before">
-        <div class="fx-label"><span class="tag is-gen">Generated draft</span></div>
-        <div class="dev is-small"><div class="dev-screen"><img class="fx-img" src="shots/{{FIRST_APP}}-before.webp" alt="The generated draft" width="390" height="844"><div class="pins" data-side="before"></div></div></div>
-      </figure>
-      <div class="fx-notes">
-        <div class="fx-app" id="fx-app"></div>
-        <div class="fx-col is-before"><h3>What the draft did</h3><ol id="fx-before"></ol></div>
-        <div class="fx-col is-after"><h3>What the skills changed</h3><ol id="fx-after"></ol></div>
-      </div>
-      <figure class="fx-phone is-after">
-        <div class="fx-label"><span class="tag is-ung">With the skills</span><a class="fx-try" id="fx-live" href="board/#only-{{FIRST_AFTER}}">Play it live</a></div>
-        <div class="dev is-small"><div class="dev-screen"><img class="fx-img" src="shots/{{FIRST_APP}}-after.webp" alt="The same screen, with the skills" width="390" height="844"><div class="pins" data-side="after"></div></div></div>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ kits -->
-<section class="sec kit-sec" id="kits">
-  <div class="wrap sec-head">
-    <p class="eyebrow">Design kits, before and after</p>
-    <h2 class="h2">One default kit, or a kit <em>made for the app.</em></h2>
-    <p class="sec-lede">The design-kit skill makes the kit before any screen: colour tokens, one type pairing, one radius scale, the parts in every state, and a motion style. Change a token and every phone on the board follows.</p>
-  </div>
-  <div class="wrap kits">{{KITS}}</div>
-</section>
-
-<!-- ============================================================ words -->
-<section class="sec words-sec" id="words">
-  <div class="wrap sec-head">
-    <p class="eyebrow">Copy, before and after</p>
-    <h2 class="h2">Say the specific thing, <em>in their numbers.</em></h2>
-  </div>
-  <div class="wrap">
-    <ol class="words">
-      <li><s><span>Unlock your full potential with AI-powered sleep insights ✨</span></s><span class="w-fix">Wind down at 10:50. Lights out at 11:10.</span><span class="w-rule">human-copy · the person’s own numbers</span></li>
-      <li><s><span>🎉 Your Personalized Plan is Ready!</span></s><span class="w-fix">This is how your month will work.</span><span class="w-rule">plan-reveal · words are human</span></li>
-      <li><s><span>Lose up to 10 lbs in 30 days! 🔥</span></s><span class="w-fix">At half a kilo a week, that’s 12 weeks.</span><span class="w-rule">no-slop · no invented promises</span></li>
-      <li><s><span>Wait! Don’t leave! You’ll lose EVERYTHING 😢</span></s><span class="w-fix">14 plants, 212 waterings. They stay yours either way.</span><span class="w-rule">cancel-flow · say what they keep</span></li>
-      <li><s><span>Oops! Something went wrong. Please try again later.</span></s><span class="w-fix">That didn’t save. Your changes are still here.</span><span class="w-rule">human-copy · say what happened, and what to do</span></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============================================================ the board -->
-<section class="sec board-sec" id="board">
-  <div class="wrap sec-head">
-    <p class="eyebrow">The design board</p>
-    <h2 class="h2">Every screen a live phone, <em>before a line of Swift.</em></h2>
-    <p class="sec-lede">The design-board skill ships a template: every screen of the app as a working 390 × 844 phone, a row per flow with a card that plays it whole, the kit and the motion styles in their own view, Pick and Note on every card, and Play the flow, full screen.</p>
-  </div>
-  <div class="wrap">
-    <a class="browser" href="board/" aria-label="Open the example board">
-      <span class="browser-bar"><i></i><i></i><i></i><span>iammirrr.github.io/ungenerated/board</span></span>
-      <img src="shots/board.webp" alt="The example board: a row per flow, each led by a card that plays it whole, then its screens as live phones" width="1440" height="900" loading="lazy">
-    </a>
-    <ul class="board-points">
-      <li><b>Live phones.</b> Every card plays its own demo; the first card of a row plays the whole flow.</li>
-      <li><b>Pick and Note.</b> Choose between variations and leave notes on the screens themselves.</li>
-      <li><b>Play the flow.</b> Walk the journey full screen with the real transitions.</li>
-      <li><b>Kits and motion.</b> The kit, the parts and the seven motion styles in their own view.</li>
-    </ul>
-    <div class="board-cta"><a class="btn-solid" href="board/">Open the example board</a><a class="btn-line" href="skills/design-board.html">Read design-board</a></div>
-  </div>
-</section>
-
-<!-- ============================================================ the skills -->
-<section class="sec skills-sec" id="skills">
-  <div class="wrap sec-head">
-    <p class="eyebrow">{{TOTAL}} skills</p>
-    <h2 class="h2">The whole app, from the first idea <em>to the App Store.</em></h2>
-    <label class="search"><span class="mono">Find a skill</span><input type="search" placeholder="paywall, motion, consent…" autocomplete="off"></label>
-  </div>
-  <div class="wrap groups">{{SKILLS}}<p class="none" hidden>No skill matches that.</p></div>
-</section>
-
-<!-- ============================================================ install -->
-<section class="sec install-sec" id="install">
-  <div class="wrap install-in">
-    <div>
-      <p class="eyebrow">Install</p>
-      <h2 class="h2">Two lines. Then ask <em>for a screen.</em></h2>
-      <ol class="steps">
-        <li><b>Add the plugin</b> in Claude Code.</li>
-        <li><b>Ask for what you are making:</b> “Design the paywall for my sleep app.” <code>app-design-workflow</code> starts with the concept, the kit and the motion style.</li>
-        <li><b>Review on the board</b>, with Pick and Note, then port the approved screens with <code>native-port</code>.</li>
-      </ol>
-    </div>
-    <div class="install" id="install-foot">
-      <pre><code><span class="dim">/</span>plugin marketplace add iammirrr/ungenerated
-<span class="dim">/</span>plugin install ungenerated@ungenerated</code></pre>
-      <button type="button" class="copy" data-copy="install-foot">Copy</button>
-    </div>
-  </div>
+<section class="skills wrap" id="skills">
+  <h2>Skills</h2>
+  {{SKILLS}}
 </section>
 
 </main>
 
 <footer class="foot">
-  <div class="wrap foot-in"><span>Rebuilt from <a href="{{REPO}}">the repository</a> on every change. Last update {{WHEN}} · <a href="{{REPO}}/commit/{{COMMIT}}">{{COMMIT}}</a></span><span>MIT licence. The apps are made up.</span></div>
+  <div class="wrap foot-in"><span>Rebuilt from <a href="{{REPO}}">the repository</a> on every change · {{WHEN}} · <a href="{{REPO}}/commit/{{COMMIT}}">{{COMMIT}}</a></span><span>MIT licence. The projects are made up.</span></div>
 </footer>
 
-<script>{{DATA}}</script>
-<script src="flows.js"></script>
 <script src="home.js"></script>
 </body>
 </html>

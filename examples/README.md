@@ -1,10 +1,10 @@
-# The example apps
+# The example projects
 
 Seven made-up apps, each with its own kit and its own motion style, shown through fifteen full
 flows: three openings, three onboardings, three paywalls, three setups and three ways out. They run
 on the design-board template's engine and are published as the
-[example board](https://iammirrr.github.io/ungenerated/board/) and the flow player on
-[the page](https://iammirrr.github.io/ungenerated/#flows).
+[project pages](https://iammirrr.github.io/ungenerated/#projects) and the
+[example board](https://iammirrr.github.io/ungenerated/board/).
 
 | App | What it is | Motion style | Flows |
 |---|---|---|---|
@@ -26,6 +26,8 @@ on the design-board template's engine and are published as the
 | `js/apps/<app>.js`, `css/apps/<app>.css` | Each app's screens. A screen is `F.def({ id, section: '<flow id>', style: '<motion style>', ... })`. |
 | `js/apps/common.js`, `css/common.css` | What they share: real dates, the iOS alert and sheet, pictures and their placeholders (`X.pic`), app icons, the mascot. |
 | `js/apps/embed.js`, `embed.html` | One phone on its own: `embed.html#<screen-id>` loops a screen, `embed.html#flow=<flow-id>` plays a flow. |
+| `kitsheet.html#<app>` | An app's kit part by part (colour, type, buttons, toggles, slider, choice, chips, a value), beside Claude's default. |
+| `motionsheet.html` | The same four parts (a heading, a button, a toggle, a value) in every motion style, in the kit of the app that moves that way. |
 | `css/generated.css` | The default kit the generated drafts share, everything the no-slop checklist names, on purpose. |
 | `images/` | The pictures, as light WebP files (from `node scripts/images.mjs`). |
 | `shots/` | Screenshots and recordings for the page and the README (from `node scripts/shots.mjs`). |
@@ -34,9 +36,9 @@ on the design-board template's engine and are published as the
 
 ```
 node scripts/dev.mjs               # http://127.0.0.1:5310/board/, served live from source
-node scripts/build-site.mjs        # the page, the skill pages and the board, into site/
+node scripts/build-site.mjs        # the home page, project pages, skill pages and the board, into site/
 node scripts/shots.mjs             # retake the screenshots and recordings
 ```
 
-Pictures: follow `IMAGE-PROMPTS.md`, put the originals in `images-src/` (not committed), run
-`node scripts/images.mjs`, rebuild.
+Pictures: paste each set from `IMAGE-PROMPTS.md` into ChatGPT, save the originals in `images-src/`
+(not committed) by the names listed, run `node scripts/images.mjs`, rebuild.

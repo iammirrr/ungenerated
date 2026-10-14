@@ -37,6 +37,25 @@
    * a placeholder that says what goes there. o: {cls ('is-contain is-dark is-small is-cutout'), style,
  * icon (the placeholder's icon)}. is-small hides the placeholder's words (a caption names it).
    */
+  /** A small context, like the board's, for parts that live outside a phone (the sheets). Its
+   * timers and loops follow F.T.speed, so ?speed=0.25 records in slow motion. */
+  X.miniCtx = (el, style) => {
+    const ctx = {
+      root: el, mode: 'demo', style, dead: false, answers: {}, params: {},
+      at(ms, fn) { return setTimeout(() => { if (!ctx.dead) fn(); }, ms * F.k()); },
+      track(a) { return a; },
+      loop(fn) {
+        let alive = true, raf = 0, last = 0;
+        const tick = (now) => { if (!alive || ctx.dead) return; const dt = last ? Math.min(64, now - last) : 16; last = now; fn(dt * (F.T.speed || 1), now); raf = requestAnimationFrame(tick); };
+        raf = requestAnimationFrame(tick);
+        return () => { alive = false; cancelAnimationFrame(raf); };
+      },
+      on(t, ev, fn, opt) { t.addEventListener(ev, fn, opt); },
+      haptic() {}, next() {}, back() {}, restart() {},
+    };
+    return ctx;
+  };
+
   X.pic = (id, o = {}) => {
     const src = (F.PICS || {})[id];
     const info = (F.PIC_INFO || {})[id] || { label: id, kind: 'photo' };
