@@ -59,6 +59,10 @@ and read the element's computed style (`getComputedStyle`): `background-image`, 
 including the board's press. An existing design-system component can differ in every one of these
 and brings behaviour the board doesn't have.
 
+Read the pseudo-elements too (`getComputedStyle(el, '::after')`). Draw CSS inset shadows exactly,
+then measure: capture both at 3× and compare them pixel by pixel. The conversions, the code and the
+check are in [references/css-in-swiftui.md](references/css-in-swiftui.md).
+
 ## Bugs ports hit
 
 | You see | Cause | Fix |
@@ -70,6 +74,7 @@ and brings behaviour the board doesn't have.
 | A jump to screen n shows the wrong state | Screen n has no start state | Port the board's `scene(i)` |
 | Jitter while something resizes | Layout every frame, or content inside a container that changes size | Finished views at their final size, moved by transforms and clipped by a shape that changes |
 | "Unable to type-check this expression in reasonable time" | Long arithmetic mixing `CGFloat`, `Double` and literals | Split into typed `let`s; convert types explicitly |
+| A copied part looks darker, with a heavier rim | An `::after` layer was missed, or an inset shadow was faked with a blurred stroke | Read the pseudo-elements; draw inset shadows exactly; compare crops pixel by pixel |
 | It feels different from the board | Different numbers | Same durations, distances, curves and springs; compare both at ¼× |
 | Smooth on the simulator, stutters on the phone | The simulator renders on the Mac's GPU | Test on a device; watch frame drops in Instruments |
 
