@@ -68,6 +68,10 @@ none run work admin there. Split setup in two:
 - **The window's radius = the target's radius + the padding around it.** Mismatched corners are
   the most visible flaw of a tour.
 - Three or four marks at most. End with the one action that starts real use.
+- **Teach the real mechanisms, in the order they happen:** the main control, the question the app
+  will ask while they work, where the answer lands, the report. Let each step hand over to the next
+  (the answer typed in step two is the title on the calendar in step three). Never tour a feature
+  the product doesn't have.
 
 ## Anti-patterns
 
