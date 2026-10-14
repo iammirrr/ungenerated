@@ -21,6 +21,10 @@ and `line-height` as well.
 | `filter: brightness(.96)` | `.colorMultiply(Color(white: 0.96))` |
 | `letter-spacing: -0.15px` | `.kerning(-0.15)` |
 | Text centred in its line box | Measure the letters' position on both crops; a half-point offset is common |
+| `line-height` on iOS 26 | `.lineHeight(.exact(points: L))`, then offset the letters by `L ÷ 2 − k × size`; for Poppins k = 0.668. Measure k for your font from two sizes |
+| `white-space: nowrap` | `.fixedSize()` on the text, and a higher `layoutPriority` than its neighbours |
+| `feColorMatrix` colours in an SVG filter | Linear RGB: convert to sRGB (`1.055 × c^(1/2.4) − 0.055`) before using them |
+| `transition: x 200ms` on a state change | `.animation(curve, value: state)` on that view; a jump-then-animate needs a frame between the two |
 | `box-shadow` (outer) | `.shadow(radius: blur ÷ 2, x:, y:)` is the usual conversion (not measured here); no spread, so draw a grown shape. Never clip it (see the pitfalls in `SKILL.md`) |
 
 ## The inset shadow

@@ -15,8 +15,8 @@ whole flow.
 2. **The problem**, felt, not explained: the real things that pull at the person (real app icons,
    scattered, tilted, drifting, badges climbing). One heading.
 3. **The hands-on moment.** The person taps or holds the hero and something visibly changes
-   (the noise goes quiet, a focus ring draws). If they don't, a soft ring marks it and a finger
-   taps for them after a few seconds.
+   (the noise goes quiet, a focus ring draws). If they don't, a soft ring marks it and waits. Never
+   tap for them: a demo finger belongs to a board preview, not the app.
 4. **The product at work**, on its real surfaces: the calendar, the dashboard, the actual app
    screen. Not an abstract card.
 5. **Everywhere it lives**: the same content moving from phone to computer (one device turning into
@@ -34,7 +34,8 @@ whole flow.
   doesn't show the hero too (say, small inside a ring).
 - **No logo repeated.** The brand name appears at most once.
 - **One heading and at most one short line per beat.** No paragraphs, no small print.
-- **No Continue until the end.** A tap anywhere moves to the next beat.
+- **No Continue until the end.** A tap anywhere moves to the next beat. Beats never move on by
+  themselves in the app: once a beat has played, a quiet "Tap to continue" shows and it waits.
 - **Devices are never cut off**; cameras move them whole (`real-icons-and-devices`).
 - **The ground does not change colour between beats** unless the change is the story (grey → colour).
 - Show the features that carry the promise; the rest wait for the story or the app.
