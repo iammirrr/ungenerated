@@ -1,5 +1,7 @@
-// Builds the public page from the skills: site/index.html (the catalogue), site/skills/<name>.html
-// (one page per skill, rendered from its SKILL.md), and site/board/ (the example design board).
+// Builds the public page from the skills and the examples: site/index.html (from site-src/index.html,
+// with the six example apps, their kits and the catalogue filled in), site/skills/<name>.html (one
+// page per skill, rendered from its SKILL.md), and site/board/ (the design-board template's engine
+// running the six example apps from examples/).
 // Runs on every push (.github/workflows/pages.yml), so the page always matches the repository.
 //   node scripts/build-site.mjs
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, copyFileSync, rmSync, existsSync } from 'node:fs';
@@ -65,7 +67,7 @@ const markdown = (md) => {
 };
 
 const readSkill = (name) => {
-  const text = readFileSync(join(root, 'skills', name, 'SKILL.md'), 'utf8');
+  const text = readFileSync(join(root, 'skills', name, 'SKILL.md'), 'utf8').replace(/\r\n/g, '\n');
   const fm = text.match(/^---\n([\s\S]*?)\n---\n/);
   const meta = {};
   fm[1].split('\n').forEach((l) => { const m = l.match(/^(\w[\w-]*): (.*)$/); if (m) meta[m[1]] = m[2]; });
@@ -82,94 +84,148 @@ try {
 } catch {}
 const when = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 const total = groups.reduce((n, g) => n + g.skills.length, 0);
+const APPS = JSON.parse(readFileSync(join(root, 'examples/apps.json'), 'utf8'));
+const src = (f) => readFileSync(join(root, 'site-src', f), 'utf8');
+const fill = (tpl, vars) => tpl.replace(/\{\{(\w+)\}\}/g, (m, k) => (k in vars ? vars[k] : m));
 
-const shell = (title, desc, body, depth = 0) => {
-  const up = depth ? '../' : '';
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(title)}</title>
-<meta name="description" content="${esc(desc)}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
-<link rel="stylesheet" href="${up}style.css">
-</head>
-<body>
-${body}
-<footer class="foot"><span>Rebuilt from <a href="${REPO}">the repository</a> on every change. Last update ${esc(when)} · <a href="${REPO}/commit/${commit}">${commit}</a></span><span>MIT licence</span></footer>
-<script src="${up}page.js"></script>
-</body>
-</html>
-`;
+// Fonts: the page's two, and the six apps' (the kits and the phones are drawn in them).
+const FONTS_SITE = 'https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Martian+Mono:wdth,wght@87.5..112.5,400..700&display=swap';
+const FONTS_ALL = FONTS_SITE.replace('&display=swap', '&family=Baloo+2:wght@600;800&family=Big+Shoulders+Display:wght@800&family=Cormorant+Garamond:wght@600&family=Gloock&family=Inter:wght@400;600;800&family=Schibsted+Grotesk:wght@400;600;700&family=Young+Serif&display=swap');
+const BLURB = {
+  'Start here': 'How the work runs, and what the app is before anything is drawn.',
+  Foundation: 'The kit, the motion, the feel under the finger, and words that sound like a person.',
+  'The board': 'Where every screen lives as a working phone, and how it gets reviewed.',
+  'The flow': 'Every screen of a subscription app, from the first beat to the cancel button.',
+  Quality: 'The checks that keep it honest, and the way to native code and the App Store.',
 };
+// Which example app shows a skill at work: the first app that lists it.
+const appFor = (name) => APPS.apps.find((a) => a.skills.includes(name));
+const SYS = 'ui-sans-serif, -apple-system, "SF Pro Text", system-ui, sans-serif';
+const kitVars = (k) => [
+  `--k-ground:${k.ground}`, `--k-ink:${k.ink}`, `--k-strong:${k.inkStrong}`, `--k-muted:${k.inkMuted}`,
+  `--k-font:${k.fontCss.replace(/"/g, "'")}`, `--k-body:${(k.body === 'same' ? k.fontCss : SYS).replace(/"/g, "'")}`,
+  `--k-btn:${k.btn}`, `--k-btn-ink:${k.btnInk}`, `--k-r:${k.radius}px`, `--k-weight:${k.weight || 400}`,
+  k.case ? `--k-case:${k.case}` : '', k.track ? `--k-track:${k.track}` : '',
+].filter(Boolean).join(';');
+const kitCard = (a, i) => `<article class="kit" style="${kitVars(a.kit)};--i:${i}">
+  <div class="kit-head"><h3 class="kit-name">${esc(a.name)}</h3><span class="kit-step">${esc(a.step)}</span></div>
+  <p class="kit-mood">${esc(a.kit.mood)}</p>
+  <div class="kit-sw">${a.kit.swatches.map(([n, c]) => `<div><i style="background:${c}"></i><small>${esc(n)}</small></div>`).join('')}</div>
+  <div class="kit-type"><b>Aa</b><span><strong>${esc(a.kit.font)}</strong>${a.kit.body === 'same' ? 'for every word' : 'for headings; the system face for the rest'}</span></div>
+  <span class="kit-btn">${a.step === 'Leaving' ? 'Continue to cancel' : 'Continue'}</span>
+</article>`;
+const G = APPS.generated;
+const defaultKit = `<article class="kit is-default">
+  <div class="kit-head"><h3 class="kit-name">Default ✨</h3><span class="kit-step">Generated</span></div>
+  <p class="kit-mood">${esc(G.what)}</p>
+  <div class="kit-sw">${G.swatches.map(([n, c]) => `<div><i style="background:${c}"></i><small>${esc(n)}</small></div>`).join('')}</div>
+  <div class="kit-type"><b>Aa</b><span><strong>${esc(G.font)}</strong>for every word, in every app</span></div>
+  <ul class="kit-wrong">${G.notes.map((t, i) => `<li style="--i:${i}"><span class="pin">${i + 1}</span><span class="kw">${esc(t)}</span></li>`).join('')}</ul>
+  <span class="kit-btn">Get Started 🚀</span>
+</article>`;
+const kitsHtml = `${defaultKit}<div class="kit-grid">${APPS.apps.map(kitCard).join('')}</div>`;
 
-rmSync(out, { recursive: true, force: true });
+// Empty site/ rather than removing it, so a local server running inside it keeps working.
+if (existsSync(out)) readdirSync(out).forEach((f) => rmSync(join(out, f), { recursive: true, force: true }));
 mkdirSync(join(out, 'skills'), { recursive: true });
 
-// The catalogue.
 const skills = Object.fromEntries(groups.flatMap((g) => g.skills).map((n) => [n, readSkill(n)]));
+const order = groups.flatMap((g) => g.skills);
+
+// ---------------------------------------------------------------- the home page
 let n = 0;
-const catalogue = groups.map((g) => `
+const catalogue = groups.map((g, gi) => `
 <section class="group">
-  <h2>${esc(g.title)}<span>${g.skills.length}</span></h2>
-  <ol class="list">${g.skills.map((name) => { const s = skills[name]; n++; return `
-    <li data-search="${esc((s.name + ' ' + s.description).toLowerCase())}"><a href="skills/${s.name}.html">
-      <span class="num">${String(n).padStart(2, '0')}</span>
-      <span class="name">${s.name}</span>
-      <span class="desc">${inline(s.short)}.</span>
-      <span class="go" aria-hidden="true">→</span>
-    </a></li>`; }).join('')}
-  </ol>
-</section>`).join('');
-
-writeFileSync(join(out, 'index.html'), shell('Ungenerated', 'Skills for designing mobile apps with Claude that don’t look generated.', `
-<header class="hero">
-  <p class="eyebrow">Ungenerated · ${total} skills for Claude Code</p>
-  <h1>Design apps that don’t look <em>generated.</em></h1>
-  <p class="lede">A live design board for every screen, a motion system, the onboarding, paywall and cancel-flow patterns that work, and a checklist that keeps the result honest. Every rule here was a correction once.</p>
-  <div class="install">
-    <pre id="install"><code>/plugin marketplace add iammirrr/ungenerated
-/plugin install ungenerated@ungenerated</code></pre>
-    <button type="button" class="copy" data-copy="install">Copy</button>
+  <div class="group-head"><span class="g-num">${String(gi + 1).padStart(2, '0')}</span><h3>${esc(g.title)}</h3><p>${esc(BLURB[g.title] || '')}</p></div>
+  <div class="g-grid">${g.skills.map((name) => { const s = skills[name]; const a = appFor(name); n++; return `
+    <a class="sk" href="skills/${s.name}.html" data-search="${esc((s.name + ' ' + s.description).toLowerCase())}">
+      <span><span class="sk-name"><i>${String(n).padStart(2, '0')}</i>${s.name}</span><span class="sk-desc">${inline(s.short)}.</span></span>
+      ${a && g.title === 'The flow' ? `<span class="sk-thumb"><img src="shots/${a.id}-after.webp" alt="" loading="lazy" width="52" height="112"></span>` : ''}
+    </a>`; }).join('')}
   </div>
-  <p class="links"><a href="board/">Open the example board</a><a href="${REPO}">Source on GitHub</a></p>
-</header>
-<main class="catalogue">
-  <label class="search"><span>Find a skill</span><input type="search" placeholder="paywall, motion, consent…" autocomplete="off"></label>
-  ${catalogue}
-  <p class="none" hidden>No skill matches that.</p>
-</main>`));
-
-// One page per skill.
-groups.forEach((g) => g.skills.forEach((name, i) => {
-  const s = skills[name];
-  const prev = g.skills[i - 1], next = g.skills[i + 1];
-  writeFileSync(join(out, 'skills', `${name}.html`), shell(`${name} · Ungenerated`, s.short, `
-<header class="top"><a href="../">← All skills</a><span>${esc(g.title)}</span></header>
-<article class="skill">
-  <p class="eyebrow">${esc(g.title)}</p>
-  <h1 class="mono">${s.name}</h1>
-  <p class="lede">${inline(s.description)}</p>
-  <p class="meta"><a href="${REPO}/blob/main/skills/${s.name}/SKILL.md">SKILL.md on GitHub</a>${s.refs.map((r) => `<a href="${REPO}/blob/main/skills/${s.name}/references/${r}">${esc(r)}</a>`).join('')}${s.hasTemplate ? `<a href="../board/">The template, live</a>` : ''}</p>
-  <div class="prose">${markdown(s.body)}</div>
-  <nav class="pager">${prev ? `<a href="${prev}.html">← ${prev}</a>` : '<span></span>'}${next ? `<a href="${next}.html">${next} →</a>` : '<span></span>'}</nav>
-</article>`, 1));
+</section>`).join('');
+const pillVars = (a) => `--a-ground:${a.kit.ground};--a-accent:${a.kit.accent}`;
+writeFileSync(join(out, 'index.html'), fill(src('index.html'), {
+  TOTAL: total, REPO, COMMIT: commit, WHEN: esc(when), FONTS: FONTS_ALL,
+  FIRST_BEFORE: APPS.apps[0].before.id, FIRST_AFTER: APPS.apps[0].after.id,
+  HERO_TABS: APPS.apps.map((a, i) => `<button type="button" class="app-pill" role="tab" aria-selected="${i === 0}" style="${pillVars(a)}"><i class="app-dot"></i>${esc(a.name)}</button>`).join(''),
+  APP_TABS: APPS.apps.map((a, i) => `<button type="button" class="tab" role="tab" aria-selected="${i === 0}" style="${pillVars(a)}"><i class="app-dot"></i>${esc(a.name)} <small>${esc(a.step.toLowerCase())}</small></button>`).join(''),
+  STRIP: APPS.apps.map((a) => `<figure class="shot"><div class="dev"><div class="dev-screen"><img class="is-before" src="shots/${a.id}-before.webp" alt="${esc(a.name)}, the generated draft" width="390" height="844" loading="lazy"><img class="is-after" src="shots/${a.id}-after.webp" alt="${esc(a.name)}, with the skills" width="390" height="844" loading="lazy"></div></div><figcaption><b>${esc(a.name)}</b><span>${esc(a.step)}</span></figcaption></figure>`).join(''),
+  KITS: kitsHtml,
+  SKILLS: catalogue,
+  APPS_JSON: JSON.stringify(APPS).replace(/</g, '\\u003c'),
 }));
 
-writeFileSync(join(out, 'style.css'), readFileSync(join(root, 'scripts/site.css'), 'utf8'));
-writeFileSync(join(out, 'page.js'), readFileSync(join(root, 'scripts/site.js'), 'utf8'));
+// ---------------------------------------------------------------- one page per skill
+const slug = (t) => t.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const skillPage = (s, g) => {
+  const i = order.indexOf(s.name), prev = order[i - 1], next = order[i + 1];
+  const body = markdown(s.body).replace(/<h([23])>(.*?)<\/h\1>/g, (m, lv, t) => `<h${lv} id="${slug(t)}">${t}</h${lv}>`);
+  const toc = [...body.matchAll(/<h3 id="([^"]+)">(.*?)<\/h3>/g)].map(([, id, t]) => `<a href="#${id}">${t.replace(/<[^>]+>/g, '')}</a>`).join('');
+  const a = appFor(s.name);
+  let example = '';
+  if (s.name === 'design-kit') example = `<figure class="sk-example is-kits"><div class="kits is-in">${kitsHtml}</div><figcaption>The default kit every generated draft shares, and the six kits this skill made for the example apps.</figcaption></figure>`;
+  else if (a) example = `<figure class="sk-example">
+    <div class="sk-pair">
+      <div><span class="tag is-gen">Generated draft</span><img src="../shots/${a.id}-before.webp" alt="${esc(a.name)}, the generated draft" width="390" height="844" loading="lazy"></div>
+      <div><span class="tag is-ung">With the skills</span><img src="../shots/${a.id}-after.webp" alt="${esc(a.name)}, with the skills" width="390" height="844" loading="lazy"></div>
+    </div>
+    <figcaption><b>${esc(a.name)}</b>: ${esc(a.what)} <a href="../board/#only-${a.after.id}">Play it live</a></figcaption>
+  </figure>`;
+  return fill(src('skill.html'), {
+    TITLE: esc(`${s.name} · Ungenerated`), DESC: esc(s.short), REPO, COMMIT: commit, WHEN: esc(when),
+    FONTS: s.name === 'design-kit' ? FONTS_ALL : FONTS_SITE,
+    GROUP: esc(g.title), NAME: s.name, LEDE: inline(s.description),
+    META: `<a href="${REPO}/blob/main/skills/${s.name}/SKILL.md">SKILL.md</a>${s.refs.map((r) => `<a href="${REPO}/blob/main/skills/${s.name}/references/${r}">${esc(r)}</a>`).join('')}${s.hasTemplate ? `<a href="../board/">The example board</a>` : ''}`,
+    SIDE: groups.map((gg) => `<p>${esc(gg.title)}</p>${gg.skills.map((x) => `<a href="${x}.html"${x === s.name ? ' aria-current="page"' : ''}>${x}</a>`).join('')}`).join(''),
+    TOC: toc ? `<p>On this page</p>${toc}` : '', EXAMPLE: example, BODY: body,
+    PAGER: `${prev ? `<a href="${prev}.html"><small>Previous</small>${prev}</a>` : '<span></span>'}${next ? `<a class="is-next" href="${next}.html"><small>Next</small>${next}</a>` : '<span></span>'}`,
+  });
+};
+groups.forEach((g) => g.skills.forEach((name) => writeFileSync(join(out, 'skills', `${name}.html`), skillPage(skills[name], g))));
 
-// The example board, without its tools and review store.
-const copy = (from, to) => {
+['base.css', 'home.css', 'skill.css', 'home.js', 'page.js'].forEach((f) => writeFileSync(join(out, f), src(f)));
+mkdirSync(join(out, 'shots'), { recursive: true });
+if (existsSync(join(root, 'examples/shots'))) readdirSync(join(root, 'examples/shots')).forEach((f) => copyFileSync(join(root, 'examples/shots', f), join(out, 'shots', f)));
+
+// The example board: the design-board template's engine, with the six example apps on it
+// (examples/). Their kits come from examples/apps.json, so the page and the board share one source.
+const copy = (from, to, skip = []) => {
+  mkdirSync(to, { recursive: true });
   for (const f of readdirSync(from)) {
-    if (['tools', 'review'].includes(f)) continue;
+    if (skip.includes(f)) continue;
     const a = join(from, f), b = join(to, f);
-    if (statSync(a).isDirectory()) { mkdirSync(b, { recursive: true }); copy(a, b); } else copyFileSync(a, b);
+    if (statSync(a).isDirectory()) copy(a, b); else copyFileSync(a, b);
   }
 };
-mkdirSync(join(out, 'board'), { recursive: true });
-copy(join(root, 'skills/design-board/template'), join(out, 'board'));
-console.log(`site/ built: ${total} skills, ${commit}, ${when}`);
+const board = join(out, 'board');
+copy(join(root, 'skills/design-board/template'), board, ['tools', 'review', 'screens', 'board.config.js', 'index.html']);
+copy(join(root, 'examples'), board, ['apps.json', 'shots', 'README.md']);
+const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16}, ${(n >> 8) & 255}, ${n & 255}, ${a})`; };
+writeFileSync(join(board, 'css/kits.css'), `/* Built from examples/apps.json by scripts/build-site.mjs. Edit the JSON, not this file. */
+` + APPS.apps.map(({ id, kit: k }) => `.ph.k-${id} {
+  --font: ${k.body === 'same' ? k.fontCss : SYS}; --font-display: ${k.fontCss};
+  --ground: ${k.ground}; --panel: ${k.panel}; --inset: ${k.inset}; --hover: ${k.hover}; --sunken: ${k.inset};
+  --hair: ${rgba(k.inkStrong, 0.1)}; --hair-2: ${rgba(k.inkStrong, 0.16)};
+  --ink-strong: ${k.inkStrong}; --ink: ${k.ink}; --ink-muted: ${k.inkMuted}; --ink-quiet: ${k.inkQuiet};
+  --accent: ${k.accent}; --accent-text: ${k.accentText}; --accent-soft: ${rgba(k.accent, 0.14)}; --accent-line: ${rgba(k.accent, 0.5)};
+  --btn: ${k.btn}; --btn-down: ${k.btnDown}; --btn-ink: ${k.btnInk}; --home-ind: ${k.inkStrong};
+  --r-card: ${k.radius}px; --r-row: ${Math.max(10, k.radius - 4)}px;
+  background: var(--ground); color: var(--ink); font-family: var(--font);
+}`).join('\n'));
+writeFileSync(join(board, 'board.config.js'), `/* Built from examples/apps.json by scripts/build-site.mjs. */
+window.APPS = ${JSON.stringify(APPS)};
+window.BOARD = {
+  name: 'Ungenerated · six apps',
+  id: 'ungenerated-examples',
+  views: [['screens', 'Screens'], ['kit', 'Kits']],
+  startView: 'screens',
+  sections: ${JSON.stringify([
+    { id: 'ungenerated', title: 'With the skills', intent: 'Six made-up apps, one step of each: the opening, a question, the plan, the paywall, a permission and leaving. Each is designed with the skills named under it on the page. The first card plays all six.' },
+    { id: 'generated', title: 'Generated drafts', intent: 'The same six screens as a model draws them from the same brief, with no skills loaded. They are made of one default kit, so they look like one app.' },
+    { id: 'kits', view: 'kit', title: 'Seven kits', intent: 'The default kit every generated draft shares, then the six kits the skills made. Nothing is shared between them but the rules.' },
+  ], null, 2)},
+  research: {},
+};
+`);
+console.log(`site/ built: ${total} skills, ${APPS.apps.length} example apps, ${commit}, ${when}`);

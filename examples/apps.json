@@ -1,0 +1,669 @@
+{
+  "about": "Six made-up apps, each designed twice from the same brief: once the way a model designs by default (the generated draft), once with these skills. The board in this folder renders them; scripts/build-site.mjs turns this file into the page, the board's config and the kit styles.",
+  "generated": {
+    "name": "The default kit",
+    "what": "What every model reaches for when nobody says otherwise.",
+    "font": "Inter",
+    "fontCss": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
+    "swatches": [
+      [
+        "Indigo 500",
+        "#6366F1"
+      ],
+      [
+        "Violet 500",
+        "#8B5CF6"
+      ],
+      [
+        "Pink 500",
+        "#EC4899"
+      ],
+      [
+        "Gray 50",
+        "#F9FAFB"
+      ],
+      [
+        "Gray 900",
+        "#111827"
+      ]
+    ],
+    "notes": [
+      "Indigo to pink, on everything",
+      "Inter for every word",
+      "Emoji where icons should be",
+      "rounded-2xl and shadow-lg on every card",
+      "A glow behind the hero"
+    ]
+  },
+  "apps": [
+    {
+      "id": "loaf",
+      "name": "Loaf",
+      "what": "A sourdough companion that bakes on your starter's schedule, not the recipe's.",
+      "step": "The opening",
+      "skills": [
+        "opening-hook",
+        "continuity",
+        "human-copy"
+      ],
+      "kit": {
+        "font": "Young Serif",
+        "fontCss": "\"Young Serif\", ui-serif, Georgia, serif",
+        "ground": "#F1E7D6",
+        "panel": "#FBF6EC",
+        "inset": "#E8DCC7",
+        "hover": "#E0D2BA",
+        "ink": "#3A2A1E",
+        "inkStrong": "#24170E",
+        "inkMuted": "#7A6655",
+        "inkQuiet": "#A08C79",
+        "accent": "#BF4F1A",
+        "accentText": "#A8431A",
+        "btn": "#24170E",
+        "btnDown": "#3A2A1E",
+        "btnInk": "#FBF6EC",
+        "radius": 22,
+        "swatches": [
+          [
+            "Flour",
+            "#F1E7D6"
+          ],
+          [
+            "Crumb",
+            "#FBF6EC"
+          ],
+          [
+            "Crust",
+            "#BF4F1A"
+          ],
+          [
+            "Rye",
+            "#24170E"
+          ]
+        ],
+        "mood": "Warm, slow, a kitchen at seven in the morning",
+        "weight": 400
+      },
+      "before": {
+        "id": "loaf-generated",
+        "notes": [
+          {
+            "text": "A feature carousel with dots for an opening.",
+            "skill": "opening-hook",
+            "x": 50,
+            "y": 86
+          },
+          {
+            "text": "Emoji for icons, in glass cards on a blurred blob.",
+            "skill": "no-slop",
+            "x": 22,
+            "y": 52
+          },
+          {
+            "text": "“Your AI-powered companion”: a heading any app could use.",
+            "skill": "human-copy",
+            "x": 50,
+            "y": 33
+          },
+          {
+            "text": "Get Started before anything has been shown.",
+            "skill": "opening-hook",
+            "x": 50,
+            "y": 94
+          }
+        ]
+      },
+      "after": {
+        "id": "loaf-opening",
+        "notes": [
+          {
+            "text": "One hero, the jar, carries every beat.",
+            "skill": "opening-hook",
+            "x": 50,
+            "y": 45
+          },
+          {
+            "text": "The starter rises and the clock moves: the product at work, not described.",
+            "skill": "continuity",
+            "x": 70,
+            "y": 64
+          },
+          {
+            "text": "One short line per beat, in a baker's words.",
+            "skill": "human-copy",
+            "x": 50,
+            "y": 17
+          },
+          {
+            "text": "The button arrives only at the end.",
+            "skill": "opening-hook",
+            "x": 50,
+            "y": 93
+          }
+        ]
+      }
+    },
+    {
+      "id": "stride",
+      "name": "Stride",
+      "what": "A running coach that builds the first week from the run you already did.",
+      "step": "A question",
+      "skills": [
+        "onboarding-questions",
+        "interaction-feel",
+        "design-kit"
+      ],
+      "kit": {
+        "font": "Big Shoulders Display",
+        "fontCss": "\"Big Shoulders Display\", \"Arial Narrow\", sans-serif",
+        "ground": "#0E0F0C",
+        "panel": "#1A1C17",
+        "inset": "#24261F",
+        "hover": "#2E3027",
+        "ink": "#DCDFD3",
+        "inkStrong": "#F4F6EC",
+        "inkMuted": "#9A9E8F",
+        "inkQuiet": "#6E7264",
+        "accent": "#D4FF3F",
+        "accentText": "#D4FF3F",
+        "btn": "#D4FF3F",
+        "btnDown": "#BDE52E",
+        "btnInk": "#0E0F0C",
+        "radius": 14,
+        "swatches": [
+          [
+            "Asphalt",
+            "#0E0F0C"
+          ],
+          [
+            "Lane",
+            "#1A1C17"
+          ],
+          [
+            "Volt",
+            "#D4FF3F"
+          ],
+          [
+            "Chalk",
+            "#F4F6EC"
+          ]
+        ],
+        "mood": "Loud, fast, a track at night",
+        "weight": 800,
+        "case": "uppercase",
+        "track": "0"
+      },
+      "before": {
+        "id": "stride-generated",
+        "notes": [
+          {
+            "text": "“Step 3 of 12” tells people how long the form will take.",
+            "skill": "onboarding-questions",
+            "x": 50,
+            "y": 12
+          },
+          {
+            "text": "A goal list every fitness app asks, and nothing later uses.",
+            "skill": "onboarding-questions",
+            "x": 50,
+            "y": 50
+          },
+          {
+            "text": "Emoji rows, then Next, for a single pick.",
+            "skill": "interaction-feel",
+            "x": 50,
+            "y": 92
+          }
+        ]
+      },
+      "after": {
+        "id": "stride-distance",
+        "notes": [
+          {
+            "text": "Asks the thing itself, in one read.",
+            "skill": "onboarding-questions",
+            "x": 40,
+            "y": 18
+          },
+          {
+            "text": "A ruler you drag; the thumb glides, the value flows.",
+            "skill": "interaction-feel",
+            "x": 50,
+            "y": 60
+          },
+          {
+            "text": "The consequence updates as you drag: laps, then week one.",
+            "skill": "onboarding-questions",
+            "x": 50,
+            "y": 76
+          },
+          {
+            "text": "A condensed face with tabular figures for every number.",
+            "skill": "design-kit",
+            "x": 50,
+            "y": 39
+          }
+        ]
+      }
+    },
+    {
+      "id": "halves",
+      "name": "Halves",
+      "what": "A budget two people keep together, without a spreadsheet or an argument.",
+      "step": "The plan",
+      "skills": [
+        "plan-reveal",
+        "no-slop",
+        "human-copy"
+      ],
+      "kit": {
+        "font": "Schibsted Grotesk",
+        "fontCss": "\"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif",
+        "ground": "#F3F3EE",
+        "panel": "#FFFFFF",
+        "inset": "#E9E9E2",
+        "hover": "#E0E0D8",
+        "ink": "#23231F",
+        "inkStrong": "#111110",
+        "inkMuted": "#6B6B63",
+        "inkQuiet": "#94948B",
+        "accent": "#F2B705",
+        "accentText": "#8A6500",
+        "btn": "#111110",
+        "btnDown": "#2A2A27",
+        "btnInk": "#FFFFFF",
+        "radius": 18,
+        "swatches": [
+          [
+            "Paper",
+            "#F3F3EE"
+          ],
+          [
+            "Sheet",
+            "#FFFFFF"
+          ],
+          [
+            "Marigold",
+            "#F2B705"
+          ],
+          [
+            "Ink",
+            "#111110"
+          ]
+        ],
+        "mood": "Plain, exact, a kitchen table with the bills on it",
+        "body": "same",
+        "weight": 700,
+        "track": "-0.045em"
+      },
+      "before": {
+        "id": "halves-generated",
+        "notes": [
+          {
+            "text": "Confetti for a plan nobody has read yet.",
+            "skill": "plan-reveal",
+            "x": 50,
+            "y": 14
+          },
+          {
+            "text": "“Save up to $1,000/month*”: a round number from nowhere.",
+            "skill": "no-slop",
+            "x": 50,
+            "y": 62
+          },
+          {
+            "text": "A donut of colours with no labels.",
+            "skill": "no-slop",
+            "x": 50,
+            "y": 42
+          },
+          {
+            "text": "“Unlock your financial freedom”.",
+            "skill": "human-copy",
+            "x": 50,
+            "y": 91
+          }
+        ]
+      },
+      "after": {
+        "id": "halves-plan",
+        "notes": [
+          {
+            "text": "Each answer glides straight into its row, one after another.",
+            "skill": "plan-reveal",
+            "x": 72,
+            "y": 46
+          },
+          {
+            "text": "Every number comes from their answers, and adds up: £4,630 in, £412 left.",
+            "skill": "no-slop",
+            "x": 72,
+            "y": 74
+          },
+          {
+            "text": "“This is how your month will work”, not “Your plan is ready”.",
+            "skill": "human-copy",
+            "x": 40,
+            "y": 15
+          },
+          {
+            "text": "One check on the card's mark, one haptic. No confetti.",
+            "skill": "plan-reveal",
+            "x": 86,
+            "y": 27
+          }
+        ]
+      }
+    },
+    {
+      "id": "lull",
+      "name": "Lull",
+      "what": "Sleep sounds and a wind-down that learns how long you take to drift off.",
+      "step": "The paywall",
+      "skills": [
+        "paywall",
+        "motion-system",
+        "no-slop"
+      ],
+      "kit": {
+        "font": "Cormorant Garamond",
+        "fontCss": "\"Cormorant Garamond\", ui-serif, Georgia, serif",
+        "ground": "#DCE4EC",
+        "panel": "#F2F5F8",
+        "inset": "#CDD7E2",
+        "hover": "#C2CEDB",
+        "ink": "#22304A",
+        "inkStrong": "#121D33",
+        "inkMuted": "#5A6780",
+        "inkQuiet": "#8592A8",
+        "accent": "#D9822B",
+        "accentText": "#A65B12",
+        "btn": "#121D33",
+        "btnDown": "#22304A",
+        "btnInk": "#F2F5F8",
+        "radius": 20,
+        "swatches": [
+          [
+            "First light",
+            "#DCE4EC"
+          ],
+          [
+            "Pillow",
+            "#F2F5F8"
+          ],
+          [
+            "Lamp",
+            "#D9822B"
+          ],
+          [
+            "Midnight",
+            "#121D33"
+          ]
+        ],
+        "mood": "Quiet, unhurried, the hour before sleep",
+        "weight": 600
+      },
+      "before": {
+        "id": "lull-generated",
+        "notes": [
+          {
+            "text": "A countdown on an offer that is always there.",
+            "skill": "paywall",
+            "x": 50,
+            "y": 30
+          },
+          {
+            "text": "A struck-out price nobody ever paid.",
+            "skill": "paywall",
+            "x": 50,
+            "y": 44
+          },
+          {
+            "text": "The close button is a faint × in the corner.",
+            "skill": "paywall",
+            "x": 9,
+            "y": 8
+          },
+          {
+            "text": "Sparkle ticks instead of three lines that matter.",
+            "skill": "no-slop",
+            "x": 50,
+            "y": 63
+          }
+        ]
+      },
+      "after": {
+        "id": "lull-paywall",
+        "notes": [
+          {
+            "text": "Every price visible before any tap.",
+            "skill": "paywall",
+            "x": 50,
+            "y": 47
+          },
+          {
+            "text": "The trial timeline, with real dates: today, the reminder, the first charge.",
+            "skill": "paywall",
+            "x": 50,
+            "y": 70
+          },
+          {
+            "text": "Money rolls when the plan changes.",
+            "skill": "motion-system",
+            "x": 80,
+            "y": 43
+          },
+          {
+            "text": "One button that names the outcome, then Restore purchases.",
+            "skill": "paywall",
+            "x": 50,
+            "y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "parla",
+      "name": "Parla",
+      "what": "Italian you say out loud, a phrase at a time, to a coach that listens.",
+      "step": "A permission",
+      "skills": [
+        "consent-and-permissions",
+        "bubbly-motion",
+        "human-copy"
+      ],
+      "kit": {
+        "font": "Baloo 2",
+        "fontCss": "\"Baloo 2\", ui-rounded, system-ui, sans-serif",
+        "ground": "#E4472E",
+        "panel": "#EE5B41",
+        "inset": "#D23C24",
+        "hover": "#C8351F",
+        "ink": "#FFF1E6",
+        "inkStrong": "#FFFFFF",
+        "inkMuted": "#FFD3C2",
+        "inkQuiet": "#F7AE97",
+        "accent": "#FFE7B8",
+        "accentText": "#FFE7B8",
+        "btn": "#FFF1E6",
+        "btnDown": "#FFE1CF",
+        "btnInk": "#B52A14",
+        "radius": 28,
+        "swatches": [
+          [
+            "Pomodoro",
+            "#E4472E"
+          ],
+          [
+            "Brick",
+            "#C8351F"
+          ],
+          [
+            "Crema",
+            "#FFE7B8"
+          ],
+          [
+            "Milk",
+            "#FFF1E6"
+          ]
+        ],
+        "mood": "Bright, bubbly, a café counter in Bologna",
+        "body": "same",
+        "weight": 800
+      },
+      "before": {
+        "id": "parla-generated",
+        "notes": [
+          {
+            "text": "Asks for the microphone at launch, before any reason is visible.",
+            "skill": "consent-and-permissions",
+            "x": 50,
+            "y": 47
+          },
+          {
+            "text": "“This app requires microphone access”: a reason that says nothing.",
+            "skill": "consent-and-permissions",
+            "x": 50,
+            "y": 55
+          },
+          {
+            "text": "A gradient logo and a spinner while the system asks.",
+            "skill": "no-slop",
+            "x": 50,
+            "y": 22
+          }
+        ]
+      },
+      "after": {
+        "id": "parla-mic",
+        "notes": [
+          {
+            "text": "Asked where the reason is visible: the phrase you're about to say.",
+            "skill": "consent-and-permissions",
+            "x": 50,
+            "y": 30
+          },
+          {
+            "text": "The mic squishes under the finger; the words light as they're heard.",
+            "skill": "bubbly-motion",
+            "x": 50,
+            "y": 58
+          },
+          {
+            "text": "What it does and never does, in one line.",
+            "skill": "human-copy",
+            "x": 50,
+            "y": 78
+          },
+          {
+            "text": "Then the real system sheet, untouched.",
+            "skill": "consent-and-permissions",
+            "x": 50,
+            "y": 90
+          }
+        ]
+      }
+    },
+    {
+      "id": "fern",
+      "name": "Fern",
+      "what": "Watering, light and repotting for every plant you own, from one photo.",
+      "step": "Leaving",
+      "skills": [
+        "cancel-flow",
+        "human-copy",
+        "no-slop"
+      ],
+      "kit": {
+        "font": "Gloock",
+        "fontCss": "\"Gloock\", ui-serif, Georgia, serif",
+        "ground": "#DFE6D8",
+        "panel": "#F1F4EC",
+        "inset": "#D2DBC9",
+        "hover": "#C6D1BB",
+        "ink": "#26332A",
+        "inkStrong": "#16221A",
+        "inkMuted": "#5D6B60",
+        "inkQuiet": "#86937F",
+        "accent": "#B4572F",
+        "accentText": "#9A4523",
+        "btn": "#16221A",
+        "btnDown": "#26332A",
+        "btnInk": "#F1F4EC",
+        "radius": 20,
+        "swatches": [
+          [
+            "Sage",
+            "#DFE6D8"
+          ],
+          [
+            "Leaf",
+            "#F1F4EC"
+          ],
+          [
+            "Terracotta",
+            "#B4572F"
+          ],
+          [
+            "Fern",
+            "#16221A"
+          ]
+        ],
+        "mood": "Green, patient, a windowsill in spring",
+        "weight": 400
+      },
+      "before": {
+        "id": "fern-generated",
+        "notes": [
+          {
+            "text": "Confirmshaming: “No thanks, I don't care about my plants”.",
+            "skill": "no-slop",
+            "x": 50,
+            "y": 93
+          },
+          {
+            "text": "A 50% countdown that answers a question nobody asked.",
+            "skill": "cancel-flow",
+            "x": 50,
+            "y": 58
+          },
+          {
+            "text": "Guilt as the headline, a crying emoji as the hero.",
+            "skill": "human-copy",
+            "x": 50,
+            "y": 28
+          }
+        ]
+      },
+      "after": {
+        "id": "fern-leaving",
+        "notes": [
+          {
+            "text": "One question, four specific answers, no “Other”.",
+            "skill": "cancel-flow",
+            "x": 50,
+            "y": 40
+          },
+          {
+            "text": "The offer matches the answer: budget gets the whole menu, every price visible.",
+            "skill": "cancel-flow",
+            "x": 50,
+            "y": 52
+          },
+          {
+            "text": "Their own numbers: what they made stays theirs.",
+            "skill": "human-copy",
+            "x": 50,
+            "y": 20
+          },
+          {
+            "text": "Continue to cancel is a full button, in the same place on every screen.",
+            "skill": "cancel-flow",
+            "x": 50,
+            "y": 93
+          }
+        ]
+      }
+    }
+  ]
+}
