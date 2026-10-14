@@ -55,9 +55,11 @@ F.def({
 
 ## Publish it
 
-To share with a reviewer who is not on your machine, publish the folder as a private web page
-(for example a Claude artifact, or any static host behind a login). Picks and Notes then save to
-that page's store.
+The board the reviewer uses is the one served from the project (`tools/serve.mjs`), on their
+computer and on their phone over the same Wi-Fi. Make every change there. Publish a copy (a
+private web page, a Claude artifact, any static host behind a login) only when they ask for one,
+for someone off the network. A copy goes stale the moment the board changes, so never treat it
+as the board or update it instead. Picks and Notes saved on a copy stay in that copy's store.
 
 ## Rules
 

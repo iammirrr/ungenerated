@@ -35,6 +35,18 @@ rules file the next session will read (for example "No segmented bar at the top 
 "Devices are never cut off"; "Money rolls, time flows"). Check every new screen against the rules
 before showing it. A broken standing rule costs more trust than any new idea earns.
 
+## When they can't say what's wrong
+
+When the reviewer rejects the same screen twice, or says "I don't know how to explain it", stop
+polishing it. The motion was not the problem; the idea was.
+
+1. Say in two or three bullets what you think is wrong: what the screen reads as (a dashboard, a
+   form), where it breaks the flow (a swap, a cut), what it repeats from the screen next to it.
+2. Offer three concepts that differ in idea, not in styling, one line each of what they would
+   see, and say which you would pick and why.
+3. Build all three on the board as a Pick group, each one also playable inside the whole flow,
+   and let them choose by seeing.
+
 ## Trim, never strip
 
 When the reviewer says a liked screen has "too much text" or "too much motion", or should be "more
