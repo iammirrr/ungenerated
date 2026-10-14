@@ -72,3 +72,7 @@ Only transform, opacity, blur and clip move on the board, so every move has a na
    rotate, scale) and clips. To change one screen into another, open the new one with an iris (a
    growing clip from the centre) rather than a crossfade; to land a card on a screen, make the
    screen the same layout at the same scale, so the card lands on it exactly.
+5. **Keep moving content out of containers that change size.** A screen centred inside a device's
+   glass moves by fractions of a pixel every frame as the glass grows. Pin the screen at a fixed
+   point outside it and let the glass only clip it (a clip-path inset that follows the glass);
+   make the moving device one GPU layer (`will-change: transform`) while it moves.
