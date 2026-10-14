@@ -1,19 +1,42 @@
 # The example apps
 
-Six made-up apps, each designed twice from the same brief: once the way a model designs by default
-(the generated draft), once with the skills. They run on the design-board template's engine and
-are published as the [example board](https://iammirrr.github.io/ungenerated/board/).
+Seven made-up apps, each with its own kit and its own motion style, shown through fifteen full
+flows: three openings, three onboardings, three paywalls, three setups and three ways out. They run
+on the design-board template's engine and are published as the
+[example board](https://iammirrr.github.io/ungenerated/board/) and the flow player on
+[the page](https://iammirrr.github.io/ungenerated/#flows).
+
+| App | What it is | Motion style | Flows |
+|---|---|---|---|
+| Loaf | sourdough, on your starter's schedule | cinematic | the opening, the first bake |
+| Stride | a running coach | snappy | the opening, onboarding, the paywall |
+| Ripe | a diet app that keeps the food you love | fluid | onboarding, the paywall |
+| Halves | a budget for two | precise | onboarding, leaving for another app |
+| Lull | sleep sounds and a wind-down | calm | the paywall |
+| Parla | Italian you say out loud | bubbly | the opening, the microphone, leaving for a break |
+| Fern | plant care | organic | the first plant, leaving for budget |
+
+## The files
 
 | File | What it is |
 |---|---|
-| `apps.json` | The source of truth: each app's kit (colours, type, radius), its step, the skills that shaped it, and the numbered notes for both phones. The build turns it into the board's config, the kit styles and the page. |
-| `js/apps/<app>.js` | Each app's two screens: `<app>-generated` and the screen made with the skills. |
-| `js/apps/common.js` | What they share: real dates, the iOS alert (drawn as iOS draws it), and the generated draft's parts. |
-| `js/apps/kits.js` | The Kits view: the default kit, then the six. |
-| `js/apps/embed.js`, `embed.html` | One phone on its own, looping; the page's live phones are this in an iframe. |
-| `css/generated.css` | The default kit, everything the no-slop checklist names, on purpose. |
-| `css/apps.css` | The six apps' own parts. |
-| `shots/` | Screenshots for the page and the README, from `node scripts/shots.mjs`. |
+| `apps.json` | Each app: its kit (colours, type, radius), its motion style, and its before/after pair for the page with the numbered notes for both phones. |
+| `flows.json` | Every flow: its steps in order, what each step does and why, the skills it shows, and the moment each step is screenshotted. |
+| `images.json` | Every picture the apps use, with the prompt that makes it. `IMAGE-PROMPTS.md` is written from it. |
+| `js/apps/<app>.js`, `css/apps/<app>.css` | Each app's screens. A screen is `F.def({ id, section: '<flow id>', style: '<motion style>', ... })`. |
+| `js/apps/common.js`, `css/common.css` | What they share: real dates, the iOS alert and sheet, pictures and their placeholders (`X.pic`), app icons, the mascot. |
+| `js/apps/embed.js`, `embed.html` | One phone on its own: `embed.html#<screen-id>` loops a screen, `embed.html#flow=<flow-id>` plays a flow. |
+| `css/generated.css` | The default kit the generated drafts share, everything the no-slop checklist names, on purpose. |
+| `images/` | The pictures, as light WebP files (from `node scripts/images.mjs`). |
+| `shots/` | Screenshots and recordings for the page and the README (from `node scripts/shots.mjs`). |
 
-To work on them: `node scripts/build-site.mjs`, serve `site/` (for example `npx serve site`), and open
-`/board/` or `/board/embed.html#lull-paywall`.
+## Work on them
+
+```
+node scripts/dev.mjs               # http://127.0.0.1:5310/board/, served live from source
+node scripts/build-site.mjs        # the page, the skill pages and the board, into site/
+node scripts/shots.mjs             # retake the screenshots and recordings
+```
+
+Pictures: follow `IMAGE-PROMPTS.md`, put the originals in `images-src/` (not committed), run
+`node scripts/images.mjs`, rebuild.

@@ -5,6 +5,10 @@ description: Give an app soft, bubbly, alive motion that still feels calm and ex
 
 # Bubbly motion
 
+Bubbly is one of seven motion personalities (`motion-styles`): right for language, kids, habit
+and social apps, wrong for a bank or a sleep app. When it is the app's style, this is how to do it
+well.
+
 Bubbly is not bouncy. A bubble is round, soft and full of air: it gives under a finger, keeps its
 volume when squeezed, pops into place and goes still. Motion with that quality makes an app feel
 friendly and alive. Done carelessly, the same tools make it look like a toy or a template. This

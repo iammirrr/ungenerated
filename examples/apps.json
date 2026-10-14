@@ -1,5 +1,5 @@
 {
-  "about": "Six made-up apps, each designed twice from the same brief: once the way a model designs by default (the generated draft), once with these skills. The board in this folder renders them; scripts/build-site.mjs turns this file into the page, the board's config and the kit styles.",
+  "about": "Seven made-up apps, each with its own kit and motion style, shown through full flows (flows.json) and one generated draft each for contrast. scripts/board-config.mjs turns these files into the board's config, the kit styles and the page's data.",
   "generated": {
     "name": "The default kit",
     "what": "What every model reaches for when nobody says otherwise.",
@@ -117,31 +117,34 @@
         "id": "loaf-opening",
         "notes": [
           {
-            "text": "One hero, the jar, carries every beat.",
+            "text": "Fades in on the bread; the camera finds the jar, which carries every beat.",
             "skill": "opening-hook",
             "x": 50,
-            "y": 45
+            "y": 40
           },
           {
-            "text": "The starter rises and the clock moves: the product at work, not described.",
+            "text": "The starter rises and the clock flows: the product at work, not described.",
             "skill": "continuity",
-            "x": 70,
-            "y": 64
+            "x": 72,
+            "y": 66
           },
           {
-            "text": "One short line per beat, in a baker's words.",
-            "skill": "human-copy",
+            "text": "One short line per beat, rising out of a mask, in a baker’s words.",
+            "skill": "motion-styles",
             "x": 50,
-            "y": 17
+            "y": 20
           },
           {
             "text": "The button arrives only at the end.",
             "skill": "opening-hook",
             "x": 50,
-            "y": 93
+            "y": 92
           }
         ]
-      }
+      },
+      "style": "cinematic",
+      "category": "Baking",
+      "icon": "loaf-icon"
     },
     {
       "id": "stride",
@@ -191,7 +194,8 @@
         "mood": "Loud, fast, a track at night",
         "weight": 800,
         "case": "uppercase",
-        "track": "0"
+        "track": "0",
+        "tone": "light"
       },
       "before": {
         "id": "stride-generated",
@@ -223,25 +227,140 @@
             "text": "Asks the thing itself, in one read.",
             "skill": "onboarding-questions",
             "x": 40,
-            "y": 18
+            "y": 22
           },
           {
-            "text": "A ruler you drag; the thumb glides, the value flows.",
-            "skill": "interaction-feel",
-            "x": 50,
-            "y": 60
-          },
-          {
-            "text": "The consequence updates as you drag: laps, then week one.",
-            "skill": "onboarding-questions",
-            "x": 50,
-            "y": 76
-          },
-          {
-            "text": "A condensed face with tabular figures for every number.",
+            "text": "A condensed face, every digit in its own fixed slot, so numbers never jitter.",
             "skill": "design-kit",
             "x": 50,
-            "y": 39
+            "y": 46
+          },
+          {
+            "text": "A ruler you drag; it follows the finger and the value flows.",
+            "skill": "interaction-feel",
+            "x": 50,
+            "y": 65
+          },
+          {
+            "text": "The consequence updates as you drag: the laps, then week one’s easy runs.",
+            "skill": "onboarding-questions",
+            "x": 50,
+            "y": 77
+          }
+        ]
+      },
+      "style": "snappy",
+      "category": "Running",
+      "icon": "stride-icon"
+    },
+    {
+      "id": "ripe",
+      "name": "Ripe",
+      "what": "Meals you already like, planned around a weight you can keep.",
+      "step": "The plan",
+      "style": "fluid",
+      "category": "Diet",
+      "icon": "ripe-icon",
+      "skills": [
+        "onboarding-questions",
+        "plan-reveal",
+        "paywall"
+      ],
+      "kit": {
+        "font": "Bricolage Grotesque",
+        "fontCss": "\"Bricolage Grotesque\", ui-sans-serif, system-ui, sans-serif",
+        "body": "same",
+        "ground": "#FFF4D6",
+        "panel": "#FFFBEF",
+        "inset": "#F7E8BF",
+        "hover": "#EFDDAE",
+        "ink": "#3A2629",
+        "inkStrong": "#22161A",
+        "inkMuted": "#7A6468",
+        "inkQuiet": "#A38D90",
+        "accent": "#E0315B",
+        "accentText": "#C21F4A",
+        "btn": "#E0315B",
+        "btnDown": "#C92650",
+        "btnInk": "#FFF8EE",
+        "radius": 24,
+        "weight": 700,
+        "track": "-0.035em",
+        "swatches": [
+          [
+            "Butter",
+            "#FFF4D6"
+          ],
+          [
+            "Cream",
+            "#FFFBEF"
+          ],
+          [
+            "Raspberry",
+            "#E0315B"
+          ],
+          [
+            "Fig",
+            "#22161A"
+          ]
+        ],
+        "mood": "Fresh, bright, a fruit stall in the morning"
+      },
+      "before": {
+        "id": "ripe-generated",
+        "notes": [
+          {
+            "text": "“Lose up to 10 lbs in 30 days”: a crash promise as the headline, in gradient text.",
+            "skill": "no-slop",
+            "x": 50,
+            "y": 17
+          },
+          {
+            "text": "A “metabolism type” and an 87% score nobody measured.",
+            "skill": "plan-reveal",
+            "x": 50,
+            "y": 35
+          },
+          {
+            "text": "A 1,200-calorie day and food rules; not one of their answers shows up.",
+            "skill": "onboarding-questions",
+            "x": 50,
+            "y": 49
+          },
+          {
+            "text": "A ticking discount, an invented review and “Join 5M+ users”.",
+            "skill": "no-slop",
+            "x": 50,
+            "y": 66
+          }
+        ]
+      },
+      "after": {
+        "id": "ripe-plan",
+        "notes": [
+          {
+            "text": "Each answer flies up into its row and becomes the value, one after another.",
+            "skill": "plan-reveal",
+            "x": 74,
+            "y": 42
+          },
+          {
+            "text": "One check on the mark, one haptic. No confetti.",
+            "skill": "plan-reveal",
+            "x": 16,
+            "y": 29
+          },
+          {
+            "text": "Every number is theirs: 72 to 66 kg at half a kilo a week, and the date it lands on.",
+            "skill": "no-slop",
+            "x": 78,
+            "y": 69
+          },
+          {
+            "text": "Called an estimate, in small print, right under the curve.",
+            "skill": "human-copy",
+            "x": 50,
+            "y": 77
           }
         ]
       }
@@ -329,31 +448,34 @@
         "id": "halves-plan",
         "notes": [
           {
-            "text": "Each answer glides straight into its row, one after another.",
+            "text": "Each answer glides straight into its row, one after another, and is wiped in.",
             "skill": "plan-reveal",
-            "x": 72,
-            "y": 46
+            "x": 86,
+            "y": 45
           },
           {
-            "text": "Every number comes from their answers, and adds up: £4,630 in, £412 left.",
+            "text": "Every number comes from their answers, and adds up: £4,630 in, £4,218 out, £412 put away.",
             "skill": "no-slop",
-            "x": 72,
-            "y": 74
+            "x": 62,
+            "y": 72
           },
           {
             "text": "“This is how your month will work”, not “Your plan is ready”.",
             "skill": "human-copy",
             "x": 40,
-            "y": 15
+            "y": 18
           },
           {
-            "text": "One check on the card's mark, one haptic. No confetti.",
+            "text": "One check on the card’s mark, one haptic. No confetti.",
             "skill": "plan-reveal",
-            "x": 86,
-            "y": 27
+            "x": 10,
+            "y": 26
           }
         ]
-      }
+      },
+      "style": "precise",
+      "category": "Money for two",
+      "icon": "halves-icon"
     },
     {
       "id": "lull",
@@ -439,28 +561,31 @@
             "text": "Every price visible before any tap.",
             "skill": "paywall",
             "x": 50,
-            "y": 47
+            "y": 54
           },
           {
             "text": "The trial timeline, with real dates: today, the reminder, the first charge.",
             "skill": "paywall",
             "x": 50,
-            "y": 70
+            "y": 68
           },
           {
-            "text": "Money rolls when the plan changes.",
-            "skill": "motion-system",
-            "x": 80,
-            "y": 43
+            "text": "What’s due today rolls when the plan changes, slowly: calm never overshoots.",
+            "skill": "motion-styles",
+            "x": 86,
+            "y": 79
           },
           {
             "text": "One button that names the outcome, then Restore purchases.",
             "skill": "paywall",
             "x": 50,
-            "y": 91
+            "y": 86
           }
         ]
-      }
+      },
+      "style": "calm",
+      "category": "Sleep",
+      "icon": "lull-icon"
     },
     {
       "id": "parla",
@@ -509,7 +634,8 @@
         ],
         "mood": "Bright, bubbly, a café counter in Bologna",
         "body": "same",
-        "weight": 800
+        "weight": 800,
+        "tone": "light"
       },
       "before": {
         "id": "parla-generated",
@@ -538,16 +664,16 @@
         "id": "parla-mic",
         "notes": [
           {
-            "text": "Asked where the reason is visible: the phrase you're about to say.",
+            "text": "Asked where the reason is visible: the phrase you’re about to say.",
             "skill": "consent-and-permissions",
             "x": 50,
-            "y": 30
+            "y": 34
           },
           {
-            "text": "The mic squishes under the finger; the words light as they're heard.",
+            "text": "The mic squishes under the finger; the words light as they’re heard.",
             "skill": "bubbly-motion",
             "x": 50,
-            "y": 58
+            "y": 62
           },
           {
             "text": "What it does and never does, in one line.",
@@ -556,13 +682,16 @@
             "y": 78
           },
           {
-            "text": "Then the real system sheet, untouched.",
+            "text": "Continue opens the real system alert, its words untouched.",
             "skill": "consent-and-permissions",
             "x": 50,
-            "y": 90
+            "y": 92
           }
         ]
-      }
+      },
+      "style": "bubbly",
+      "category": "Language",
+      "icon": "parla-icon"
     },
     {
       "id": "fern",
@@ -636,7 +765,7 @@
         ]
       },
       "after": {
-        "id": "fern-leaving",
+        "id": "fern-offer",
         "notes": [
           {
             "text": "One question, four specific answers, no “Other”.",
@@ -663,7 +792,10 @@
             "y": 93
           }
         ]
-      }
+      },
+      "style": "organic",
+      "category": "Plant care",
+      "icon": "fern-icon"
     }
   ]
 }

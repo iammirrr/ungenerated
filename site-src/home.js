@@ -80,7 +80,7 @@
   onScroll();
 
   // Things rise once as they arrive.
-  $$('.sec-head, .tabs, .fixer, .feel, .browser, .board-points, .install-in, .group').forEach((el) => el.setAttribute('data-reveal', ''));
+  $$('.sec-head, .tabs, .fixer, .browser, .board-points, .install-in, .group').forEach((el) => el.setAttribute('data-reveal', ''));
   const revealIo = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); revealIo.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   $$('[data-reveal], .kits').forEach((el) => (STILL ? el.classList.add('is-in') : revealIo.observe(el)));
   const wordsIo = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); wordsIo.unobserve(e.target); } }), { rootMargin: '0px 0px -18% 0px' });
@@ -124,6 +124,7 @@
     const screen = $('#cmp-screen');
     const fAfter = $('.cmp-layer.is-after iframe', cmp), fBefore = $('.cmp-layer.is-before iframe', cmp);
     const pills = $$('.app-pill', cmp);
+    const order = pills.map((b) => APPS.find((x) => x.id === b.dataset.app));
     let p = 1, auto = true, idx = 0, timers = [], stop = null;
     const setP = (v) => { p = clamp(v, 0, 1); cmp.style.setProperty('--p', p.toFixed(4)); };
     const clear = () => { timers.forEach(clearTimeout); timers = []; stop && stop(); };
@@ -131,7 +132,7 @@
     const play = (i, user) => {
       clear();
       idx = i;
-      const a = APPS[i];
+      const a = order[i];
       pills.forEach((b, k) => b.setAttribute('aria-selected', String(k === i)));
       showIn(fAfter, a.after.id);
       showIn(fBefore, a.before.id);
@@ -142,7 +143,7 @@
           later(500, () => { stop = tween(0.02, 0.5, 800, CURVE.strong, setP); });
         });
       });
-      if (auto) later(Math.max(9000, (a.after.loop || 10000) + 1200), () => play((idx + 1) % APPS.length));
+      if (auto) later(9000, () => play((idx + 1) % order.length));
     };
     pills.forEach((b, i) => b.addEventListener('click', () => { auto = false; play(i, true); }));
     // The rule follows the finger anywhere on the screen.
@@ -227,13 +228,15 @@
   const fixer = $('#fixer');
   if (fixer) {
     const tabs = $$('#tabs .tab');
-    const fb = $('.fx-phone.is-before iframe', fixer), fa = $('.fx-phone.is-after iframe', fixer);
+    // Stills, not live phones: the pins mark the moment each screenshot was taken.
+    const fb = $('.fx-phone.is-before img', fixer), fa = $('.fx-phone.is-after img', fixer), live = $('#fx-live');
     const pins = { before: $('.pins[data-side="before"]', fixer), after: $('.pins[data-side="after"]', fixer) };
     const lists = { before: $('#fx-before'), after: $('#fx-after') };
     const head = $('#fx-app');
     const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    const order = tabs.map((t) => t.dataset.app);
     const render = (i, first) => {
-      const a = APPS[i];
+      const a = APPS.find((x) => x.id === order[i]);
       tabs.forEach((t, k) => t.setAttribute('aria-selected', String(k === i)));
       head.innerHTML = `<h3>${esc(a.name)}</h3><p>${esc(a.what)}</p><div class="fx-skills">${a.skills.map((s) => `<a href="skills/${s}.html">${s}</a>`).join('')}</div>`;
       ['before', 'after'].forEach((side) => {
@@ -248,91 +251,31 @@
           li.addEventListener('mouseleave', () => hot(false));
         });
       });
-      showIn(fb, a.before.id);
-      showIn(fa, a.after.id);
+      fb.src = `shots/${a.id}-before.webp`;
+      fa.src = `shots/${a.id}-after.webp`;
+      if (live) live.href = `board/#only-${a.after.id}`;
+      [fb, fa].forEach((img) => img.animate([{ opacity: 0.4 }, { opacity: 1 }], { duration: reduce ? 1 : 320, easing: 'ease-out' }));
     };
     tabs.forEach((t, i) => t.addEventListener('click', () => render(i)));
     render(0, true);
   }
 
-  // ---------------------------------------------------------------- motion, before and after
+  // ---------------------------------------------------------------- the apps: each opens its flows
 
-  // A press: in to 0.97 and a point down in 90 ms, out on a 0.34 / 0.6 spring.
-  $$('.d-btn.is-ung').forEach((b) => {
-    let a = null, down = false;
-    const pin = () => { down = true; b.classList.add('is-down'); a && a.cancel(); a = b.animate([{ transform: 'none' }, { transform: 'translateY(1px) scale(0.97)' }], { duration: 90, easing: CSS.strong, fill: 'forwards' }); };
-    const out = () => { if (!down) return; down = false; b.classList.remove('is-down'); a && a.cancel(); a = springAnim(b, [0.34, 0.6], (v) => ({ transform: `translateY(${(1 - v).toFixed(3)}px) scale(${(0.97 + 0.03 * v).toFixed(4)})` }), { fill: 'none' }); };
-    b.addEventListener('pointerdown', pin);
-    ['pointerup', 'pointerleave', 'pointercancel'].forEach((ev) => b.addEventListener(ev, out));
-  });
-
-  // A pick: generated swaps in a frame; ours blooms from the finger and the check pops once.
-  $$('.d-rows.is-gen').forEach((g) => $$('button', g).forEach((b) => b.addEventListener('click', () => $$('button', g).forEach((x) => x.classList.toggle('is-on', x === b)))));
-  $$('.d-rows.is-ung').forEach((g) => $$('button', g).forEach((b) => b.addEventListener('click', (e) => {
-    const r = b.getBoundingClientRect();
-    const x = e.clientX ? e.clientX - r.left : r.width / 2, y = e.clientY ? e.clientY - r.top : r.height / 2;
-    $$('button', g).forEach((o) => {
-      if (o === b || !o.classList.contains('is-on')) return;
-      o.classList.remove('is-on');
-      const bl = $('.bloom', o);
-      if (bl) bl.animate([{ transform: bl.style.transform, opacity: 1 }, { transform: 'scale(0)', opacity: 1 }], { duration: 320, easing: CSS.strong, fill: 'forwards' }).onfinish = () => bl.remove();
-      $('i', o).animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, fill: 'forwards' });
-    });
-    if (b.classList.contains('is-on')) return;
-    b.classList.add('is-on');
-    const bl = document.createElement('span');
-    bl.className = 'bloom';
-    const reach = Math.hypot(Math.max(x, r.width - x), Math.max(y, r.height - y)) / 10 + 1;
-    bl.style.left = x + 'px';
-    bl.style.top = y + 'px';
-    bl.style.transform = `scale(${reach})`;
-    b.prepend(bl);
-    bl.animate([{ transform: 'scale(0)' }, { transform: `scale(${reach})` }], { duration: reduce ? 1 : 460, easing: CSS.emph });
-    springAnim($('i', b), [0.38, 0.62], (v) => ({ opacity: Math.min(1, v * 2), transform: `scale(${(0.5 + 0.5 * v).toFixed(3)})` }), { delay: 160, fill: 'both' });
-  })));
-
-  // A price: generated replaces the text; ours rolls each digit on its own reel, left to right.
-  const PRICES = ['$39.99', '$71.88'];
-  let priceI = 0;
-  const reel = (el, text, prev) => {
-    el.replaceChildren(...[...text].map((ch, i) => {
-      if (!/\d/.test(ch)) { const s = document.createElement('span'); s.textContent = ch; return s; }
-      const col = document.createElement('span'); col.className = 'col';
-      const strip = document.createElement('span');
-      for (let k = 0; k < 30; k++) { const d = document.createElement('span'); d.textContent = String(k % 10); strip.append(d); }
-      col.append(strip);
-      const from = /\d/.test(prev[i] || '') ? +prev[i] : 0, to = 20 + +ch;
-      strip.style.transform = `translateY(${-to * 1.12}em)`;
-      if (prev && prev[i] !== ch) springAnim(strip, [0.62 + i * 0.06, 0.74], (v) => ({ transform: `translateY(${(-(from + (to - from) * v) * 1.12).toFixed(3)}em)` }), { delay: i * 60, fill: 'backwards' });
-      return col;
-    }));
-  };
-  const moneyU = $('.d-money.is-ung'), moneyG = $('.d-money.is-gen');
-  if (moneyU) reel(moneyU, PRICES[0], '');
-  const switchPrice = () => {
-    const prev = PRICES[priceI];
-    priceI = 1 - priceI;
-    moneyG.textContent = PRICES[priceI];
-    reel(moneyU, PRICES[priceI], prev);
-  };
-  // A screen arriving: generated bounces everything at once; ours focuses the title and rises once.
-  const arrive = () => {
-    const g = $('.d-screen.is-gen');
-    g.classList.remove('is-run'); void g.offsetWidth; g.classList.add('is-run');
-    const u = $('.d-screen.is-ung');
-    const [t, ...rest] = [...u.children];
-    t.animate([{ opacity: 0, transform: 'translateY(10px)', filter: 'blur(6px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }], { duration: reduce ? 1 : 520, easing: CSS.strong, fill: 'backwards' });
-    rest.forEach((el, i) => el.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: reduce ? 1 : 420, delay: 90 + i * 60, easing: CSS.decel, fill: 'backwards' }));
-  };
-  $$('[data-go]').forEach((b) => b.addEventListener('click', () => (b.dataset.go === 'money' ? switchPrice() : arrive())));
-  const feelIo = new IntersectionObserver((es) => es.forEach((e) => {
-    if (!e.isIntersecting) return;
-    feelIo.unobserve(e.target);
-    const d = e.target.dataset.demo;
-    if (d === 'money') setTimeout(switchPrice, 700);
-    if (d === 'arrive') setTimeout(arrive, 500);
-  }), { threshold: 0.6 });
-  if (!STILL) $$('.feel').forEach((f) => feelIo.observe(f));
+  const player = $('#player');
+  // A drifting phone or a "seen in" link opens its flow in the player.
+  $$('a[data-flow]').forEach((a) => a.addEventListener('click', (e) => {
+    if (!a.dataset.flow || !player || !player.flowPlayer) return;
+    e.preventDefault();
+    player.flowPlayer.show(a.dataset.flow);
+    $('#flows').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }));
+  $$('.app-card').forEach((card) => card.addEventListener('click', () => {
+    const f = (window.FLOWS || []).find((x) => x.app === card.dataset.app);
+    if (!f || !player || !player.flowPlayer) return;
+    player.flowPlayer.show(f.id);
+    $('#flows').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }));
 
   // ---------------------------------------------------------------- find a skill
 

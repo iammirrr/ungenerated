@@ -6,11 +6,12 @@
   if (!window.APPS) return;
   const { generated, apps } = window.APPS;
 
-  // The whole part: the six screens one after another, with the board's own transitions.
-  F.def({
-    id: 'seq-ungenerated', section: 'ungenerated', name: 'All six · the whole part', seq: apps.map((a) => a.after.id),
-    intent: 'Plays the six ungenerated screens in a row, each through its demo, then loops. Six apps, six kits, one set of rules.',
-  });
+  // A whole-part card for every flow of more than one step: it plays the steps in order, with
+  // each screen's real transition, and leads the flow's row.
+  (window.FLOWS || []).filter((f) => f.steps.length > 1).forEach((f) => F.def({
+    id: 'seq-' + f.id, section: f.id, name: `${f.title} · the whole flow`, seq: f.steps.map((s) => s.id),
+    intent: f.summary,
+  }));
 
   F.def({
     id: 'kit-generated', section: 'kits', name: 'The default kit',

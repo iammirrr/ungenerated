@@ -84,6 +84,8 @@
     let paused = false;
     const ctx = {
       screen, root, mode, dead: false,
+      // The motion style the screen moves in (js/styles.js); null keeps the engine's defaults.
+      style: screen.style || CFG.style || null,
       answers: hooks.answers || clone(F.DEFAULT_ANSWERS),
       progressFrom: hooks.progressFrom,
       via: hooks.via || null,
@@ -228,9 +230,10 @@
       const me = i;
       const scr = F.SCREENS.find((x) => x.id === ids[i]);
       if (!scr) return step();
-      F.transit(i === 0 ? 'cut' : scr.enter || 'step', {
-        oldCtx: c.ctx, dir: 1,
-        mount: (extra) => mount(scr, c.stage, 'demo', { answers, progressFrom: progress, haptic: (k) => showHaptic(c.hap, k), next: () => me === i && step(), ...extra }),
+      F.transit(i === 0 ? 'cut' : (F.enterOf ? F.enterOf(scr) : scr.enter || 'step'), {
+        oldCtx: c.ctx, dir: 1, style: scr.style || CFG.style,
+        // ctx.next({ to }) skips ahead to that screen when it is later in the part.
+        mount: (extra) => mount(scr, c.stage, 'demo', { answers, progressFrom: progress, haptic: (k) => showHaptic(c.hap, k), next: (info) => { if (me !== i) return; const j = info && info.to ? ids.indexOf(info.to) : -1; if (j > i) i = j - 1; step(); }, ...extra }),
         onMounted: (n) => {
           c.ctx = n;
           if (typeof scr.progress === 'number') progress = scr.progress;
@@ -486,9 +489,9 @@
       const old = player.ctx;
       player.busy = true;
       setTimeout(() => player && (player.busy = false), 260);
-      F.transit(old ? (dir > 0 ? screen.enter || 'step' : 'dissolve') : 'cut', {
-        oldCtx: old, dir,
-        mount: (extra) => mount(screen, stage, 'flow', { answers: player.answers, progressFrom: player.progress, haptic: (k) => showHaptic(hap, k), next: () => go(player.i + 1), back: () => go(player.i - 1, -1), ...extra }),
+      F.transit(old ? (dir > 0 ? (F.enterOf ? F.enterOf(screen) : screen.enter || 'step') : 'dissolve') : 'cut', {
+        oldCtx: old, dir, style: screen.style || CFG.style,
+        mount: (extra) => mount(screen, stage, 'flow', { answers: player.answers, progressFrom: player.progress, haptic: (k) => showHaptic(hap, k), next: (info) => go(info && info.to && ids.includes(info.to) ? ids.indexOf(info.to) : player.i + 1), back: () => go(player.i - 1, -1), ...extra }),
         onMounted: (n) => { player.ctx = n; if (typeof screen.progress === 'number') player.progress = screen.progress; },
       });
       player.i = i;

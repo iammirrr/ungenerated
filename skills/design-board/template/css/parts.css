@@ -318,7 +318,8 @@
 .reel-col {
   display: inline-block;
   height: 1.12em;
-  overflow: hidden;
+  /* A clip, not overflow: hidden, so the column keeps its text baseline beside other words. */
+  clip-path: inset(0);
 }
 .reel-strip {
   display: flex;

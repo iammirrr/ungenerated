@@ -50,3 +50,27 @@
 
 @media (max-width: 1120px) { .sk-page { grid-template-columns: 180px minmax(0, 1fr); } .sk-toc { display: none; } }
 @media (max-width: 760px) { .sk-page { grid-template-columns: minmax(0, 1fr); } .sk-side { display: none; } }
+
+/* The flow player and the motion styles, inside a skill's column. */
+.sk-example.is-flows { padding: 18px 18px 22px; }
+.sk-flows-cap { margin: 0 4px; font-size: 14.5px; color: var(--muted); }
+.sk-example .fl { margin-top: 12px; }
+.sk-example .fl-stage { grid-template-columns: minmax(0, 250px) minmax(0, 1fr); gap: 28px; margin-top: 20px; }
+.sk-example .fl-phone { top: 84px; }
+.sk-example .fl-title { margin-top: 16px; font-size: 30px; }
+.sk-example .fl-summary { font-size: 15.5px; }
+.sk-example .fl-apps button { height: 46px; }
+.sk-example .fl-steps button { grid-template-columns: 38px minmax(0, 1fr); gap: 10px; }
+.sk-example .fl-thumb { width: 38px; border-radius: 8px; }
+.sk-example .fl-txt b { font-size: 15px; }
+.sk-example .fl-note { font-size: 14px; }
+.sk-example.is-styles { padding: 14px; }
+.sk-example.is-styles .styles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 0; }
+.sk-example.is-styles .style-tile { padding: 10px 10px 14px; }
+.sk-example.is-styles .style-tile h3 { font-size: 22px; }
+.sk-example.is-styles .style-tile p { font-size: 13.5px; }
+@media (max-width: 760px) {
+  .sk-example .fl-stage { grid-template-columns: minmax(0, 1fr); }
+  .sk-example .fl-phone { max-width: 280px; }
+  .sk-example.is-styles .styles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

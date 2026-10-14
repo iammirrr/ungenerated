@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-base="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ungenerated · design apps that don’t look generated</title>
-<meta name="description" content="{{TOTAL}} skills that teach Claude how real apps are designed: a live board for every screen, a design kit first, the onboarding, paywall and cancel flows that work, and a checklist for the tells. Six example apps, before and after.">
+<meta name="description" content="{{TOTAL}} skills that teach Claude how real apps are designed. {{N_APPS}} example apps, {{N_FLOWS}} full flows, {{N_STEPS}} screens, seven motion styles: openings, onboarding, paywalls, permissions and the way out.">
 <meta property="og:title" content="Ungenerated">
-<meta property="og:description" content="Design apps that don’t look generated. {{TOTAL}} skills for Claude Code, with six example apps before and after.">
-<meta property="og:image" content="https://iammirrr.github.io/ungenerated/shots/readme-hero.png">
+<meta property="og:description" content="Design apps that don’t look generated. {{TOTAL}} skills for Claude Code, shown through {{N_FLOWS}} full flows in {{N_APPS}} apps.">
+<meta property="og:image" content="https://iammirrr.github.io/ungenerated/shots/readme-hero.webp">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +21,10 @@
   <div class="wrap bar-in">
     <a class="mark" href="./" aria-label="Ungenerated, home"><b>Un</b>generated</a>
     <nav class="nav" aria-label="Sections">
+      <a href="#flows">Flows</a>
+      <a href="#motion">Motion</a>
       <a href="#before-after">Before and after</a>
       <a href="#kits">Kits</a>
-      <a href="#feel">Motion</a>
       <a href="#skills">Skills</a>
       <a href="board/">Example board</a>
     </nav>
@@ -41,14 +42,14 @@
       <p class="eyebrow">{{TOTAL}} skills for Claude Code</p>
       <h1 class="hero-title">Design apps that don’t look <span class="fix" id="fix"><span class="fix-word"><span class="fix-slop">generated</span><span class="fix-plain" aria-hidden="true">generated</span></span><span class="fix-spark" aria-hidden="true">✨</span><svg class="fix-strike" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 C 30 8, 70 13, 98 9" pathLength="1"/></svg>.</span></h1>
       <p class="fix-note" id="fix-note"><span class="pin">1</span><span>No gradient text, no emoji.</span> <a href="skills/no-slop.html">no-slop</a></p>
-      <p class="hero-lede">Left alone, Claude designs the same app every time: indigo gradients, emoji for icons, a carousel with dots. These skills are the corrections, one rule at a time, and a live board to see every screen move.</p>
+      <p class="hero-lede">Left alone, Claude designs the same app every time: indigo gradients, emoji for icons, one bounce for everything. These skills are the corrections, and every one is shown working: {{N_APPS}} apps, {{N_FLOWS}} full flows, seven ways to move.</p>
       <div class="install" id="install-hero">
         <pre><code><span class="dim">/</span>plugin marketplace add iammirrr/ungenerated
 <span class="dim">/</span>plugin install ungenerated@ungenerated</code></pre>
         <button type="button" class="copy" data-copy="install-hero">Copy</button>
       </div>
       <div class="hero-links">
-        <a class="btn-solid" href="#before-after">See six apps, before and after</a>
+        <a class="btn-solid" href="#flows">Watch the flows</a>
         <a class="btn-line" href="board/">Open the example board</a>
       </div>
     </div>
@@ -67,12 +68,49 @@
   </div>
 </section>
 
-<!-- ============================================================ six apps, one scan -->
+<!-- ============================================================ every screen, drifting -->
+<section class="drift" aria-label="Every screen of the example apps">
+  <div class="drift-row" style="--dur: 120s">{{DRIFT_A}}</div>
+  <div class="drift-row is-back" style="--dur: 140s">{{DRIFT_B}}</div>
+  <p class="wrap drift-cap"><b>{{N_STEPS}} screens, {{N_APPS}} apps, {{N_FLOWS}} flows.</b> Every one made with these skills, every one live on the <a href="board/">example board</a>.</p>
+</section>
+
+<!-- ============================================================ the apps -->
+<section class="sec apps-sec" id="apps">
+  <div class="wrap sec-head">
+    <p class="eyebrow">Seven apps, nothing in common</p>
+    <h2 class="h2">The rules are the same. <em>The apps never are.</em></h2>
+    <p class="sec-lede">A diet app, a running coach, a budget for two, a sleep app, a language app, a plant app, a baking app. Each has its own kit and its own way to move. Pick one to watch its flows.</p>
+  </div>
+  <div class="wrap apps">{{APPS_ROW}}</div>
+</section>
+
+<!-- ============================================================ the flows -->
+<section class="sec flows-sec" id="flows">
+  <div class="wrap sec-head">
+    <p class="eyebrow">Every flow, start to finish</p>
+    <h2 class="h2">This is what happens <em>to your app.</em></h2>
+    <p class="sec-lede">The opening, the questions, the paywall, the permissions, the way out: each one three times, in three apps that move three different ways. The phone plays the real screens; every step says which rule it follows.</p>
+  </div>
+  <div class="wrap"><div class="fl" id="player" data-player data-kinds></div></div>
+</section>
+
+<!-- ============================================================ motion styles -->
+<section class="sec motion-sec" id="motion">
+  <div class="wrap sec-head">
+    <p class="eyebrow">Motion, generic no more</p>
+    <h2 class="h2">Not one bounce. <em>Seven ways to move.</em></h2>
+    <p class="sec-lede">The same screen in seven personalities. Pick the one your app should feel like and set one line on the board; every heading, list, press, value and screen change follows it (<a href="skills/motion-styles.html">motion-styles</a>).</p>
+  </div>
+  <div class="wrap styles">{{STYLE_TILES}}</div>
+</section>
+
+<!-- ============================================================ before and after -->
 <section class="sec strip-sec" id="before-after">
   <div class="wrap sec-head">
     <p class="eyebrow">Same brief, twice</p>
-    <h2 class="h2">Generated, six apps look like <em>one app.</em> With the skills, none look alike.</h2>
-    <p class="sec-lede">Six made-up apps, one step of each. The same prompt drew both rows; only the skills changed. Every phone below is a real screenshot of a live screen on the example board.</p>
+    <h2 class="h2">Generated, every app looks like <em>one app.</em></h2>
+    <p class="sec-lede">The same prompt drew both rows; only the skills changed. The red line applies them.</p>
     <div class="seg" id="strip-seg" role="group" aria-label="Show">
       <button type="button" data-mode="gen">Generated</button>
       <button type="button" data-mode="scan" aria-pressed="true">Scan</button>
@@ -80,13 +118,13 @@
     </div>
   </div>
   <div class="strip" id="strip">
-    <div class="strip-row">{{STRIP}}</div>
+    <div class="strip-row" style="--n: {{N_PAIRS}}">{{STRIP}}</div>
     <div class="scan" id="scan" aria-hidden="true"><span>skills applied</span></div>
   </div>
 </section>
 
 <!-- ============================================================ corrections, app by app -->
-<section class="sec fix-sec" id="apps">
+<section class="sec fix-sec" id="corrections">
   <div class="wrap sec-head">
     <p class="eyebrow">Corrections, app by app</p>
     <h2 class="h2">Every change has a reason, and the reason <em>is a skill.</em></h2>
@@ -96,7 +134,7 @@
     <div class="fixer" id="fixer">
       <figure class="fx-phone is-before">
         <div class="fx-label"><span class="tag is-gen">Generated draft</span></div>
-        <div class="dev is-small"><div class="dev-screen"><iframe title="The generated draft" data-src="board/embed.html?paused#{{FIRST_BEFORE}}"></iframe><div class="pins" data-side="before"></div></div></div>
+        <div class="dev is-small"><div class="dev-screen"><img class="fx-img" src="shots/{{FIRST_APP}}-before.webp" alt="The generated draft" width="390" height="844"><div class="pins" data-side="before"></div></div></div>
       </figure>
       <div class="fx-notes">
         <div class="fx-app" id="fx-app"></div>
@@ -104,8 +142,8 @@
         <div class="fx-col is-after"><h3>What the skills changed</h3><ol id="fx-after"></ol></div>
       </div>
       <figure class="fx-phone is-after">
-        <div class="fx-label"><span class="tag is-ung">With the skills</span><span class="fx-try">Live. Tap it.</span></div>
-        <div class="dev is-small"><div class="dev-screen"><iframe title="With the skills" data-src="board/embed.html?paused#{{FIRST_AFTER}}"></iframe><div class="pins" data-side="after"></div></div></div>
+        <div class="fx-label"><span class="tag is-ung">With the skills</span><a class="fx-try" id="fx-live" href="board/#only-{{FIRST_AFTER}}">Play it live</a></div>
+        <div class="dev is-small"><div class="dev-screen"><img class="fx-img" src="shots/{{FIRST_APP}}-after.webp" alt="The same screen, with the skills" width="390" height="844"><div class="pins" data-side="after"></div></div></div>
       </figure>
     </div>
   </div>
@@ -116,50 +154,9 @@
   <div class="wrap sec-head">
     <p class="eyebrow">Design kits, before and after</p>
     <h2 class="h2">One default kit, or a kit <em>made for the app.</em></h2>
-    <p class="sec-lede">The design-kit skill makes the kit before any screen: colour tokens, one type pairing, one radius scale, the parts in every state. Change a token and every phone on the board follows.</p>
+    <p class="sec-lede">The design-kit skill makes the kit before any screen: colour tokens, one type pairing, one radius scale, the parts in every state, and a motion style. Change a token and every phone on the board follows.</p>
   </div>
   <div class="wrap kits">{{KITS}}</div>
-</section>
-
-<!-- ============================================================ motion -->
-<section class="sec feel-sec" id="feel">
-  <div class="wrap sec-head">
-    <p class="eyebrow">Motion, before and after</p>
-    <h2 class="h2">Press both. The difference is <em>in your thumb.</em></h2>
-    <p class="sec-lede">Generated motion is a CSS transition on everything. The motion skills give each kind of thing its own physics: presses spring, content rises, money rolls, picks bloom from the finger.</p>
-  </div>
-  <div class="wrap feel-grid">
-    <article class="feel" data-demo="press">
-      <header><h3>A press</h3><a href="skills/interaction-feel.html">interaction-feel</a></header>
-      <div class="feel-pair">
-        <div class="feel-half is-gen"><span class="tag is-gen">Generated</span><button type="button" class="d-btn is-gen">Continue</button><p>Fades on hover. A phone has no hover.</p></div>
-        <div class="feel-half"><span class="tag is-ung">With the skills</span><button type="button" class="d-btn is-ung">Continue</button><p>In to 0.97 and a point down in 90 ms, back on a spring.</p></div>
-      </div>
-    </article>
-    <article class="feel" data-demo="pick">
-      <header><h3>A pick</h3><a href="skills/bubbly-motion.html">bubbly-motion</a></header>
-      <div class="feel-pair">
-        <div class="feel-half is-gen"><span class="tag is-gen">Generated</span><div class="d-rows is-gen"><button type="button">Mornings</button><button type="button">Evenings</button></div><p>The state swaps in one frame.</p></div>
-        <div class="feel-half"><span class="tag is-ung">With the skills</span><div class="d-rows is-ung"><button type="button">Mornings<i></i></button><button type="button">Evenings<i></i></button></div><p>The colour spreads from your finger; the check pops once.</p></div>
-      </div>
-    </article>
-    <article class="feel" data-demo="money">
-      <header><h3>A price</h3><a href="skills/motion-system.html">motion-system</a></header>
-      <div class="feel-pair">
-        <div class="feel-half is-gen"><span class="tag is-gen">Generated</span><b class="d-money is-gen">$39.99</b><p>The number is replaced.</p></div>
-        <div class="feel-half"><span class="tag is-ung">With the skills</span><b class="d-money is-ung" aria-live="polite">$39.99</b><p>Money rolls on reels, left to right. Time never does.</p></div>
-      </div>
-      <button type="button" class="d-go" data-go="money">Switch plan</button>
-    </article>
-    <article class="feel" data-demo="arrive">
-      <header><h3>A screen arriving</h3><a href="skills/motion-system.html">motion-system</a></header>
-      <div class="feel-pair">
-        <div class="feel-half is-gen"><span class="tag is-gen">Generated</span><div class="d-screen is-gen"><b>Plan your week</b><i></i><i></i><i></i><span></span></div><p>Everything bounces in at once.</p></div>
-        <div class="feel-half"><span class="tag is-ung">With the skills</span><div class="d-screen is-ung"><b>Plan your week</b><i></i><i></i><i></i><span></span></div><p>The title focuses in; the rest rises in one wave.</p></div>
-      </div>
-      <button type="button" class="d-go" data-go="arrive">Replay</button>
-    </article>
-  </div>
 </section>
 
 <!-- ============================================================ words -->
@@ -170,9 +167,9 @@
   </div>
   <div class="wrap">
     <ol class="words">
-      <li><s><span>Unlock your full potential with AI-powered sleep insights ✨</span></s><span class="w-fix">You fell asleep 12 minutes sooner this week.</span><span class="w-rule">human-copy · the person’s own numbers</span></li>
+      <li><s><span>Unlock your full potential with AI-powered sleep insights ✨</span></s><span class="w-fix">Wind down at 10:50. Lights out at 11:10.</span><span class="w-rule">human-copy · the person’s own numbers</span></li>
       <li><s><span>🎉 Your Personalized Plan is Ready!</span></s><span class="w-fix">This is how your month will work.</span><span class="w-rule">plan-reveal · words are human</span></li>
-      <li><s><span>Supercharge your workflow with seamless, effortless planning</span></s><span class="w-fix">Plan tomorrow in two minutes.</span><span class="w-rule">human-copy · never write “seamless”</span></li>
+      <li><s><span>Lose up to 10 lbs in 30 days! 🔥</span></s><span class="w-fix">At half a kilo a week, that’s 12 weeks.</span><span class="w-rule">no-slop · no invented promises</span></li>
       <li><s><span>Wait! Don’t leave! You’ll lose EVERYTHING 😢</span></s><span class="w-fix">14 plants, 212 waterings. They stay yours either way.</span><span class="w-rule">cancel-flow · say what they keep</span></li>
       <li><s><span>Oops! Something went wrong. Please try again later.</span></s><span class="w-fix">That didn’t save. Your changes are still here.</span><span class="w-rule">human-copy · say what happened, and what to do</span></li>
     </ol>
@@ -184,18 +181,18 @@
   <div class="wrap sec-head">
     <p class="eyebrow">The design board</p>
     <h2 class="h2">Every screen a live phone, <em>before a line of Swift.</em></h2>
-    <p class="sec-lede">The design-board skill ships a template: every screen of the app as a working 390 × 844 phone in rows, the kit in its own view, Pick and Note on every card, and Play the flow, full screen. Review it with your thumb, then port what you approved.</p>
+    <p class="sec-lede">The design-board skill ships a template: every screen of the app as a working 390 × 844 phone, a row per flow with a card that plays it whole, the kit and the motion styles in their own view, Pick and Note on every card, and Play the flow, full screen.</p>
   </div>
   <div class="wrap">
     <a class="browser" href="board/" aria-label="Open the example board">
       <span class="browser-bar"><i></i><i></i><i></i><span>iammirrr.github.io/ungenerated/board</span></span>
-      <img src="shots/board.webp" alt="The example board: a row of six live phones made with the skills, and the generated drafts under them" width="1440" height="900" loading="lazy">
+      <img src="shots/board.webp" alt="The example board: a row per flow, each led by a card that plays it whole, then its screens as live phones" width="1440" height="900" loading="lazy">
     </a>
     <ul class="board-points">
-      <li><b>Live phones.</b> Every card plays its own demo; the whole-part card plays a section in order.</li>
+      <li><b>Live phones.</b> Every card plays its own demo; the first card of a row plays the whole flow.</li>
       <li><b>Pick and Note.</b> Choose between variations and leave notes on the screens themselves.</li>
       <li><b>Play the flow.</b> Walk the journey full screen with the real transitions.</li>
-      <li><b>Kit, research, transitions.</b> Each in its own view, in the order of the work.</li>
+      <li><b>Kits and motion.</b> The kit, the parts and the seven motion styles in their own view.</li>
     </ul>
     <div class="board-cta"><a class="btn-solid" href="board/">Open the example board</a><a class="btn-line" href="skills/design-board.html">Read design-board</a></div>
   </div>
@@ -219,7 +216,7 @@
       <h2 class="h2">Two lines. Then ask <em>for a screen.</em></h2>
       <ol class="steps">
         <li><b>Add the plugin</b> in Claude Code.</li>
-        <li><b>Ask for what you are making:</b> “Design the onboarding for my habit app.” <code>app-design-workflow</code> starts with the concept and the kit.</li>
+        <li><b>Ask for what you are making:</b> “Design the paywall for my sleep app.” <code>app-design-workflow</code> starts with the concept, the kit and the motion style.</li>
         <li><b>Review on the board</b>, with Pick and Note, then port the approved screens with <code>native-port</code>.</li>
       </ol>
     </div>
@@ -234,10 +231,11 @@
 </main>
 
 <footer class="foot">
-  <div class="wrap foot-in"><span>Rebuilt from <a href="{{REPO}}">the repository</a> on every change. Last update {{WHEN}} · <a href="{{REPO}}/commit/{{COMMIT}}">{{COMMIT}}</a></span><span>MIT licence. The six apps are made up.</span></div>
+  <div class="wrap foot-in"><span>Rebuilt from <a href="{{REPO}}">the repository</a> on every change. Last update {{WHEN}} · <a href="{{REPO}}/commit/{{COMMIT}}">{{COMMIT}}</a></span><span>MIT licence. The apps are made up.</span></div>
 </footer>
 
-<script>window.APPS = {{APPS_JSON}};</script>
+<script>{{DATA}}</script>
+<script src="flows.js"></script>
 <script src="home.js"></script>
 </body>
 </html>

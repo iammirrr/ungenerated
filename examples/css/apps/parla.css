@@ -1,0 +1,150 @@
+/* ---------------------------------------------------------------- Parla (bubbly)
+ * Pomodoro ground, Milk for what you touch and read, Crema for what is lit, Brick for the ink on
+ * milk. Baloo 2 for every word. Cards round at 28; buttons are pills with a lip, so a press has
+ * somewhere to go. */
+
+.k-parla {
+  --sel-bg: var(--btn);
+  --sel-down: var(--btn-down);
+  --lip: color-mix(in srgb, var(--btn) 74%, var(--btn-ink));
+  --lip-crema: color-mix(in srgb, var(--accent) 70%, var(--btn-ink));
+  --faded: color-mix(in srgb, var(--btn-ink) 28%, var(--btn));
+}
+.k-parla .ph-body { padding-top: 64px; }
+
+/* Type */
+.pa-h { margin: 16px 0 0; font: 800 40px/1.04 var(--font-display); letter-spacing: -0.02em; color: var(--ink-strong); text-wrap: balance; }
+.pa-h em { font-style: normal; color: var(--accent); }
+.pa-center { text-align: center; }
+.pa-body { margin: 10px 4px 0; font: 600 17px/1.4 var(--font); color: var(--ink); text-align: center; text-wrap: balance; }
+.pa-ln { display: block; text-wrap: balance; }
+.pa-sub { margin: 10px 0 0; font: 600 17px/1.35 var(--font); color: var(--ink-muted); }
+.k-parla .ph-fill.is-more { flex-grow: 1.5; }
+.k-parla .ph-fill.is-less { flex-grow: 0.4; }
+
+/* Buttons: a milk pill with a lip; the outline twin for the way out. */
+.k-parla .btn { flex: none; height: 60px; font-size: 18px; font-weight: 800; letter-spacing: 0; box-shadow: 0 4px 0 var(--lip); }
+.k-parla .btn.is-down { box-shadow: 0 2px 0 var(--lip); }
+.k-parla .btn > span { display: block; }
+.k-parla .ph-foot { gap: 12px; padding-bottom: 6px; }
+.pa-out { flex: none; width: 100%; height: 60px; border-radius: 999px; box-shadow: inset 0 0 0 2px var(--ink); color: var(--ink) !important; font: 800 18px/1 var(--font); transition: background-color 120ms ease; }
+.pa-out.is-down { background: var(--hover); }
+.pa-later { flex: none; align-self: center; height: 40px; padding: 0 18px; border-radius: 999px; color: var(--ink-muted) !important; font: 700 16px/1 var(--font); transition: background-color 120ms ease; }
+.pa-later.is-down { background: var(--inset); }
+
+/* Tazza: a slot (place, bob) holding the pose (squash, hop). */
+.pa-tz { position: relative; flex: none; }
+.pa-tz-in { width: 100%; height: 100%; transform-origin: 50% 90%; }
+.pa-tz-in > * { display: block; }
+.pa-bub { position: absolute; left: 63%; top: 3%; z-index: 2; display: inline-flex; align-items: center; height: 46px; padding: 2px 18px 0; border-radius: 23px; background: var(--accent); color: var(--btn-ink); font: 800 23px/1 var(--font-display); white-space: nowrap; transform-origin: 10% 115%; }
+.pa-bub::after { content: ''; position: absolute; left: 12px; bottom: -6px; width: 16px; height: 16px; border-radius: 3px; background: inherit; transform: rotate(45deg); }
+.pa-bub > span { position: relative; z-index: 1; }
+
+/* The lesson chip */
+.pa-chip { flex: none; align-self: flex-start; display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 1px 14px 0 12px; border-radius: 999px; background: var(--inset); color: var(--ink); font: 700 14px/1 var(--font); }
+
+/* The phrase: brick on milk, every word its own box, a voice pill under the word being said. */
+.pa-phrase { position: relative; z-index: 0; margin: 0; font: 800 32px/1.12 var(--font-display); letter-spacing: -0.01em; color: var(--btn-ink); }
+.pa-line { display: block; }
+.pa-word { display: inline-block; color: var(--faded); transition: color 220ms ease; }
+.pa-phrase.is-read .pa-word, .pa-word.is-heard, .pa-word.is-now { color: var(--btn-ink); }
+.pa-phrase:not(.is-read) .pa-word { transition-duration: 420ms; }
+.pa-pill { position: absolute; inset: -16px; z-index: -1; background: color-mix(in srgb, var(--ground) 22%, var(--btn)); clip-path: inset(50% 50% 50% 50% round 999px); pointer-events: none; }
+
+/* The lesson card */
+.pa-card { position: relative; flex: none; margin-top: 22px; padding: 22px 22px 16px; border-radius: var(--r-card); background: var(--btn); color: var(--btn-ink); }
+.pa-sounds { margin: 10px 0 0; font: 600 15.5px/1.3 var(--font); letter-spacing: 0.01em; color: color-mix(in srgb, var(--btn-ink) 58%, var(--btn)); }
+.pa-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding-top: 12px; border-top: 2px solid color-mix(in srgb, var(--btn-ink) 10%, var(--btn)); }
+.pa-en { margin: 0; font: 700 16.5px/1.3 var(--font); color: color-mix(in srgb, var(--btn-ink) 80%, var(--btn)); }
+.pa-hear { position: relative; flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--accent); color: var(--btn-ink) !important; box-shadow: 0 3px 0 var(--lip-crema); transform-origin: 50% 100%; }
+.pa-hear .ic { transition: opacity 160ms ease, transform 160ms ease; }
+.pa-eq { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 3px; opacity: 0; transition: opacity 160ms ease; }
+.pa-eq i { width: 4px; height: 18px; border-radius: 2px; background: currentColor; transform: scaleY(0.3); }
+.pa-hear.is-playing .ic { opacity: 0; transform: scale(0.6); }
+.pa-hear.is-playing .pa-eq { opacity: 1; }
+.pa-perf { position: absolute; top: -17px; right: 16px; display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 1px 15px 0 11px; border-radius: 999px; background: var(--hover); color: var(--accent); font: 800 17px/1 var(--font); box-shadow: 0 0 0 3px var(--btn); transform-origin: 30% 100%; visibility: hidden; }
+
+/* The mic */
+.pa-mic-wrap { position: relative; display: grid; place-items: center; }
+.pa-mic { position: relative; z-index: 1; display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%; background: var(--btn); color: var(--btn-ink) !important; box-shadow: 0 6px 0 var(--lip); transform-origin: 50% 100%; transition: background-color 160ms ease, box-shadow 120ms ease; touch-action: none; }
+.pa-mic.is-live { background: var(--accent); box-shadow: 0 3px 0 var(--lip-crema); }
+.pa-ring { position: absolute; inset: 0; border-radius: 50%; background: color-mix(in srgb, var(--btn) 17%, transparent); opacity: 0; transition: opacity 260ms ease; }
+.pa-ring.is-out { background: none; box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--btn) 34%, transparent); }
+.pa-mic-wrap.is-live .pa-ring { opacity: 1; transition-duration: 160ms; }
+
+/* ---------------------------------------------------------------- the opening, one stage */
+.pa-open .pa-open-h { position: absolute; left: 24px; right: 24px; top: 92px; margin: 0; text-align: center; white-space: pre-line; }
+.pa-open-tz { position: absolute; left: 50%; top: 204px; width: 176px; height: 176px; margin-left: -88px; }
+.pa-tiles { position: absolute; left: 30px; right: 30px; top: 400px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 10px; }
+.pa-tile { display: inline-flex; align-items: center; height: 48px; padding: 1px 18px 0; border-radius: 16px; background: var(--btn); color: var(--btn-ink); font: 700 21px/1 var(--font); box-shadow: 0 4px 0 var(--lip); }
+.pa-speech { position: absolute; z-index: 2; left: 24px; right: 24px; top: 392px; padding: 18px 22px 16px; border-radius: var(--r-card); background: var(--btn); }
+.pa-speech::after { content: ''; position: absolute; left: 50%; bottom: -8px; width: 20px; height: 20px; margin-left: -10px; border-radius: 4px; background: inherit; transform: rotate(45deg); }
+.pa-speech .pa-phrase { z-index: 1; }
+.pa-speech-en { position: relative; z-index: 1; margin: 6px 0 0; font: 700 15.5px/1.3 var(--font); color: color-mix(in srgb, var(--btn-ink) 72%, var(--btn)); }
+.pa-open-mic { position: absolute; z-index: 1; left: 50%; top: 572px; margin-left: -60px; }
+.pa-open-hint { position: absolute; left: 24px; right: 24px; top: 724px; margin: 0; text-align: center; font: 700 16px/1 var(--font); color: var(--ink-muted); }
+.pa-open-foot { position: absolute; left: 24px; right: 24px; bottom: 40px; }
+
+/* ---------------------------------------------------------------- the microphone */
+.pa-first-tz { position: relative; z-index: 1; display: grid; place-items: center; margin-bottom: -32px; }
+.pa-mic-stage { display: grid; place-items: center; height: 228px; margin-top: 12px; }
+.pa-promise { margin: 6px 12px 0; text-align: center; font: 600 16px/1.4 var(--font); color: var(--ink); text-wrap: balance; }
+.pa-hint { margin: 0; height: 60px; display: grid; place-items: center; font: 800 18px/1 var(--font); color: var(--accent); }
+
+/* Day one */
+.pa-streak-tz { display: grid; place-items: center; margin-top: 4px; }
+.pa-day-h { margin-top: 2px; font-size: 62px; line-height: 1; }
+.pa-day-sub { margin-top: 8px; color: var(--ink-muted); }
+.pa-week { display: flex; justify-content: space-between; margin-top: 26px; padding: 0 2px; }
+.pa-day { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 44px; }
+.pa-day i { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; box-shadow: inset 0 0 0 2.5px color-mix(in srgb, var(--ink) 30%, transparent); color: transparent; }
+.pa-day.is-today i { box-shadow: inset 0 0 0 2.5px var(--accent); }
+.pa-day.is-today.is-on i { background: var(--accent); box-shadow: 0 3px 0 var(--lip-crema); color: var(--btn-ink); }
+.pa-day small { font: 700 13px/1 var(--font); color: var(--ink-muted); }
+.pa-day.is-today small { color: var(--ink-strong); }
+/* The reminder as iOS will show it: a notification, in the system's own type. */
+.pa-note { flex: none; display: flex; align-items: center; gap: 12px; margin: 0 0 14px; padding: 12px 14px; border-radius: 24px; background: rgba(255, 255, 255, 0.86); -webkit-backdrop-filter: blur(20px) saturate(1.5); backdrop-filter: blur(20px) saturate(1.5); color: #000; font-family: -apple-system, "SF Pro Text", ui-sans-serif, system-ui, sans-serif; }
+.pa-note .app-ic { flex: none; border-radius: 9px; font-size: 18px; }
+.pa-note-text { flex: 1 1 auto; min-width: 0; }
+.pa-note-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.pa-note-top b { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+.pa-note-top small { font-size: 13px; font-variant-numeric: tabular-nums; color: rgba(60, 60, 67, 0.6); }
+.pa-note p { margin: 1px 0 0; font-size: 15px; line-height: 1.3; letter-spacing: -0.01em; }
+
+/* ---------------------------------------------------------------- leaving */
+.pa-top { flex: none; display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; height: 44px; margin: -6px -14px 0; text-align: center; }
+.pa-top b { font: 700 17px/1 var(--font); color: var(--ink-strong); }
+.k-parla .q-back { color: var(--ink) !important; }
+.k-parla .q-back.is-down { background: var(--inset); }
+
+/* 1 · one question */
+.pa-list { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+.k-parla .row { min-height: 80px; padding: 12px 18px 12px 15px; border-radius: 24px; background: var(--panel); color: var(--ink-strong); font: 700 17.5px/1.25 var(--font); letter-spacing: 0; }
+.k-parla .row .row-label { text-wrap: balance; }
+.k-parla .row .tile { width: 50px; height: 50px; border-radius: 14px; background: var(--inset); color: var(--accent); transition: background-color 200ms ease, color 200ms ease; }
+.k-parla .row .tile .ic { width: 24px; height: 24px; stroke-width: 2.1; }
+.k-parla .row .check { box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--ink) 34%, transparent); }
+.k-parla .row.is-on { color: var(--btn-ink); }
+.k-parla .row.is-on .tile { background: var(--ground); color: var(--btn); }
+.k-parla .row.is-on .check { background: var(--btn-ink); color: var(--btn); box-shadow: none; }
+
+/* 2 · a break */
+.pa-break-tz { display: grid; place-items: center; margin-top: 6px; }
+.pa-months { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
+.pa-month { display: flex; flex-direction: column; align-items: center; padding: 14px 4px 12px; border-radius: 24px; background: var(--panel); color: var(--ink-strong) !important; box-shadow: 0 4px 0 var(--inset); transform-origin: 50% 100%; transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease; }
+.pa-month b { font: 800 46px/1 var(--font-display); }
+.pa-month span { margin-top: -2px; font: 700 16px/1.2 var(--font); }
+.pa-month small { margin-top: 10px; padding: 5px 10px 3px; border-radius: 999px; background: var(--inset); font: 700 13px/1.2 var(--font); font-variant-numeric: tabular-nums; color: var(--ink); white-space: nowrap; transition: background-color 200ms ease, color 200ms ease; }
+.pa-month.is-on { background: var(--btn); color: var(--btn-ink) !important; box-shadow: 0 4px 0 var(--lip); }
+.pa-month.is-on small { background: var(--accent); color: var(--btn-ink); }
+.pa-steps { display: grid; grid-template-columns: 1fr 18px 1fr 18px 1fr; align-items: start; margin-top: 28px; text-align: center; }
+.pa-step { display: flex; flex-direction: column; align-items: center; }
+.pa-step-ic { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 9px; border-radius: 50%; background: var(--inset); color: var(--accent); }
+.pa-step b { font: 800 16px/1.15 var(--font); color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.pa-step small { margin-top: 2px; font: 600 13.5px/1.25 var(--font); color: var(--ink-muted); text-wrap: balance; }
+.pa-link { height: 3px; margin-top: 23px; border-radius: 2px; background: color-mix(in srgb, var(--ink) 38%, transparent); }
+
+/* 3 · ci vediamo */
+.pa-bye-tz { display: grid; place-items: center; margin-top: 34px; }
+.pa-remind-row { display: flex; justify-content: center; margin-top: 18px; }
+.pa-remind { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 1px 16px 0 13px; border-radius: 999px; background: var(--inset); color: var(--accent); font: 700 15px/1 var(--font); font-variant-numeric: tabular-nums; }

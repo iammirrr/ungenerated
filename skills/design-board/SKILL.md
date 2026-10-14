@@ -43,6 +43,10 @@ F.def({
 - In `ctx.mode !== 'flow'` a screen may demo itself (a finger taps the answer); in the flow it waits
   for the person.
 - `#only-<id>` shows one screen at real size; `#play` and `#play-<id>` open the flow.
+- **Motion style.** `style: 'calm'` on a screen (or on `window.BOARD` for the whole app) makes the
+  engine's helpers move in that personality and picks the screen-to-screen move: `fade`, `push`,
+  `step`, `carry`, `iris` or `grow` (`motion-styles`). The Kit view's Motion styles row shows the
+  same screen in all seven, so the reviewer can pick by feel.
 
 ## The board's layout (keep it)
 

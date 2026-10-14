@@ -1,0 +1,503 @@
+{
+  "about": "Every flow the example apps show, in order, with what each step does and why. Three flows per kind, each in a different app and motion style. The page's flow player, the board's rows and the screenshots all read this file.",
+  "flows": [
+    {
+      "id": "stride-open",
+      "app": "stride",
+      "kind": "opening",
+      "title": "The opening",
+      "summary": "Four beats of kinetic type on one stage, the button only on the last.",
+      "skills": [
+        "opening-hook",
+        "motion-styles",
+        "human-copy"
+      ],
+      "steps": [
+        {
+          "id": "stride-open",
+          "name": "Run at your pace",
+          "shot": 9600,
+          "note": "One hero carries every beat: the volt lane. RUN slams in, your pace ticks down to 5:42, the plans from a book are struck through, and week one is built from your last run. The lane opens into the button on the last beat."
+        }
+      ]
+    },
+    {
+      "id": "parla-open",
+      "app": "parla",
+      "kind": "opening",
+      "title": "The opening",
+      "summary": "A mascot, one phrase, and a microphone you hold before anything is asked.",
+      "skills": [
+        "opening-hook",
+        "bubbly-motion",
+        "human-copy"
+      ],
+      "steps": [
+        {
+          "id": "parla-open",
+          "name": "Say it out loud",
+          "shot": 7700,
+          "note": "Tazza pops in once and carries the beats. The hands-on moment is real: a finger holds the mic and the phrase lights word by word. Only the last beat has a button."
+        }
+      ]
+    },
+    {
+      "id": "loaf-open",
+      "app": "loaf",
+      "kind": "opening",
+      "title": "The opening",
+      "summary": "A camera, not a slideshow: the crumb, the jar, the rise, the plan.",
+      "skills": [
+        "opening-hook",
+        "continuity",
+        "motion-styles"
+      ],
+      "steps": [
+        {
+          "id": "loaf-opening",
+          "name": "Bread on its own clock",
+          "shot": 12200,
+          "note": "Fades in on the crumb in a letterbox as the lights come up, the first line rising out of its mask; the camera tilts down to the jar, which carries three beats: fed, rising while the clock flows, today’s peak. The plan, then the button."
+        }
+      ]
+    },
+    {
+      "id": "ripe-onboarding",
+      "app": "ripe",
+      "kind": "onboarding",
+      "title": "Questions to a plan",
+      "summary": "Five quick answers, each one reused, flowing into the plan.",
+      "skills": [
+        "onboarding-questions",
+        "plan-reveal",
+        "human-copy"
+      ],
+      "steps": [
+        {
+          "id": "ripe-goal",
+          "name": "What would you change?",
+          "shot": 3200,
+          "note": "Four picture cards, one pick, no paragraphs. The colour floods from the finger, the screen moves on by itself, and the flooded card pours into the next screen’s glass."
+        },
+        {
+          "id": "ripe-weight",
+          "name": "Where you are, where you’d like to be",
+          "shot": 4400,
+          "note": "Two values on one liquid gauge. The pace is theirs, half a kilo a week, and so is the date it lands on."
+        },
+        {
+          "id": "ripe-loves",
+          "name": "Foods you’d never give up",
+          "shot": 4000,
+          "note": "Real photos to pick from. The plan keeps every one of them, and says so: nothing is banned. Each pick gets a heart that follows the food through the plan."
+        },
+        {
+          "id": "ripe-day",
+          "name": "How your days go",
+          "shot": 3200,
+          "note": "Pictures of a day instead of a quiz: four rows, each a thin strip of the day with its meals on it. The strip they pick flies into the plan."
+        },
+        {
+          "id": "ripe-plan",
+          "name": "Your plan",
+          "shot": 4800,
+          "note": "Each answer flies into the plan card and becomes its value. The curve is an estimate from their own numbers, and says so in small print."
+        }
+      ]
+    },
+    {
+      "id": "stride-onboarding",
+      "app": "stride",
+      "kind": "onboarding",
+      "title": "Questions to week one",
+      "summary": "A ruler, a week, a race: three answers that become three runs.",
+      "skills": [
+        "onboarding-questions",
+        "interaction-feel",
+        "plan-reveal"
+      ],
+      "steps": [
+        {
+          "id": "stride-distance",
+          "name": "Your longest run",
+          "shot": 4400,
+          "note": "A ruler you drag. It follows the finger, the number flows, and the laps and week one’s easy runs change as you drag."
+        },
+        {
+          "id": "stride-days",
+          "name": "The days you can run",
+          "shot": 4000,
+          "note": "The seven days of week one, from today, as lanes; a preset lights its days in a wave, each landing on the beat."
+        },
+        {
+          "id": "stride-goal",
+          "name": "What you’re training for",
+          "shot": 2400,
+          "note": "Four big tiles, one pick, and the screen moves on. The pick slams in."
+        },
+        {
+          "id": "stride-week",
+          "name": "Week one",
+          "shot": 3800,
+          "note": "The answers become three runs on the days they chose: the easy runs from their longest run, the long run from the race."
+        }
+      ]
+    },
+    {
+      "id": "halves-onboarding",
+      "app": "halves",
+      "kind": "onboarding",
+      "title": "Questions to the month",
+      "summary": "Two names, two incomes, one way to split, then a month that adds up.",
+      "skills": [
+        "onboarding-questions",
+        "plan-reveal",
+        "no-slop"
+      ],
+      "steps": [
+        {
+          "id": "halves-who",
+          "name": "Who’s in",
+          "shot": 3200,
+          "note": "Names are the one thing worth typing, so they are typed on the keyboard: Mia, next, Sam. Two people, two avatars, nothing else on the screen."
+        },
+        {
+          "id": "halves-income",
+          "name": "What comes in",
+          "shot": 5400,
+          "note": "Two take-home pays, dragged along one scale. As they land, one bar splits exactly 53 to 47 and the total rolls to £4,630. Nothing overshoots."
+        },
+        {
+          "id": "halves-split",
+          "name": "How you split",
+          "shot": 3200,
+          "note": "Three ways to split, each drawn as the bar it makes from their own incomes. The answer is the button."
+        },
+        {
+          "id": "halves-plan",
+          "name": "The month",
+          "shot": 4600,
+          "note": "Each answer glides into its row, 170 ms apart, then one check on the mark. £4,630 in, £4,218 out, £412 put away."
+        }
+      ]
+    },
+    {
+      "id": "lull-paywall",
+      "app": "lull",
+      "kind": "paywall",
+      "title": "The paywall",
+      "summary": "Tonight first, then every price, then the reminder the trial promised.",
+      "skills": [
+        "paywall",
+        "consent-and-permissions",
+        "motion-styles"
+      ],
+      "steps": [
+        {
+          "id": "lull-value",
+          "name": "Tonight",
+          "shot": 4500,
+          "note": "One value beat before the price, made from their answers: wind down at 10:50, lights out at 11:10. Nothing is invented."
+        },
+        {
+          "id": "lull-paywall",
+          "name": "Every price",
+          "shot": 2400,
+          "note": "Both prices before any tap; the trial as a timeline with real dates; one button that names the outcome; Restore and how to cancel under it."
+        },
+        {
+          "id": "lull-remind",
+          "name": "The reminder",
+          "shot": 3800,
+          "note": "The timeline promised a reminder, so notifications are asked for here, with the date on screen. The real system alert, its real words."
+        },
+        {
+          "id": "lull-tonight",
+          "name": "All set",
+          "shot": 2400,
+          "note": "The first screen of the product, breathing slowly: tonight’s wind-down, the sound, the time."
+        }
+      ]
+    },
+    {
+      "id": "ripe-paywall",
+      "app": "ripe",
+      "kind": "paywall",
+      "title": "The paywall",
+      "summary": "Their first week of meals is the value, and it carries into the price.",
+      "skills": [
+        "paywall",
+        "plan-reveal",
+        "continuity"
+      ],
+      "steps": [
+        {
+          "id": "ripe-week",
+          "name": "Your first week",
+          "shot": 2600,
+          "note": "The value is their own week of meals, starting with pasta tonight and built from the foods they kept. The plates fly up into a strip on the next screen."
+        },
+        {
+          "id": "ripe-pay",
+          "name": "Every price",
+          "shot": 2000,
+          "note": "Both prices visible, the trial on a timeline with real dates, the week of meals still on screen. One button."
+        },
+        {
+          "id": "ripe-today",
+          "name": "Today",
+          "shot": 3600,
+          "note": "After paying, the plan working: three plates fly down from the week into today’s meals, and a glass of water fills as it is logged."
+        }
+      ]
+    },
+    {
+      "id": "stride-paywall",
+      "app": "stride",
+      "kind": "paywall",
+      "title": "The paywall",
+      "summary": "Dark and loud, still honest: both prices, the trial, then Health in context.",
+      "skills": [
+        "paywall",
+        "consent-and-permissions",
+        "motion-styles"
+      ],
+      "steps": [
+        {
+          "id": "stride-week",
+          "name": "Week one",
+          "shot": 3800,
+          "note": "The plan is the value beat: three runs built from their answers, before any price."
+        },
+        {
+          "id": "stride-pay",
+          "name": "Week one free",
+          "shot": 1800,
+          "note": "Both prices on screen, the trial on a timeline, cancel in Settings in plain words. Loud type, no countdown, no struck-out price."
+        },
+        {
+          "id": "stride-health",
+          "name": "Apple Health",
+          "shot": 4150,
+          "note": "The permission is asked where its reason is visible: runs from the watch land in week one. The toggle opens the real sheet."
+        }
+      ]
+    },
+    {
+      "id": "parla-permission",
+      "app": "parla",
+      "kind": "setup",
+      "title": "The microphone",
+      "summary": "The phrase first, then the ask, then the first word heard.",
+      "skills": [
+        "consent-and-permissions",
+        "bubbly-motion",
+        "human-copy"
+      ],
+      "steps": [
+        {
+          "id": "parla-first",
+          "name": "Your first phrase",
+          "shot": 3000,
+          "note": "The phrase comes first, so the reason for the microphone is on screen before anything is asked."
+        },
+        {
+          "id": "parla-mic",
+          "name": "Asked in context",
+          "shot": 6100,
+          "note": "The real system alert with its real text. Then the mic squishes under the finger and each word lights as it is heard."
+        },
+        {
+          "id": "parla-streak",
+          "name": "Day one",
+          "shot": 1700,
+          "note": "Tazza cheers, once. A daily reminder is asked for with the streak on screen, at the time they practise."
+        }
+      ]
+    },
+    {
+      "id": "fern-setup",
+      "app": "fern",
+      "kind": "setup",
+      "title": "The first plant",
+      "summary": "One photo, a name, a schedule that grows in, and the shelf.",
+      "skills": [
+        "setup-and-tour",
+        "consent-and-permissions",
+        "motion-styles"
+      ],
+      "steps": [
+        {
+          "id": "fern-scan",
+          "name": "Add your first plant",
+          "shot": 2700,
+          "note": "The camera, with a frame that says what to do. One plant, one photo; the shutter is the only button."
+        },
+        {
+          "id": "fern-id",
+          "name": "It’s a monstera",
+          "shot": 3800,
+          "note": "The plant is named, and its care grows in as a schedule: water every 9 days, bright, indirect light, and repot in spring."
+        },
+        {
+          "id": "fern-home",
+          "name": "Your shelf",
+          "shot": 5200,
+          "note": "The product: the plant on its shelf, the next watering, a drop that fills. It sways; it never bounces."
+        }
+      ]
+    },
+    {
+      "id": "loaf-setup",
+      "app": "loaf",
+      "kind": "setup",
+      "title": "The first bake",
+      "summary": "One question, the day drawn as a schedule, one coach mark.",
+      "skills": [
+        "setup-and-tour",
+        "consent-and-permissions",
+        "motion-styles"
+      ],
+      "steps": [
+        {
+          "id": "loaf-fed",
+          "name": "Your last feed",
+          "shot": 4300,
+          "note": "Time flows: the last feed on a ribbon of minutes under one needle, never a slot machine. The answer comes back as the hour it should peak."
+        },
+        {
+          "id": "loaf-schedule",
+          "name": "Your bake",
+          "shot": 3200,
+          "note": "The day drawn as the schedule it is. Notifications are asked for with the peak time on screen."
+        },
+        {
+          "id": "loaf-home",
+          "name": "Today",
+          "shot": 4200,
+          "note": "The product, like a magazine: today’s bake with its photos, and a single coach mark on the peak."
+        }
+      ]
+    },
+    {
+      "id": "fern-leaving",
+      "app": "fern",
+      "kind": "leaving",
+      "title": "Leaving, for budget",
+      "summary": "Seven screens, from the plan to coming back a month later.",
+      "skills": [
+        "cancel-flow",
+        "human-copy",
+        "no-slop"
+      ],
+      "steps": [
+        {
+          "id": "fern-plan",
+          "name": "Your plan",
+          "shot": 4200,
+          "note": "Where people expect it: the plan, its price, the next charge, who bills it. What it did for them comes first, in Fern’s own picture."
+        },
+        {
+          "id": "fern-why",
+          "name": "One question",
+          "shot": 3300,
+          "note": "Four answers in Fern’s words, no Other. One tap answers it."
+        },
+        {
+          "id": "fern-offer",
+          "name": "One offer",
+          "shot": 4200,
+          "note": "Budget gets the whole menu once: every price visible, the best value picked. Continue to cancel is a full button."
+        },
+        {
+          "id": "fern-keep",
+          "name": "What stays",
+          "shot": 3000,
+          "note": "Their numbers, what stays, what stops, and the exact day it stops."
+        },
+        {
+          "id": "fern-sheet",
+          "name": "Apple’s sheet",
+          "shot": 3700,
+          "note": "The platform does the cancelling, in its own sheet and its own words. Never faked inside the app."
+        },
+        {
+          "id": "fern-bye",
+          "name": "Goodbye",
+          "shot": 3600,
+          "note": "Their name, the exact date, no more charges, what they keep, and one tap to undo."
+        },
+        {
+          "id": "fern-back",
+          "name": "Coming back",
+          "shot": 4500,
+          "note": "A month later: the plants are still there, every price is visible, one tap to start again."
+        }
+      ]
+    },
+    {
+      "id": "halves-leaving",
+      "app": "halves",
+      "kind": "leaving",
+      "title": "Leaving, for another app",
+      "summary": "No offer for someone who has moved on: their data, in one tap.",
+      "skills": [
+        "cancel-flow",
+        "human-copy",
+        "motion-styles"
+      ],
+      "steps": [
+        {
+          "id": "halves-why",
+          "name": "One question",
+          "shot": 2900,
+          "note": "Halves’ own answers, no Other. They pick “We moved to another app”."
+        },
+        {
+          "id": "halves-export",
+          "name": "Take it with you",
+          "shot": 4400,
+          "note": "Pretending an offer will help is slop. Their months, exported in one tap, as a spreadsheet or a statement."
+        },
+        {
+          "id": "halves-bye",
+          "name": "Goodbye",
+          "shot": 3200,
+          "note": "Both names, the exact day, what stays readable, and the way back."
+        }
+      ]
+    },
+    {
+      "id": "parla-leaving",
+      "app": "parla",
+      "kind": "leaving",
+      "title": "Leaving, for a break",
+      "summary": "A break the App Store allows: renewal off, phrases kept, a reminder.",
+      "skills": [
+        "cancel-flow",
+        "bubbly-motion",
+        "human-copy"
+      ],
+      "steps": [
+        {
+          "id": "parla-why",
+          "name": "One question",
+          "shot": 3000,
+          "note": "Parla’s own answers. They pick “I’m taking a break”."
+        },
+        {
+          "id": "parla-break",
+          "name": "A break",
+          "shot": 4200,
+          "note": "The App Store can’t pause a plan, so the honest version: renewal off, every phrase kept, a reminder on the day they pick."
+        },
+        {
+          "id": "parla-bye",
+          "name": "Ci vediamo",
+          "shot": 3400,
+          "note": "Tazza waves, once. The exact date, what stays, one tap to undo."
+        }
+      ]
+    }
+  ]
+}

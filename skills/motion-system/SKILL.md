@@ -57,6 +57,8 @@ Only transform, opacity, blur and clip move on the board, so every move has a na
 
 ## Going further
 
+- `motion-styles`: the app's motion personality (calm, snappy, bubbly, precise, fluid, cinematic,
+  organic) on top of these rules, set with one line on the board.
 - `bubbly-motion`: the soft, alive layer for what the finger touches (squish, pop, goo, stretch).
 - `continuity`: planning a flow so one thing carries into the next (the thread sheet, the baton).
 

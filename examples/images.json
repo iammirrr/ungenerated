@@ -1,0 +1,366 @@
+{
+  "about": "Every picture the example apps use, with the prompt that makes it. Save each as examples/images/<id>.webp (or .png/.jpg); until then the screens show a placeholder. scripts/board-config.mjs writes IMAGE-PROMPTS.md from this file.",
+  "groups": [
+    {
+      "app": "parla",
+      "title": "Tazza, the mascot",
+      "note": "Make the first pose (hello), then ask for the others in the same chat: “the same character, now …”. Transparent backgrounds, so Tazza can stand on any screen. Keep the saucer’s base at the same height in every pose, about 90% of the way down, centred: the poses swap in place.",
+      "style": "A mascot for a language app: Tazza, a small white espresso cup with a rounded body, one curved handle on its right, a thin tomato-red band around the rim, two big glossy black eyes with a white highlight, a tiny smile and soft pink cheeks, two short rounded arms, standing on a cream #FFE7B8 saucer with a thin tomato-red rim. Soft matte 3D vinyl-toy render, gentle studio light from the top left, a very soft contact shadow, rounded shapes everywhere, warm and simple. No text, no letters, no logos."
+    },
+    {
+      "app": "loaf",
+      "title": "Photographs",
+      "note": "One chat, so the light and the board match across the four photos.",
+      "style": "Editorial food photography for a sourdough baking app: natural window light from the left, warm and soft, deep shadows, a dusting of flour, a dark rye-brown wooden surface, shallow depth of field, a 50 mm lens, subtle film grain, a muted warm palette of cream, crust brown and rye black. No faces, no text, no logos, no brand packaging."
+    },
+    {
+      "app": "ripe",
+      "title": "Food photographs",
+      "note": "Straight down, the same yellow surface in every picture, so the foods line up as a set. The screens crop each photo to a circle, so keep the bowl or plate centred.",
+      "style": "Bright overhead food photography for a meal-planning app: shot straight down on a pale butter-yellow #FFF4D6 surface, soft daylight, short gentle shadows, fresh and colourful, one simple cream ceramic bowl or plate, generous space around it. No hands, no text, no logos."
+    },
+    {
+      "app": "stride",
+      "title": "Photograph",
+      "note": "One picture, for the opening. Tall, so it can fill the phone.",
+      "style": "Night running photography: a wet track at night, cold stadium light, deep blacks, one volt-yellow #D4FF3F streak of light, motion blur, high contrast, grain. No faces, no logos on shoes or clothes, no text."
+    },
+    {
+      "app": "lull",
+      "title": "Illustrations",
+      "note": "Painted, not photographed: Lull should feel like a picture book at bedtime.",
+      "style": "Quiet painterly illustration for a sleep app: soft gouache texture, a muted palette of dusk blue #DCE4EC, midnight #121D33 and one warm lamp orange #D9822B, calm and sparse. No people, no text."
+    },
+    {
+      "app": "fern",
+      "title": "Plant photographs",
+      "note": "The same wall, pot and light for every plant, so the shelf looks like one home.",
+      "style": "Natural plant photography for a plant-care app: one houseplant in a plain terracotta pot against a soft sage-green #DFE6D8 wall, diffused daylight from a window on the left, calm, true colours, the plant centred with space around it. No people, no text, no logos."
+    },
+    {
+      "app": "halves",
+      "title": "Avatars",
+      "note": "Flat, so they sit well at 40 points.",
+      "style": "Flat illustrated avatar for a budgeting app: simple geometric shapes, friendly, ink-black #111110 outlines, a flat marigold #F2B705 circle behind the head, no shading, no text."
+    },
+    {
+      "app": "icons",
+      "title": "App icons",
+      "note": "Full square with no rounded corners (iOS adds them). Nothing small: an icon is read at 60 points.",
+      "style": "An iOS app icon, 1024 × 1024, full square with no rounded corners, one bold simple subject centred with generous margin, flat colour background. No text, no letters."
+    }
+  ],
+  "images": [
+    {
+      "id": "parla-tazza-hello",
+      "app": "parla",
+      "kind": "mascot",
+      "transparent": true,
+      "size": "Square, 1024 × 1024",
+      "label": "Tazza waving hello",
+      "used": "the opening, Day one",
+      "prompt": "Tazza standing on its saucer, waving hello with its right arm raised high, eyes wide and happy, a tiny curl of steam above the rim. Full body, centred, transparent background."
+    },
+    {
+      "id": "parla-tazza-listen",
+      "app": "parla",
+      "kind": "mascot",
+      "transparent": true,
+      "size": "Square, 1024 × 1024",
+      "label": "Tazza listening",
+      "used": "the first phrase, the opening’s mic beat",
+      "prompt": "The same Tazza, leaning slightly to its left, one arm cupped beside its body as if listening closely, eyes curious and looking up. Full body, centred, transparent background."
+    },
+    {
+      "id": "parla-tazza-cheer",
+      "app": "parla",
+      "kind": "mascot",
+      "transparent": true,
+      "size": "Square, 1024 × 1024",
+      "label": "Tazza cheering",
+      "used": "“Perfetto”, day one",
+      "prompt": "The same Tazza cheering, both arms up, eyes closed in two happy curves, mouth open in a smile, two small curls of steam rising. Full body, centred, transparent background."
+    },
+    {
+      "id": "parla-tazza-sleep",
+      "app": "parla",
+      "kind": "mascot",
+      "transparent": true,
+      "size": "Square, 1024 × 1024",
+      "label": "Tazza asleep",
+      "used": "taking a break",
+      "prompt": "The same Tazza asleep, tilted gently to one side on its saucer, eyes closed as two soft lines, arms resting, one slow curl of steam. Full body, centred, transparent background."
+    },
+    {
+      "id": "parla-tazza-wave",
+      "app": "parla",
+      "kind": "mascot",
+      "transparent": true,
+      "size": "Square, 1024 × 1024",
+      "label": "Tazza waving goodbye",
+      "used": "the goodbye",
+      "prompt": "The same Tazza waving goodbye with one arm, holding a tiny crema #FFE7B8 suitcase with a brick-red handle in the other, a warm small smile. Full body, centred, transparent background."
+    },
+    {
+      "id": "loaf-crumb",
+      "app": "loaf",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "Sourdough crumb, close",
+      "used": "Loaf’s opening, today",
+      "prompt": "Close-up of a sliced sourdough loaf showing an open, glossy crumb with irregular holes and a dark caramelised crust with a sharp ear, the cut face towards the camera, on a floured board."
+    },
+    {
+      "id": "loaf-jar",
+      "app": "loaf",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "Starter rising in its jar",
+      "used": "the first bake, the opening, today",
+      "prompt": "A tall glass jar of bubbly sourdough starter that has doubled, large bubbles pressed against the glass, a red-orange rubber band around the jar where it started, a folded linen cloth beside it. Keep the bubbles and the rubber band in the middle third of the frame, so the picture also works cropped to a wide strip."
+    },
+    {
+      "id": "loaf-hands",
+      "app": "loaf",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "Hands shaping dough",
+      "used": "today’s bake, the schedule",
+      "prompt": "Seen from above: two floured hands shaping a round of dough on a wooden board, only hands and forearms in the frame, sleeves rolled up."
+    },
+    {
+      "id": "loaf-oven",
+      "app": "loaf",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "A boule out of the oven",
+      "used": "today’s bake, the schedule",
+      "prompt": "A freshly baked sourdough boule in an open cast-iron pot, a little steam rising, a deep brown crust with a burst ear, oven gloves out of focus at the edge."
+    },
+    {
+      "id": "ripe-pasta",
+      "app": "ripe",
+      "kind": "photo",
+      "size": "Square, 1024 × 1024",
+      "label": "Pasta with tomatoes",
+      "used": "foods they keep, the week",
+      "prompt": "A bowl of spaghetti with cherry tomatoes, basil and shaved parmesan."
+    },
+    {
+      "id": "ripe-bowl",
+      "app": "ripe",
+      "kind": "photo",
+      "size": "Square, 1024 × 1024",
+      "label": "Salmon rice bowl",
+      "used": "foods they keep, the week, today",
+      "prompt": "A rice bowl with seared salmon, avocado slices, cucumber, edamame and sesame seeds."
+    },
+    {
+      "id": "ripe-cheese",
+      "app": "ripe",
+      "kind": "photo",
+      "size": "Square, 1024 × 1024",
+      "label": "Three cheeses",
+      "used": "foods they keep",
+      "prompt": "A small round board of three cheeses with red grapes and a few crackers."
+    },
+    {
+      "id": "ripe-chocolate",
+      "app": "ripe",
+      "kind": "photo",
+      "size": "Square, 1024 × 1024",
+      "label": "Dark chocolate",
+      "used": "foods they keep",
+      "prompt": "A few broken squares of dark chocolate with a handful of raspberries."
+    },
+    {
+      "id": "ripe-curry",
+      "app": "ripe",
+      "kind": "photo",
+      "size": "Square, 1024 × 1024",
+      "label": "Chickpea curry",
+      "used": "foods they keep, the week",
+      "prompt": "A bowl of chickpea and spinach curry with a spoon of yogurt, rice on the side."
+    },
+    {
+      "id": "ripe-toast",
+      "app": "ripe",
+      "kind": "photo",
+      "size": "Square, 1024 × 1024",
+      "label": "Toast with ricotta",
+      "used": "foods they keep",
+      "prompt": "A slice of toasted sourdough with ricotta, honey and a few thyme leaves."
+    },
+    {
+      "id": "ripe-yogurt",
+      "app": "ripe",
+      "kind": "photo",
+      "size": "Square, 1024 × 1024",
+      "label": "Yogurt with raspberries",
+      "used": "the week, today",
+      "prompt": "A bowl of thick yogurt with raspberries, granola and a drizzle of honey."
+    },
+    {
+      "id": "stride-track",
+      "app": "stride",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "Running on a wet track at night",
+      "used": "Stride’s opening",
+      "prompt": "A runner’s legs and shoes mid-stride on a wet running track at night, the lane lines glowing, the stadium lights streaked by motion blur behind. Keep the lower 40% mostly dark wet track: the opening’s words sit there."
+    },
+    {
+      "id": "lull-window",
+      "app": "lull",
+      "kind": "illustration",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "A window at night, rain",
+      "used": "tonight, all set",
+      "prompt": "A window at night seen from inside a dark bedroom, rain drops on the glass, the lights of a town blurred outside, a small warm lamp on the sill at the lower left, the lower middle quiet and dark, the main subject in the centre square."
+    },
+    {
+      "id": "lull-rain",
+      "app": "lull",
+      "kind": "illustration",
+      "size": "Square, 1024 × 1024",
+      "label": "Rain on a tin roof",
+      "used": "sounds",
+      "prompt": "Rain falling on a tin roof at night, seen close, soft and grey-blue."
+    },
+    {
+      "id": "lull-train",
+      "app": "lull",
+      "kind": "illustration",
+      "size": "Square, 1024 × 1024",
+      "label": "A night train",
+      "used": "sounds",
+      "prompt": "A night train crossing a dark valley, its windows warm and lit."
+    },
+    {
+      "id": "lull-sea",
+      "app": "lull",
+      "kind": "illustration",
+      "size": "Square, 1024 × 1024",
+      "label": "The sea at night",
+      "used": "sounds",
+      "prompt": "A calm sea at night under a low moon, small soft waves."
+    },
+    {
+      "id": "fern-monstera",
+      "app": "fern",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "Monstera",
+      "used": "the camera, the first plant, the shelf, coming back",
+      "prompt": "A healthy Monstera deliciosa with large split leaves. Centred, with generous space on every side: it fills a camera viewfinder that shows only the middle of the picture."
+    },
+    {
+      "id": "fern-pothos",
+      "app": "fern",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "Golden pothos",
+      "used": "the plan, coming back",
+      "prompt": "A golden pothos with leaves trailing over the edge of the pot."
+    },
+    {
+      "id": "fern-fig",
+      "app": "fern",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "Fiddle-leaf fig",
+      "used": "the plan, coming back",
+      "prompt": "A fiddle-leaf fig about a metre tall."
+    },
+    {
+      "id": "fern-snake",
+      "app": "fern",
+      "kind": "photo",
+      "size": "Portrait 2:3, 1024 × 1536",
+      "label": "Snake plant",
+      "used": "the plan",
+      "prompt": "A snake plant with tall upright striped leaves."
+    },
+    {
+      "id": "halves-mia",
+      "app": "halves",
+      "kind": "avatar",
+      "size": "Square, 1024 × 1024",
+      "label": "Mia",
+      "used": "who’s in (64 pt), what comes in (38 pt), the goodbye (92 pt)",
+      "prompt": "Portrait avatar of a woman in her early thirties with short dark curly hair and round glasses, shoulders up, smiling."
+    },
+    {
+      "id": "halves-sam",
+      "app": "halves",
+      "kind": "avatar",
+      "size": "Square, 1024 × 1024",
+      "label": "Sam",
+      "used": "who’s in (64 pt), what comes in (38 pt), the goodbye (92 pt)",
+      "prompt": "Portrait avatar of a man in his early thirties with a short beard and a striped shirt, shoulders up, smiling."
+    },
+    {
+      "id": "loaf-icon",
+      "app": "icons",
+      "kind": "icon",
+      "size": "Square, 1024 × 1024",
+      "label": "Loaf’s icon",
+      "used": "the page, the paywall",
+      "prompt": "A simple stylised sourdough boule seen from the side, cream-coloured with one curved score, on a flat deep crust-brown #BF4F1A background, minimal flat illustration with a soft inner shadow."
+    },
+    {
+      "id": "stride-icon",
+      "app": "icons",
+      "kind": "icon",
+      "size": "Square, 1024 × 1024",
+      "label": "Stride’s icon",
+      "used": "the page, the paywall",
+      "prompt": "One bold volt-yellow #D4FF3F stroke leaning forward like a lane line in motion, on a flat asphalt-black #0E0F0C background."
+    },
+    {
+      "id": "ripe-icon",
+      "app": "icons",
+      "kind": "icon",
+      "size": "Square, 1024 × 1024",
+      "label": "Ripe’s icon",
+      "used": "the page, the paywall",
+      "prompt": "A single glossy raspberry, softly stylised, on a flat butter-yellow #FFF4D6 background, soft 3D render."
+    },
+    {
+      "id": "halves-icon",
+      "app": "icons",
+      "kind": "icon",
+      "size": "Square, 1024 × 1024",
+      "label": "Halves’ icon",
+      "used": "the page",
+      "prompt": "A circle split down the middle into an ink-black #111110 half and a marigold #F2B705 half, on an off-white #F3F3EE background, flat."
+    },
+    {
+      "id": "lull-icon",
+      "app": "icons",
+      "kind": "icon",
+      "size": "Square, 1024 × 1024",
+      "label": "Lull’s icon",
+      "used": "the page, the paywall",
+      "prompt": "A thin crescent moon that glows like a lamp, soft orange #D9822B, on a deep midnight-blue #121D33 background, a gentle gouache texture."
+    },
+    {
+      "id": "parla-icon",
+      "app": "icons",
+      "kind": "icon",
+      "size": "Square, 1024 × 1024",
+      "label": "Parla’s icon",
+      "used": "the page",
+      "prompt": "Tazza’s face close up (a white espresso cup with big glossy black eyes and a tiny smile) on a flat tomato-red #E4472E background, soft 3D render."
+    },
+    {
+      "id": "fern-icon",
+      "app": "icons",
+      "kind": "icon",
+      "size": "Square, 1024 × 1024",
+      "label": "Fern’s icon",
+      "used": "the page",
+      "prompt": "A single unfurling fern frond in deep green #16221A rising from a small terracotta #B4572F pot, on a flat sage #DFE6D8 background, minimal flat illustration."
+    }
+  ]
+}

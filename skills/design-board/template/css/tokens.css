@@ -111,3 +111,10 @@
   --glass-line: rgba(240, 238, 232, 0.1);
   --home-ind: #f2f0ea;
 }
+
+/* The picked state: a tint of the accent on the panel. Set on each phone, not on :root, so it
+ * follows the kit the phone uses (a kit class on .ph changes --accent and --panel). */
+.ph {
+  --sel-bg: color-mix(in srgb, var(--accent) 16%, var(--panel));
+  --sel-down: color-mix(in srgb, var(--accent) 24%, var(--panel));
+}
