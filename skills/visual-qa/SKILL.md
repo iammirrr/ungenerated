@@ -29,6 +29,8 @@ A screen is not done until you have looked at it, at the moments that matter, in
 - An element blinking out for a frame (a swap), or appearing at full size (a pop).
 - A device cut off by the frame or the layout.
 - Corners that don't nest (inner radius should be outer minus padding).
+- Grey square corners outside a rounded card: its shadow is being cut by a clip the size of the
+  card (a `clip-path` on the web, a mask or clip natively). Clip the content, not the shadow.
 - A layout that collapsed: usually a class name clashing with an older rule. Rename yours.
 - Positions measured before fonts loaded (things land a few points off).
 - Content behind content (z-order) and empty screens during a transition.

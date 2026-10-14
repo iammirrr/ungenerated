@@ -27,7 +27,8 @@ reviewed with Picks and Notes, and only approved screens are built natively. Thi
 7. **Check** every screen with `visual-qa` (real screenshots, mid-motion frames) and `no-slop`
    before showing it. `accessibility-pass` before anything is approved.
 8. **Review** (`design-review`): read the reviewer's Picks and Notes, log them, fix in passes.
-9. **Build** (`native-port`): only approved screens, section by section, compared side by side.
+9. **Build** (`board-to-app`, `native-port`): only approved screens, one section at a time, each
+   playable alone with a test bar, compared side by side with the board.
 10. **Ship** (`app-store-assets`): store screenshots and the preview, made from the board.
 
 ## Rules that hold across every step

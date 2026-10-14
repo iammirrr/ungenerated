@@ -125,6 +125,7 @@ before you see it. You review on the board with Pick and Note; the next pass rea
 | [`no-slop`](skills/no-slop/SKILL.md) | The checklist every screen passes before anyone sees it. |
 | [`accessibility-pass`](skills/accessibility-pass/SKILL.md) | Check app screens for accessibility before approval. |
 | [`native-port`](skills/native-port/SKILL.md) | Build approved board screens natively in SwiftUI or Jetpack Compose. |
+| [`board-to-app`](skills/board-to-app/SKILL.md) | Turn an approved board section into a working native demo that plays exactly like the board. |
 | [`app-store-assets`](skills/app-store-assets/SKILL.md) | Make App Store and Play Store screenshots and the preview video from the design board. |
 
 ## The design board

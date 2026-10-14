@@ -49,6 +49,7 @@
         "no-slop",
         "accessibility-pass",
         "native-port",
+        "board-to-app",
         "app-store-assets"
       ]
     }

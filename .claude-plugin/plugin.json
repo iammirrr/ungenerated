@@ -1,7 +1,7 @@
 {
   "name": "ungenerated",
   "version": "0.1.0",
-  "description": "Design mobile apps with Claude: a live design board, a motion system, onboarding and paywall patterns, and a no-slop checklist, and the cancel flow.",
+  "description": "Design mobile apps with Claude: a live design board, a motion system, onboarding and paywall patterns, a no-slop checklist, the cancel flow, and native demos built from the board.",
   "author": { "name": "Mir", "url": "https://github.com/iammirrr" },
   "homepage": "https://iammirrr.github.io/ungenerated/",
   "repository": "https://github.com/iammirrr/ungenerated",
