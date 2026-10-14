@@ -66,3 +66,9 @@ Only transform, opacity, blur and clip move on the board, so every move has a na
 2. Look for: a pop (opacity 0→1 in one frame), a jump (an element changing parent), two animations
    on one element, a layout read before fonts loaded, a delay that leaves the screen empty.
 3. Fix the cause, never by slowing everything down.
+4. **Jitter means something is re-laid out every frame.** Animating a width, a height, padding or
+   a variable that moves text makes lines re-wrap and edges snap to pixels, worst inside a scaled
+   device. Build each state as a finished layout and move it only with transforms (translate,
+   rotate, scale) and clips. To change one screen into another, open the new one with an iris (a
+   growing clip from the centre) rather than a crossfade; to land a card on a screen, make the
+   screen the same layout at the same scale, so the card lands on it exactly.
