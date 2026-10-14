@@ -63,7 +63,7 @@ the app feels finished.
 - **Toasts** for what just happened, in under three seconds, one at a time, with Undo when it can
   be undone ("Switched to Admin", "Break started", "Note saved").
 - **The platform's own alert** for anything destructive, with the destructive word in red and a
-  safer choice first ("Delete Flamely dev?" → Cancel, Archive instead, Delete).
+  safer choice first ("Delete Side project?" → Cancel, Archive instead, Delete).
 - **Notifications** in the app's own words, each with a switch in Settings, and the important ones
   answerable without opening the app (a reply field on the Lock Screen).
 - **An updates list** for what the person missed while away.

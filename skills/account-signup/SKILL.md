@@ -15,7 +15,7 @@ description: Place and design the sign-up so it feels like saving progress, not 
 3. **Say why:** "Save your setup for your phone and computer." One line.
 4. **Play the use case in the centre.** "Almost done." at the top (title size, not a poster), then
    the opening's own picture playing the product in three short beats, one caption line each. For
-   a focus tracker: the hero lights ("Light the candle."), the distracting apps float in round it
+   a focus tracker: the hero lights up, the distracting apps float in round it
    with their badges; a focus ring draws, a clock runs and the apps fade ("Focus. The pull
    fades."); the ring becomes today's projects and the hours count up ("Every minute, tracked.").
    Chips listing their settings looked static and said nothing about what the product does; the

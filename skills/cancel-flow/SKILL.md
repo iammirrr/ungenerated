@@ -60,7 +60,7 @@ much as the logic.
 - **Big things.** Large icons on the answers, large numbers for their value ("412 h"), one idea
   per screen. Small grey rows read as a form; a form reads as a trap.
 - **The plan screen shows what it did for them** before any button: their hours, their best week,
-  the streak, in the product's own visuals (its ring, its candle, its chart), not a feature list.
+  the streak, in the product's own visuals (its ring, its mascot, its chart), not a feature list.
 - **Offers stand on the paywall's own ground and type**, so staying looks like the product they
   bought. The button that keeps the plan is made like the plan (the brand's gradient or texture,
   its icon); "Continue to cancel" is a plain full-width outline button under it, never a link.
