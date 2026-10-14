@@ -52,6 +52,33 @@ to one in three people who start it.
    Many trial cancels happen in the first minutes, from people who don't trust themselves to
    remember.
 
+## How each screen should look and feel
+
+These come from a flow that was built, reviewed screen by screen and approved; the feel matters as
+much as the logic.
+
+- **Big things.** Large icons on the answers, large numbers for their value ("412 h"), one idea
+  per screen. Small grey rows read as a form; a form reads as a trap.
+- **The plan screen shows what it did for them** before any button: their hours, their best week,
+  the streak, in the product's own visuals (its ring, its candle, its chart), not a feature list.
+- **Offers stand on the paywall's own ground and type**, so staying looks like the product they
+  bought. The button that keeps the plan is made like the plan (the brand's gradient or texture,
+  its icon); "Continue to cancel" is a plain full-width outline button under it, never a link.
+- **One question as big icon rows**, one tap answers it. "Another tool" shows the real icons of
+  the tools people actually move to, so the answer is recognised, not read.
+- **A break is a picker plus a timeline:** one, two or three months as big cards with the return
+  date under each; under that, three steps (today, the day it pauses, the day you're back) with
+  short links between the icons, never a line through them.
+- **The yearly answer keeps the year:** a discounted next year with the new price and date, and a
+  reminder a week before; no refund talk.
+- **Budget gets the whole menu at once** on one screen (a free month, a few months at half price,
+  a discounted year), every price visible, the best value picked. Never a second offer after a no.
+- **Before the platform sheet, "Look what you built":** their totals, big, and what stays.
+- **The goodbye finishes like the product**, with their numbers ("You tracked 412 hours with us")
+  and the exact last day; coming back is one tap from the same plan screen.
+- **Every screen keeps Cancel at the bottom**, the same place and the same weight, so nobody has to
+  look for it.
+
 ## Match the offer to the answer
 
 | They say | Offer | Watch for |
@@ -65,6 +92,30 @@ to one in three people who start it.
 Write the answers so they neither insult the product nor sound final: "doesn't fit my budget
 right now", not "too expensive"; "I'm taking a break", not "I don't use it anymore". Name the
 reasons only your customers have; specific answers make people stop and think.
+
+## The screens around the flow
+
+A real exit has more doors than the cancel button. Design these too (each is small):
+
+- **Plan status, plainly.** Status, plan, renewal date and who bills it, before any action.
+- **"How do I cancel?" help.** The platform's exact steps (on iOS: Settings → your name →
+  Subscriptions → the app → Cancel Subscription), who handles payments ("Apple bills this, not
+  us"), "If you don't see Cancel, you've already cancelled", and "Did this help?".
+- **Delete account is not cancel.** On the App Store the platform bills, so deleting an account
+  does not stop the subscription. The delete sheet says so first and offers "Manage subscription"
+  before "Delete". Give deletion a short grace period ("Undo within 10 days") and say what is
+  erased and from where.
+- **Leaving an offer.** If someone dismisses a one-time offer, at most one neutral confirm ("Give
+  up 33% off?" with "Keep the offer" and "Not now"), never shaming, never a second offer.
+- **Reminders that prevent angry cancels:** a week before a yearly renewal and before a trial's
+  first charge, with the date and the price; they cost a few saves and earn the trust that brings
+  people back.
+- **Failed payments are not a cancel.** Show a quiet banner with the platform's update-payment
+  sheet and its billing grace period; never route it into the cancel flow.
+- **Win-back is for the long gone,** weeks after the end: their data waiting, the price per week
+  or per month, "No commitment, cancel anytime". Not on the goodbye.
+- **Restore purchases** answers in place: "Your plan is back" or "Nothing to restore on this
+  Apple ID", never a dead end.
 
 ## Rules
 
@@ -112,7 +163,10 @@ reasons only your customers have; specific answers make people stop and think.
 ## On the board
 
 One row: the plan screen, the question, one card per answer's offer, what stays, the platform
-sheet, the goodbye, coming back, the trial case. A whole-part card plays one path end to end.
+sheet, the goodbye, coming back, the trial case. A second, smaller row for the screens around the
+flow: plan status, the help article, delete account, the renewal and trial reminders, the failed
+payment banner, win-back and restore. A whole-part card plays one path end to end.
 The board's demo finger acts inside a screen; only the whole-part card moves between screens.
 
-See `references/benchmarks.md` for the numbers and where they come from.
+See `references/benchmarks.md` for the numbers and where they come from, and
+`references/field-study.md` for what real apps do around the exit.

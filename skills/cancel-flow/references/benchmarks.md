@@ -48,6 +48,11 @@ use them as a starting point, then measure your own.
   offers can reach current subscribers (a discount from the next renewal); win-back offers reach
   lapsed ones. A free trial cannot be extended; cancelling during it normally keeps access until it ends
   (trust the expiration date StoreKit reports).
+- **App Store, more:** Apple runs a billing grace period and retries for failed payments (show
+  the update-payment sheet, never the cancel flow). Apple has also added ways to speak inside its
+  own cancel path (a retention message or offer configured in App Store Connect); check what your
+  account and region support before designing around it.
 - **Google Play:** subscriptions can be paused (one week to three months) and offers can target
-  existing subscribers.
+  existing subscribers; Play asks its own short cancellation survey, so don't ask the same
+  question twice.
 - **Web checkout:** the provider's portal cancels; link to it directly, no "email us".
