@@ -22,7 +22,7 @@ on the design-board template's engine and are published as the
 |---|---|
 | `apps.json` | Each app: its kit (colours, type, radius), its motion style, and its before/after pair for the page with the numbered notes for both phones. |
 | `flows.json` | Every flow: its steps in order, what each step does and why, the skills it shows, and the moment each step is screenshotted. |
-| `images.json` | Every picture the apps use, with the prompt that makes it. `IMAGE-PROMPTS.md` is written from it. |
+| `images.json` | Every picture the apps use, with the prompt that makes it. `IMAGE-PROMPTS.md`, the brief for ChatGPT, is written from it. |
 | `js/apps/<app>.js`, `css/apps/<app>.css` | Each app's screens. A screen is `F.def({ id, section: '<flow id>', style: '<motion style>', ... })`. |
 | `js/apps/common.js`, `css/common.css` | What they share: real dates, the iOS alert and sheet, pictures and their placeholders (`X.pic`), app icons, the mascot. |
 | `js/apps/embed.js`, `embed.html` | One phone on its own: `embed.html#<screen-id>` loops a screen, `embed.html#flow=<flow-id>` plays a flow. |
@@ -40,5 +40,7 @@ node scripts/build-site.mjs        # the home page, project pages, skill pages a
 node scripts/shots.mjs             # retake the screenshots and recordings
 ```
 
-Pictures: paste each set from `IMAGE-PROMPTS.md` into ChatGPT, save the originals in `images-src/`
-(not committed) by the names listed, run `node scripts/images.mjs`, rebuild.
+Pictures: upload `IMAGE-PROMPTS.md` to a new ChatGPT chat and send; it makes one picture per
+reply, each labelled with its file name, and “next” moves on. Save the originals in `images-src/`
+(not committed) by those names, run `node scripts/images.mjs`, rebuild. The brief lists only the
+pictures not made yet.

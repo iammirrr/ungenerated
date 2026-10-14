@@ -102,34 +102,66 @@ export const prompts = ({ APPS, IMAGES }) => {
   return { one, set, files, pics, iconOf, groups: G, sizeOf };
 };
 
-/** IMAGE-PROMPTS.md: every set, most visible first, ready to paste into ChatGPT. */
+/**
+ * IMAGE-PROMPTS.md: one brief, written to ChatGPT, for every picture not made yet. Upload it to a
+ * new chat (or paste it) and send: ChatGPT makes one picture per reply, in order, each labelled
+ * with its file name. The pictures go in sets, each with its own style.
+ */
 export const imagePrompts = (EX) => {
   const { APPS, IMAGES, PICS } = EX;
   const P = prompts(EX);
-  const name = (id) => (id === 'icons' ? 'App icons' : `${APPS.apps.find((a) => a.id === id).name}: ${P.groups[id].title}`);
-  // The icons show on every page; Tazza carries Parla; then the apps whose screens show the most pictures.
-  const sets = ['icons', 'parla', 'ripe', 'loaf', 'fern', 'lull', 'stride', 'halves'].filter((id) => P.groups[id]);
-  const out = [`# Image prompts
+  // The mascot first (Parla's icon is its face), then the icons (they show on every page), then
+  // the apps whose screens show the most pictures.
+  const ORDER = ['parla', 'icons', 'ripe', 'loaf', 'fern', 'lull', 'stride', 'halves'];
+  const sets = ORDER.filter((id) => P.groups[id]).map((id) => ({ id, g: P.groups[id], list: P.files(id).filter((i) => !PICS[i.id]) })).filter((x) => x.list.length);
+  const total = sets.reduce((n, x) => n + x.list.length, 0);
+  if (!total) return `# Pictures for seven app designs\n\nAll ${IMAGES.images.length} pictures are made.\n`;
+  const ownerOf = (i) => APPS.apps.find((a) => a.icon === i.id);
+  const mascotSet = (appId) => sets.findIndex((x) => x.id === appId && x.list.some((i) => i.kind === 'mascot'));
+  const shape = (i) => [/2:3/.test(i.size) ? 'portrait' : 'square', i.transparent ? 'transparent' : ''].filter(Boolean).join(', ');
+  const first = sets[0].list[0];
+  let n = 0;
+  const out = [`# Pictures for seven app designs
 
-The pictures the example projects use, as ChatGPT prompts: ${Object.keys(PICS).length} of ${IMAGES.images.length} made.
+A brief for ChatGPT: upload this file to a new chat, or paste all of it, and send.
 
-1. Open a new ChatGPT chat for each set and paste the set. It makes picture 1; say “next” for each one after.
-2. Save each picture as \`examples/images-src/<name>.png\`, with the names listed under its set, in order.
-3. Run \`node scripts/images.mjs\` (it writes light WebP files to \`examples/images/\`), then rebuild.
+You are making ${total} pictures for seven made-up mobile apps. They go inside the apps’ screens, so each one has to look like it belongs to its app and to the other pictures in its set.
 
-Until a picture exists, the screens show a placeholder in its place. To redo one picture, copy it
-alone from its project page on the site: each prompt there carries the style.
+## How to work
+
+1. One picture per reply, in the order of this file, starting with picture 1.
+2. A picture’s prompt is its set’s style, word for word, then the picture’s own description. Each set has its own look: start every set fresh from its style, and carry nothing over from the set before unless a picture says so.
+3. Under each picture, write only its number and file name, like this: \`1/${total} · ${first.id}.png\`
+4. Then wait. When I say “next”, make the next picture. When I say “redo” and a file name, make that picture again.
+5. Square is 1024 × 1024. Portrait is 1024 × 1536. Transparent means a real transparent PNG background around the subject, never a painted checkerboard.
+6. No text, letters, numbers, logos, watermarks, borders or frames in any picture.
+
+Start now with picture 1.
 `];
-  sets.forEach((id, n) => {
-    const list = P.files(id);
-    out.push(`## ${n + 1}. ${name(id)}
+  sets.forEach((x, k) => {
+    const a = APPS.apps.find((y) => y.id === x.id);
+    const title = a ? `${a.name}: ${x.g.title}` : x.g.title;
+    const intro = a ? `The app: ${a.what}` : 'One icon for each of the seven apps, each its own brand.';
+    const items = x.list.map((i) => {
+      const owner = x.id === 'icons' ? ownerOf(i) : null;
+      const m = owner ? mascotSet(owner.id) : -1;
+      const lead = owner ? `${owner.name} (${owner.category.toLowerCase()}). ` : '';
+      const same = m >= 0 ? ` Draw the same character as in set ${m + 1}.` : '';
+      const num = `${++n}. `;
+      return `${num}\`${i.id}.png\` · ${shape(i)}\n${' '.repeat(num.length)}${lead}${i.prompt}${same}`;
+    });
+    out.push(`## Set ${k + 1} · ${title} · ${x.list.length} picture${x.list.length > 1 ? 's' : ''}
 
-\`\`\`text
-${P.set(id)}
-\`\`\`
+${intro}
 
-Save as: ${list.map((i) => `\`${i.id}.png\`${PICS[i.id] ? ' (done)' : ''}`).join(', ')}.
+Style for every picture in this set:
+
+> ${x.g.style}
+
+${x.g.note || ''}
+
+${items.join('\n\n')}
 `);
   });
-  return out.join('\n');
+  return out.join('\n').replace(/\n{3,}/g, '\n\n');
 };

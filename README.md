@@ -140,9 +140,9 @@ project and run `node tools/serve.mjs`. The
 | `site-src/` | The site: the home page, the project pages and the skill pages. |
 | `scripts/` | `build-site.mjs` builds the site into `site/` on every push; `dev.mjs` serves the board while you work; `shots.mjs` retakes the screenshots; `images.mjs` turns pictures into light WebP files. |
 
-The pictures (the mascot, the food, the plants, the app icons) come from the ChatGPT prompts in
-[`examples/IMAGE-PROMPTS.md`](examples/IMAGE-PROMPTS.md). Until one exists, the screens show a
-placeholder.
+The pictures (the mascot, the food, the plants, the app icons) come from ChatGPT:
+[`examples/IMAGE-PROMPTS.md`](examples/IMAGE-PROMPTS.md) is a brief to upload to a chat, and it
+makes them one by one. Until one exists, the screens show a placeholder.
 
 ## Contributing
 

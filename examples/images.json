@@ -4,13 +4,13 @@
     {
       "app": "parla",
       "title": "Tazza, the mascot",
-      "note": "Make the first pose (hello), then ask for the others in the same chat: “the same character, now …”. Transparent backgrounds, so Tazza can stand on any screen. Keep the saucer’s base at the same height in every pose, about 90% of the way down, centred: the poses swap in place.",
+      "note": "Every pose is the same Tazza: the same cup, eyes, band, arms and saucer, at the same size. Keep the saucer’s base at the same height in every pose, about 90% of the way down, centred, so the poses swap in place on screen. Transparent backgrounds, so Tazza can stand on any screen.",
       "style": "A mascot for a language app: Tazza, a small white espresso cup with a rounded body, one curved handle on its right, a thin tomato-red band around the rim, two big glossy black eyes with a white highlight, a tiny smile and soft pink cheeks, two short rounded arms, standing on a cream #FFE7B8 saucer with a thin tomato-red rim. Soft matte 3D vinyl-toy render, gentle studio light from the top left, a very soft contact shadow, rounded shapes everywhere, warm and simple. No text, no letters, no logos."
     },
     {
       "app": "loaf",
       "title": "Photographs",
-      "note": "One chat, so the light and the board match across the four photos.",
+      "note": "The same light, board and colours in all four photos, so they read as one kitchen.",
       "style": "Editorial food photography for a sourdough baking app: natural window light from the left, warm and soft, deep shadows, a dusting of flour, a dark rye-brown wooden surface, shallow depth of field, a 50 mm lens, subtle film grain, a muted warm palette of cream, crust brown and rye black. No faces, no text, no logos, no brand packaging."
     },
     {
@@ -207,7 +207,7 @@
       "size": "Portrait 2:3, 1024 × 1536",
       "label": "Running on a wet track at night",
       "used": "Stride’s opening",
-      "prompt": "A runner’s legs and shoes mid-stride on a wet running track at night, the lane lines glowing, the stadium lights streaked by motion blur behind. Keep the lower 40% mostly dark wet track: the opening’s words sit there."
+      "prompt": "A runner’s legs and shoes mid-stride on a wet running track at night, the lane lines glowing, the stadium lights streaked by motion blur behind. Keep the lower 40% of the frame mostly empty dark wet track: the app sets its own words there, so add none."
     },
     {
       "id": "lull-window",
