@@ -1,6 +1,6 @@
 ---
 name: board-to-app
-description: Turn an approved board into a working native app, SwiftUI first and Jetpack Compose later, that looks and moves exactly like the board while the person does everything themselves. One debug host holds every screen in the board's order with the board's transitions, under a test bar to jump, replay, play, loop and slow down. Use the board's own clock, curves and springs, copy parts from the board's computed styles, never copy the board's self-playing previews, and check the list of bugs that ports hit. Use when a board section is approved and must run on a phone, or when the native build "doesn't feel like the board".
+description: Turn an approved board into a working native app, SwiftUI first and Jetpack Compose later, that looks and moves exactly like the board. Its motion plays itself as designed; only the board's fake inputs (auto-picks, typing, toggles) are left out. One debug host holds every screen in the board's order with the board's transitions, under a test bar to jump, replay, play, loop and slow down. Use the board's own clock, curves and springs, copy parts from the board's computed styles, and check the list of bugs that ports hit. Use when a board section is approved and must run on a phone, or when the native build "doesn't feel like the board".
 ---
 
 # Board to app
@@ -29,25 +29,24 @@ the reviewer can test it alone on a device: replay it, jump to any screen, slow 
    over, show a sheet of every screen in the section, not just the last one.
 8. **Then the next section**, into the same host: the test bar grows with each one (below).
 
-## The person does everything
+## Motion plays itself; inputs wait for the person
 
-A board plays itself so a reviewer can watch it: previews move on after a hold, a finger taps,
-types, drags and swipes. **None of that ports.** In the app nothing moves on by itself and nothing
-is done for the person.
+A board shows two kinds of automatic behaviour, and only one of them ports.
 
-- **No screen continues by itself.** A screen moves on when the person taps its button, picks an
-  answer or taps to continue. A timed hold from the board becomes "Tap to continue", shown once the
-  part's motion has settled.
-- **Parts wait too.** A screen that changes its headline partway (a story beat, a stage of a
-  diagram, the steps of an opening film) is split there: each part plays its motion, then waits
-  for a tap.
-- **No demo inputs.** The board's demo finger, auto-typing, auto-toggles, auto-swipes and
-  auto-picks are removed. Where the board's finger did something (tap the candle, drag a block
-  down), the person does it, with a quiet hint ("Drag down to plan").
-- **Motion still plays.** Entrances, counts, reveals and the reaction to the person's own action
-  play exactly as on the board.
-- **Only the test bar's Play steps by time**, for reviewing: each screen and part after its hold,
-  still with no fake inputs. The app never starts in Play.
+- **Motion graphics port exactly, playing themselves.** An opening film runs beat to beat on its
+  own; a story moves on after each beat's hold (a tap moves on sooner); showcases, flights and
+  counts play as soon as their screen opens. Keep the board's timing to the millisecond. Never turn
+  a self-playing sequence into tap-to-continue or a drag the person must do: that breaks the
+  design the reviewer approved.
+- **The designed tap points stay as designed.** A "Tap to focus" waits for the tap, with the
+  board's fallback if it has one (a finger that taps after a few seconds is part of the film);
+  the last button ("Get started") waits.
+- **Fake inputs never port.** Board previews pick answers, type, toggle, swipe and accept
+  promises so a reviewer can watch them. In the app, choices, forms and buttons wait for the
+  person, always (also while the test bar plays).
+- **When a reviewer says "it continues by itself", ask which:** a demo input filling in their
+  choices (remove it), or a sequence's own motion (keep it). Confirm before changing how a
+  sequence advances.
 
 ## The test bar, for the whole board
 
@@ -56,7 +55,8 @@ transition, under a floating bar (Liquid Glass on iOS 26). Reviewers asked for i
 "switch screens myself, play the animations, and loop any sequence".
 
 1. A menu: every section, then its screens; "Play the whole flow".
-2. Previous, next, replay; play and loop (by time, as above); 1×, ½×, ¼×; hide.
+2. Previous, next, replay; play and loop (each screen after its hold, never faking an input);
+   1×, ½×, ¼×; hide.
 3. A caption: "Section · 3 of 7 · name".
 4. Launch switches: open the flow, start at a screen, start playing, and start with the bar folded
    away for screenshots that line up with the board.
@@ -108,7 +108,8 @@ check are in [references/css-in-swiftui.md](references/css-in-swiftui.md).
 | A label wraps on the phone but not on the board | The native font measures slightly wider than the browser's at the same size | One line with a small minimum scale (`lineLimit(1)` and `minimumScaleFactor(0.8)`), and keep a little spare room |
 | Lines of a title sit too far apart or too close | CSS `line-height` has no direct twin; native text uses the font's own line height | iOS 26: `lineHeight(.exact(points:))`; elsewhere set each line as its own text at the board's distance |
 | Titles sit a few points low and the lines under them a point high, though their boxes match | In an exact line iOS places the glyphs differently from Chrome; for Poppins it is 0.668 × size − line ÷ 2 lower (34 pt titles 4.2 pt, 28 pt 2.5 pt, 15 pt lines −1.3 pt) | Measure your font once: the first row of ink on both screenshots for two sizes gives the constant. Pass the font size to your line-height modifier and offset the letters by it. Checked to 0.3 pt |
-| A screen moves on, types, taps or swipes by itself | The board's preview demo or timed hold was ported | Remove it: the app waits for the person (see above) |
+| The app picks, types, toggles or swipes for the person | The board's preview demo was ported | Remove the fake input; keep the motion around it (see above) |
+| A self-playing sequence now stops at every step | Demos and motion were removed together | Restore the sequence's own timing; only fake inputs go |
 | A jump-then-spring never moves (a check's pop, a tile's bounce, a pulse) | Setting the start pose and animating back in the same update cancels out, so SwiftUI sees no change | Set the pose without animation, then animate home a frame later |
 | A value in a chip or row is cut with "…" | CSS keeps it whole (`white-space: nowrap`); a native stack compresses text to fit | `fixedSize()` and a higher layout priority on the value; let the label give way |
 | A tinted texture or grain is darker than the board's | SVG filters (`feColorMatrix`, `feTurbulence`) work in linear RGB, so their numbers are lighter in sRGB | Convert the filter's colours to sRGB before drawing; compare the mean colour of a flat area |
