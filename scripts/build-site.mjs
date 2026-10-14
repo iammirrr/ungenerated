@@ -138,7 +138,7 @@ const picturesOf = (a) => {
   return `<section class="wrap pj-sec" id="pictures">
   <h2>Pictures</h2>
   <p class="pics-how">${done === cards.length ? `${cards.length} pictures, made with ChatGPT from these prompts.` : `${cards.length} pictures to make with ChatGPT${done ? ` (${done} done)` : ''}. Paste the whole set into one chat, or one picture at a time.`}</p>
-  <div class="prompt"><p class="prompt-name">The style</p><pre>${esc(g.style)}</pre><button type="button" class="copy" data-text="${attr(P.set(a.id, { icon: true }))}">Copy the set</button></div>
+  <div class="prompt"><p class="prompt-name">The style</p><pre>${esc(g.style)}</pre><button type="button" class="copy" data-text="${attr(P.set(a.id))}">Copy the set</button></div>
   <div class="pics">${cards.map((i) => picCard(a, i)).join('')}</div>
 </section>`;
 };
