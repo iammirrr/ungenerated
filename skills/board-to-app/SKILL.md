@@ -34,8 +34,8 @@ the reviewer can test it alone on a device: replay it, jump to any screen, slow 
 A board shows two kinds of automatic behaviour, and only one of them ports.
 
 - **Motion graphics port exactly, playing themselves.** An opening film runs beat to beat on its
-  own; a story moves on after each beat's hold (a tap moves on sooner); showcases, flights and
-  counts play as soon as their screen opens. Keep the board's timing to the millisecond. Never turn
+  own; a story moves on after each beat's hold and is never skipped by a tap; showcases, flights
+  and counts play as soon as their screen opens. Keep the board's timing to the millisecond. Never turn
   a self-playing sequence into tap-to-continue or a drag the person must do: that breaks the
   design the reviewer approved.
 - **The designed tap points stay as designed.** A "Tap to focus" waits for the tap, with the
@@ -43,7 +43,8 @@ A board shows two kinds of automatic behaviour, and only one of them ports.
   the last button ("Get started") waits.
 - **Fake inputs never port.** Board previews pick answers, type, toggle, swipe and accept
   promises so a reviewer can watch them. In the app, choices, forms and buttons wait for the
-  person, always (also while the test bar plays).
+  person, always (also while the test bar plays). A question waits for its Continue: a pick never
+  moves on by itself, so people can change their mind.
 - **When a reviewer says "it continues by itself", ask which:** a demo input filling in their
   choices (remove it), or a sequence's own motion (keep it). Confirm before changing how a
   sequence advances.
@@ -121,6 +122,13 @@ check are in [references/css-in-swiftui.md](references/css-in-swiftui.md).
 | A copied part looks darker, with a heavier rim | An `::after` layer was missed, or an inset shadow was faked with a blurred stroke | Read the pseudo-elements; draw inset shadows exactly; compare crops pixel by pixel |
 | It feels different from the board | Different numbers | Same durations, distances, curves and springs; compare both at ¼× |
 | Smooth on the simulator, stutters on the phone | The simulator renders on the Mac's GPU | Test on a device; watch frame drops in Instruments |
+| On first launch a choreography has already finished when its screen appears | The first draw after an install stalls the main thread (up to seconds); timers on wall time all fire behind the frozen screen | Run choreography on a scene clock that moves with the frames, each frame's step capped (50 ms): a stall pauses the scene. Reproduce by reinstalling, or by blocking the main thread for 2 s in a test build |
+| A white flash between two screens | Mid-move both screens are partly transparent and nothing is under them | Draw the board's stage colour under every screen |
+| A text button or link barely answers taps | With a custom button style only drawn pixels take taps; a clear pill behind the words doesn't count | Give the label a content shape over its whole pill, 44 pt tall, without changing the layout (pad, shape, pad back) |
+| A tap that does nothing (the last screen's Done, Restore) | `next()` past the end, or a stub action | Every tap answers: it moves on, or a toast says what happened |
+| Orphan lines on a narrower phone ("This helps us / build it.") | The board's line breaks were copied into the copy for the board's width | Keep copied breaks in body copy only at the board's width and let it wrap elsewhere; titles may keep theirs |
+| The smallest phone hides the main button or pushes the title under the status bar | Layouts sized for the board's screen | Check the smallest supported phone (375 × 667 on current iOS): content scrolls above pinned actions, pictures scale to their room |
+| VoiceOver reads file names, or every digit of a reel | Images and composed numbers expose their parts | Decorative images; one name per control; picked things marked selected; a reel speaks its value |
 
 ## Verify
 
@@ -137,6 +145,11 @@ check are in [references/css-in-swiftui.md](references/css-in-swiftui.md).
 - Start the app with the test bar folded away so its layout lines up with the board's.
 - Read every frame for the bugs above: corners, wraps, a frame where something blinks out or pops.
 - On a real phone: haptics, frame rate, ProMotion, light and dark.
+- **Tap everything.** Drive each screen on a separate simulator (AXe, or a UI test): every button,
+  Later and Skip included, every field with the keyboard up, Return, scrolling. Read the
+  accessibility tree for names. Never test on the reviewer's own simulator.
+- **The smallest phone**, and one fresh install (the first draw stalls; choreography must still be
+  seen).
 - Write down what you didn't prove: device feel, haptics, Reduce Motion, Dynamic Type.
 
 ## Compose (Android)
