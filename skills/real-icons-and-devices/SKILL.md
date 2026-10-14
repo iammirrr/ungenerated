@@ -42,8 +42,10 @@ description: Show real app icons and real-looking devices on design screens - fe
   don't add content the story didn't ask for; a phone-shaped card floating in a laptop reads as a
   mock-up. Landing a card on a device, let its corners and shadow melt away as it becomes the
   screen; going back in, reshape the screen into the card as the camera arrives.
-- **Shrink while it turns.** A rotating phone's bounding box is wider than either pose; scale the
-  device about its centre so the box stays inside the frame with a margin, then let it settle.
+- **Shrink while it turns, never at the end.** A rotating phone's bounding box is wider than either
+  pose; scale the device about its centre so it stays inside the frame. Size it for its finished
+  shape (the laptop with its base) by the time it lies flat, so it forms in place; a refit when the
+  base slides in reads as a jump to a smaller size.
 
 ## Anti-patterns
 
