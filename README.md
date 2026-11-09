@@ -136,7 +136,7 @@ real apps, and why.
 
 ### Where the old skills went
 
-Version 0.1 had 29 smaller skills. Each lives on, word for word, as a reference inside its new home.
+Before 1.0 there were 29 smaller skills. Each lives on, word for word, as a reference inside its new home.
 
 | Now | Was |
 |---|---|
