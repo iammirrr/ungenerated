@@ -35,7 +35,7 @@ Read `references/loopholes.md` (the full catalogue, the things nobody tests), `r
 
 Write a short map, in the report:
 1. **Products and prices:** every plan, interval, currency, trial, intro offer, coupon/code, and where each price id is defined (dashboard, env, database table, client constant). Flag any price the client can choose freely.
-2. **Stores:** which providers sell, on which platforms (web checkout, desktop, iOS App Store, Google Play). Two stores = a cross-store double-billing question.
+2. **Stores:** which providers sell, on which platforms (web checkout, desktop, iOS App Store, Google Play). Two stores = a cross-store double-billing question. For each store, is it **open for business**: the paid agreement active, bank and tax in, the billing service holding the store's keys? (Apple: Paid Apps Agreement, In-App Purchase key; `references/lessons.md` 30–31.) If not, nothing sells, whatever the code does.
 3. **Source of truth for access:** the one table/field/function that decides "is this person paid now" (an entitlements row, RevenueCat entitlements, a JWT claim). If there is more than one, that is finding #1.
 4. **Who writes it:** webhooks, a refresh endpoint, an admin tool, the client (red flag), a cron job.
 5. **Who reads it:** server-side gates (API, RLS, sync), client-side gates (UI padlocks, limits), offline caches.
@@ -81,7 +81,7 @@ Minimum matrix (each row a test or a sandbox run with evidence): new trial; tria
 
 ## Phase 5: go-live checklist
 
-Live keys present and the sandbox/test ones removed from production config; any key ever pasted in chat rotated; webhook endpoint registered in live with the needed events (including refunds/adjustments/disputes) and its secret on the server; live prices mapped; discount box and test coupons off unless intended; receipts/emails branded; one real purchase + refund passes; monitoring: webhook failure alert, processing errors = 0, a daily check of "paid in provider but not in app" and the reverse (reconciliation query).
+The store's paid agreement Active and bank/tax in; the billing service holding the store's keys (Apple's In-App Purchase key); live keys present and the sandbox/test ones removed from production config; any key ever pasted in chat rotated; webhook endpoint registered in live with the needed events (including refunds/adjustments/disputes) and its secret on the server; live prices mapped; discount box and test coupons off unless intended; receipts/emails branded; one real purchase + refund passes; monitoring: webhook failure alert, processing errors = 0, a daily check of "paid in provider but not in app" and the reverse (reconciliation query).
 
 ## The report (for a non-developer owner)
 

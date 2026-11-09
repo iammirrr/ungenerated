@@ -15,7 +15,7 @@ Verify against the provider's current docs before relying on a detail; APIs chan
 ## Apple (StoreKit 2, App Store Server API, Server Notifications V2)
 - Verify JWS signed transactions/notifications with Apple's certificate chain (App Store Server Library). Notification types: `SUBSCRIBED`, `DID_RENEW`, `DID_FAIL_TO_RENEW` (with `GRACE_PERIOD` subtype), `GRACE_PERIOD_EXPIRED`, `EXPIRED`, `DID_CHANGE_RENEWAL_STATUS`, `REFUND`, `REVOKE` (Family Sharing), `CONSUMPTION_REQUEST`, `PRICE_INCREASE`, `OFFER_REDEEMED`.
 - Test: Xcode StoreKit configuration files (time rate, failed transactions, refunds, ask-to-buy), sandbox testers with accelerated renewals (a month ≈ 5 minutes), TestFlight renewals, `requestTestNotification`.
-- Traps: `environment` must be Production in prod; `appAccountToken` to bind purchases to your user; Family Sharing grants; introductory offer eligibility is per Apple ID subscription group; refunds arrive as `REFUND`; account deletion rules require a path to manage/cancel.
+- Traps: `environment` must be Production in prod; `appAccountToken` to bind purchases to your user; Family Sharing grants; introductory offer eligibility is per Apple ID subscription group; refunds arrive as `REFUND`; account deletion rules require a path to manage/cancel. **No products at all** (every fetch empty, RevenueCat `ErrorCode 23`) almost always means the Paid Apps Agreement isn't Active (App Store Connect › Business: legal entity, agreement, bank, tax), not the code (`lessons.md` 30).
 
 ## Google Play Billing
 - Real-time developer notifications (Pub/Sub) → always re-read the purchase with the Play Developer API (`purchases.subscriptionsv2.get`) before granting; acknowledge purchases within 3 days or they refund. States: active, in grace, on hold, paused, canceled, expired; `SUBSCRIPTION_REVOKED` for refunds.
@@ -24,7 +24,7 @@ Verify against the provider's current docs before relying on a detail; APIs chan
 
 ## RevenueCat
 - Webhook `Authorization` header you set; events `INITIAL_PURCHASE`, `RENEWAL`, `CANCELLATION`, `UNCANCELLATION`, `BILLING_ISSUE`, `EXPIRATION`, `PRODUCT_CHANGE`, `TRANSFER`, `SUBSCRIPTION_PAUSED`, `REFUND_REVERSED`, `TEMPORARY_ENTITLEMENT_GRANT`. `environment` = SANDBOX | PRODUCTION.
-- Traps: restore behaviour (transfer to new app user vs keep) is a project setting; `TRANSFER` must end access on the old user; Test Store products must never count in production; anonymous app user ids merging into real ones.
+- Traps: restore behaviour (transfer to new app user vs keep) is a project setting; `TRANSFER` must end access on the old user; Test Store products must never count in production; anonymous app user ids merging into real ones. The App Store app in RevenueCat needs the In-App Purchase key (`SubscriptionKey_*.p8` + Key ID + Issuer ID) to validate StoreKit 2 purchases and grant promotional offers; check `app_store.subscription_key_configured` through the v2 API (`lessons.md` 31).
 
 ## Lemon Squeezy, Gumroad, others
 - Same invariants: signed webhooks (`X-Signature` HMAC), event id dedupe, subscription states, refunds and disputes, test mode separate from live.
