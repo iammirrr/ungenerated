@@ -1,0 +1,111 @@
+/* ---------------------------------------------------------------- Fern (organic) */
+
+.k-fern .ph-body { padding-top: 54px; }
+.fe-top { flex: none; display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; height: 44px; margin: 0 -14px; text-align: center; }
+.fe-top b { font-size: 16px; font-weight: 600; color: var(--ink-strong); }
+.fe-h { margin: 18px 0 0; font: 400 34px/1.06 var(--font-display); letter-spacing: -0.01em; color: var(--ink-strong); text-wrap: balance; }
+.fe-h em { font-style: normal; color: var(--accent-text); }
+.fe-center { text-align: center; }
+.fe-sub { margin: 14px 0 12px; font-size: 15px; color: var(--ink-muted); }
+.fe-body { margin: 12px 8px 0; font-size: 16px; line-height: 1.45; text-align: center; color: var(--ink); }
+.fe-small { margin: 0; text-align: center; font-size: 12.5px; color: var(--ink-muted); }
+.fe-when { margin-top: 10px; color: var(--ink-muted); }
+
+/* What they keep, at the top of the leaving screens. */
+.fe-kept { display: flex; align-items: center; gap: 12px; margin-top: 16px; padding: 12px 14px; border-radius: 16px; background: var(--panel); }
+.fe-kept p { margin: 0; font-size: 14px; line-height: 1.4; color: var(--ink-muted); }
+.fe-kept b { font-weight: 600; color: var(--ink-strong); }
+.fe-kept-ic { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; }
+
+/* 1 · the plan: a vine grows past their numbers */
+.fe-grow { position: relative; margin-top: 18px; height: 196px; border-radius: var(--r-card); background: var(--panel); overflow: hidden; }
+.fe-vine-svg { position: absolute; left: 0; bottom: 6px; overflow: visible; }
+.fe-vine { fill: none; stroke: #3d5c44; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 1; }
+.fe-leaf { fill: #4f7a57; transform-box: fill-box; transform-origin: 0% 60%; }
+.fe-leaf.is-light { fill: #7fa883; }
+.fe-stats { position: absolute; left: 18px; right: 18px; top: 16px; display: flex; gap: 22px; }
+.fe-stat b { display: block; font: 400 34px/1 var(--font-display); color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.fe-stat span { display: block; margin-top: 4px; font-size: 13px; color: var(--ink-muted); }
+.fe-since { position: absolute; right: 16px; bottom: 12px; font-size: 12px; color: var(--ink-quiet); }
+.fe-plan { margin-top: 12px; padding: 14px 16px; border-radius: var(--r-card); background: var(--panel); }
+.fe-plan-top { display: flex; align-items: center; gap: 12px; }
+.fe-plan-top b { display: block; font: 400 20px/1.1 var(--font-display); color: var(--ink-strong); }
+.fe-plan-top small { display: block; font-size: 13.5px; color: var(--ink-muted); }
+.fe-plan dl { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--hair); }
+.fe-plan dl div { display: flex; justify-content: space-between; padding: 3px 0; font-size: 14px; }
+.fe-plan dt { color: var(--ink-muted); }
+.fe-plan dd { margin: 0; color: var(--ink-strong); font-weight: 500; }
+.fe-cells { margin-top: 12px; border-radius: var(--r-card); background: var(--panel); overflow: hidden; }
+.fe-cell { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 62px; padding: 10px 16px; text-align: left; color: var(--ink-quiet); transition: background-color 120ms ease; }
+.fe-cell + .fe-cell { border-top: 1px solid var(--hair); }
+.fe-cell > span { flex: 1 1 auto; }
+.fe-cell b { display: block; font-size: 16px; font-weight: 600; color: var(--ink-strong); }
+.fe-cell small { display: block; font-size: 13px; color: var(--ink-muted); }
+.fe-cell.is-down { background: var(--hover); }
+.fe-cell.is-cancel b { color: var(--accent-text); }
+
+/* 2 · one question */
+.fe-list { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+.k-fern .row { min-height: 70px; padding: 12px 16px 12px 14px; font-size: 16px; border-radius: 18px; }
+.k-fern .row .tile { width: 44px; height: 44px; border-radius: 13px; background: var(--inset); color: var(--accent-text); }
+.k-fern .row.is-on .tile { background: var(--accent); color: #fff; }
+
+/* 3 · one offer */
+.fe-menu { display: flex; flex-direction: column; gap: 10px; }
+.fe-opt { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 70px; padding: 12px 16px; border-radius: 18px; background: var(--panel); text-align: left; box-shadow: inset 0 0 0 1.5px transparent; transition: box-shadow 160ms ease, background-color 120ms ease; }
+.fe-opt > span { flex: 1 1 auto; }
+.fe-opt b { display: block; font: 400 21px/1.15 var(--font-display); color: var(--ink-strong); }
+.fe-opt small { display: block; margin-top: 2px; font-size: 13.5px; color: var(--ink-muted); }
+.fe-opt.is-down { background: var(--hover); }
+.fe-opt.is-on { box-shadow: inset 0 0 0 2px var(--ink-strong); background: #fafcf7; }
+.fe-radio { flex: none; width: 24px; height: 24px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--ink-quiet); transition: box-shadow 200ms cubic-bezier(.34, 1.4, .64, 1); }
+.fe-opt.is-on .fe-radio { box-shadow: inset 0 0 0 7px var(--ink-strong); }
+.fe-leave { width: 100%; height: 56px; border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--ink-strong); color: var(--ink-strong); font-size: 16px; font-weight: 600; background: transparent; }
+.fe-leave.is-down { background: var(--inset); }
+
+/* 4 · what stays */
+.fe-shelf { display: flex; align-items: flex-end; gap: 8px; margin-top: 18px; }
+.fe-pot { width: 64px; height: 80px; border-radius: 14px; }
+.fe-more { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: var(--panel); font: 400 18px var(--font-display); color: var(--ink-strong); }
+.fe-list-block { margin-top: 16px; padding: 14px 16px; border-radius: var(--r-card); background: var(--panel); }
+.fe-list-block.is-stops { background: transparent; box-shadow: inset 0 0 0 1px var(--hair-2); }
+.fe-list-head { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.01em; color: var(--accent-text); }
+.fe-list-block.is-stops .fe-list-head { color: var(--ink-muted); }
+.fe-list-block ul { margin: 0; padding: 0; list-style: none; }
+.fe-list-block li { padding: 5px 0; font-size: 15.5px; color: var(--ink-strong); }
+.fe-list-block.is-stops li { color: var(--ink); }
+
+/* 5 · Apple's sheet */
+.ios-sub { flex: 1 1 auto; overflow: hidden; padding-top: 6px; }
+.ios-gap { margin-top: 18px; }
+.ios-app { gap: 14px; padding: 14px 16px; }
+.ios-app .app-ic { border-radius: 14px; }
+.ios-app b { display: block; font-size: 17px; font-weight: 600; letter-spacing: -0.02em; }
+.ios-app small { display: block; font-size: 15px; color: rgba(60, 60, 67, 0.6); }
+.ios-check { margin-left: 10px; color: #007aff; display: grid; }
+.ios-cell.is-red { width: calc(100% + 0px); font: inherit; font-size: 17px; letter-spacing: -0.02em; }
+.ios-cell.is-red.is-down { background: rgba(0, 0, 0, 0.06); }
+
+/* 6 · goodbye */
+.fe-art { display: grid; place-items: center; margin-top: 46px; }
+.fe-sprout { overflow: visible; }
+.fe-stem { fill: none; stroke: #3d5c44; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; }
+.fe-pot-body { fill: var(--accent); }
+.fe-pot-rim { fill: #9a4524; }
+
+/* 7 · coming back */
+.fe-back-shelf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.fe-back-pot { margin: 0; }
+.fe-back-pic { height: 128px; border-radius: 16px; }
+.fe-back-pot figcaption { margin-top: 8px; }
+.fe-back-pot b { display: block; font: 400 15px/1.2 var(--font-display); color: var(--ink-strong); }
+.fe-back-pot small { display: block; font-size: 12px; color: var(--ink-muted); }
+.fe-status { display: flex; align-items: flex-start; gap: 10px; margin: 16px 0 0; padding: 12px 14px; border-radius: 16px; background: var(--panel); font-size: 14px; line-height: 1.4; color: var(--ink); }
+.fe-status .ic { margin-top: 2px; color: var(--ink-muted); }
+.fe-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.fe-price { display: flex; flex-direction: column; align-items: flex-start; padding: 12px 14px; border-radius: 18px; background: var(--panel); text-align: left; box-shadow: inset 0 0 0 1.5px transparent; transition: box-shadow 160ms ease; }
+.fe-price small { font-size: 13px; font-weight: 600; color: var(--ink-muted); }
+.fe-price b { margin-top: 2px; font: 400 26px/1.1 var(--font-display); color: var(--ink-strong); }
+.fe-price span { font-size: 12.5px; color: var(--ink-muted); }
+.fe-price.is-on { box-shadow: inset 0 0 0 2px var(--ink-strong); background: #fafcf7; }
+.k-fern .ph-foot { gap: 10px; }

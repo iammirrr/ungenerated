@@ -99,7 +99,11 @@
       const was = b.getAttribute('aria-disabled') !== 'true';
       if (on) b.removeAttribute('aria-disabled');
       else b.setAttribute('aria-disabled', 'true');
-      if (on && !was) F.move(b, { s: 0.98 }, { s: 1 }, { spring: { response: 0.4, damping: 0.6 }, ctx, fill: 'none' });
+      if (on && !was) {
+        // Waking up follows the style's press: a spring where the style springs, a curve where it never overshoots.
+        const P = F.styleOf && F.styleOf(ctx) && F.styleOf(ctx).press;
+        F.move(b, { s: 0.98 }, { s: 1 }, P && !P.spring ? { duration: P.outMs || 300, curve: P.curve || 'standard', ctx, fill: 'none' } : { spring: (P && P.spring) || { response: 0.4, damping: 0.6 }, ctx, fill: 'none' });
+      }
     };
     let swap = null;
     b.label = (text) => {
@@ -154,7 +158,11 @@
     el.setAttribute('aria-pressed', String(on));
     if (on !== was) F.bloom(ctx, el, !on);
     const check = el.querySelector('.check, .radio');
-    if (on && !was && check) F.move(check, { s: 0.5 }, { s: 1 }, { spring: { response: 0.34, damping: 0.62 }, ctx, fill: 'none' });
+    if (on && !was && check) {
+      // In a motion style the check lands the way the style lands things (js/styles.js).
+      if (F.styleOf && F.styleOf(ctx)) F.pop(ctx, check);
+      else F.move(check, { s: 0.5 }, { s: 1 }, { spring: { response: 0.34, damping: 0.62 }, ctx, fill: 'none' });
+    }
     ctx.haptic('selection');
   };
 
@@ -174,7 +182,7 @@
     let col = 0;
     const digits = [...text].filter((c) => /\d/.test(c)).length;
     el.replaceChildren(...[...text].map((ch, i) => {
-      if (!/\d/.test(ch)) return h('span.reel-ch', ch);
+      if (!/\d/.test(ch)) return h('span.reel-ch', ch === ' ' ? '\u00a0' : ch);
       const d = +ch;
       const from = /\d/.test(prev[i] || '') ? +prev[i] : 0;
       const turns = prev === '' || prev[i] !== ch ? spins : 0;
@@ -184,11 +192,13 @@
       const k = col++;
       strip.style.transform = `translateY(${-target * LH}em)`;
       if (!F.reduced() && turns) {
-        const sc = F.springCurve(0.62 + k * 0.08, 0.72);
+        // The screen's motion style decides the reel's spring: calm and precise never overshoot.
+        const R = (F.styleOf && F.styleOf(ctx) && F.styleOf(ctx).reel) || { response: 0.62, damping: 0.72 };
+        const sc = F.springCurve(R.response + k * 0.08, R.damping);
         const frames = sc.values.map((v, j) => {
           const pos = from + (target - from) * v;
           const vel = j ? Math.abs(v - sc.values[j - 1]) * sc.values.length : 0;
-          return { transform: `translateY(${(-pos * LH).toFixed(3)}em)`, filter: `blur(${Math.min(1.6, vel * 0.09).toFixed(2)}px)` };
+          return { transform: `translateY(${(-pos * LH).toFixed(3)}em)`, filter: R.blur === false ? 'none' : `blur(${Math.min(1.6, vel * 0.09).toFixed(2)}px)` };
         });
         ctx.track(strip.animate(frames, { duration: sc.duration * F.k(), delay: (o.delay || 0) * F.k() + k * (o.stagger ?? 70) * F.k(), easing: 'linear', fill: 'backwards' }));
         if (k === digits - 1 && o.haptic !== false) ctx.at((o.delay || 0) + sc.duration * 0.62 + k * (o.stagger ?? 70), () => ctx.haptic('light'));
