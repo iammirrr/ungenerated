@@ -97,7 +97,7 @@ const json = (v) => JSON.stringify(v).replace(/<\//g, '<\\/');
 
 // The seven motion styles, read from the engine itself so the pages never disagree with it.
 const STYLES = (() => {
-  const code = readFileSync(join(root, 'skills/design-board/template/js/styles.js'), 'utf8').replace(/\r\n/g, '\n');
+  const code = readFileSync(join(root, 'skills/ungenerated-flows/template/js/styles.js'), 'utf8').replace(/\r\n/g, '\n');
   const out = {};
   for (const m of code.matchAll(/^ {4}(\w+): \{\n {6}name: '([^']+)', feel: '([^']+)', use: '([^']+)',\n {6}tokens: '([^']+)',/gm)) out[m[1]] = { name: m[2], feel: m[3], use: m[4], tokens: m[5] };
   return out;
@@ -202,6 +202,16 @@ const skillPage = (s, g) => {
   });
 };
 groups.forEach((g) => g.skills.forEach((name) => writeFileSync(join(out, 'skills', `${name}.html`), skillPage(skills[name], g))));
+// The 29 skills of v0.1 live on as parts of the merged ones: keep their old pages as redirects.
+const MOVED = {
+  'ungenerated-foundation': ['app-design-workflow', 'app-concept', 'app-research', 'design-kit', 'real-icons-and-devices', 'human-copy'],
+  'ungenerated-motion': ['motion-system', 'motion-styles', 'continuity', 'bubbly-motion', 'interaction-feel'],
+  'ungenerated-flows': ['design-board', 'opening-hook', 'onboarding-questions', 'story-screens', 'plan-reveal', 'account-signup', 'consent-and-permissions', 'paywall', 'setup-and-tour', 'app-screens', 'cancel-flow', 'board-to-app', 'native-port'],
+  'ungenerated-review': ['no-slop', 'visual-qa', 'accessibility-pass', 'design-review'],
+  'ungenerated-store': ['app-store-assets'],
+};
+Object.entries(MOVED).forEach(([to, olds]) => olds.forEach((old) => writeFileSync(join(out, 'skills', `${old}.html`),
+  `<!doctype html><meta charset="utf-8"><title>${old} moved</title><meta http-equiv="refresh" content="0; url=${to}.html"><link rel="canonical" href="${to}.html"><p><code>${old}</code> is now part of <a href="${to}.html">${to}</a>.</p>`)));
 
 ['base.css', 'home.css', 'project.css', 'skill.css', 'home.js', 'project.js', 'page.js', 'flows.js'].forEach((f) => writeFileSync(join(out, f), src(f)));
 const copy = (from, to, skip = []) => {
@@ -219,9 +229,9 @@ copy(join(root, 'examples/shots'), join(out, 'shots'));
 // Its config and kit styles are generated from examples/*.json (scripts/board-config.mjs), the
 // same way the dev server (scripts/dev.mjs) serves them.
 const board = join(out, 'board');
-copy(join(root, 'skills/design-board/template'), board, ['tools', 'review', 'screens', 'board.config.js', 'index.html']);
+copy(join(root, 'skills/ungenerated-flows/template'), board, ['tools', 'review', 'screens', 'board.config.js', 'index.html']);
 mkdirSync(join(board, 'js/screens'), { recursive: true });
-copyFileSync(join(root, 'skills/design-board/template/js/screens/styles.js'), join(board, 'js/screens/styles.js'));
+copyFileSync(join(root, 'skills/ungenerated-flows/template/js/screens/styles.js'), join(board, 'js/screens/styles.js'));
 copy(join(root, 'examples'), board, ['apps.json', 'flows.json', 'images.json', 'shots', 'README.md', 'IMAGE-PROMPTS.md', 'images-src']);
 writeFileSync(join(board, 'css/kits.css'), kitsCss(EX));
 writeFileSync(join(board, 'board.config.js'), boardConfig(EX));

@@ -8,9 +8,9 @@
       "title": "The opening",
       "summary": "Four beats of kinetic type on one stage, the button only on the last.",
       "skills": [
-        "opening-hook",
-        "motion-styles",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "steps": [
         {
@@ -28,9 +28,9 @@
       "title": "The opening",
       "summary": "A mascot, one phrase, and a microphone you hold before anything is asked.",
       "skills": [
-        "opening-hook",
-        "bubbly-motion",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "steps": [
         {
@@ -48,9 +48,8 @@
       "title": "The opening",
       "summary": "A camera, not a slideshow: the crumb, the jar, the rise, the plan.",
       "skills": [
-        "opening-hook",
-        "continuity",
-        "motion-styles"
+        "ungenerated-flows",
+        "ungenerated-motion"
       ],
       "steps": [
         {
@@ -68,9 +67,8 @@
       "title": "Questions to a plan",
       "summary": "Five quick answers, each one reused, flowing into the plan.",
       "skills": [
-        "onboarding-questions",
-        "plan-reveal",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-foundation"
       ],
       "steps": [
         {
@@ -112,9 +110,8 @@
       "title": "Questions to week one",
       "summary": "A ruler, a week, a race: three answers that become three runs.",
       "skills": [
-        "onboarding-questions",
-        "interaction-feel",
-        "plan-reveal"
+        "ungenerated-flows",
+        "ungenerated-motion"
       ],
       "steps": [
         {
@@ -150,9 +147,8 @@
       "title": "Questions to the month",
       "summary": "Two names, two incomes, one way to split, then a month that adds up.",
       "skills": [
-        "onboarding-questions",
-        "plan-reveal",
-        "no-slop"
+        "ungenerated-flows",
+        "ungenerated-review"
       ],
       "steps": [
         {
@@ -188,9 +184,8 @@
       "title": "The paywall",
       "summary": "Tonight first, then every price, then the reminder the trial promised.",
       "skills": [
-        "paywall",
-        "consent-and-permissions",
-        "motion-styles"
+        "ungenerated-flows",
+        "ungenerated-motion"
       ],
       "steps": [
         {
@@ -226,9 +221,8 @@
       "title": "The paywall",
       "summary": "Their first week of meals is the value, and it carries into the price.",
       "skills": [
-        "paywall",
-        "plan-reveal",
-        "continuity"
+        "ungenerated-flows",
+        "ungenerated-motion"
       ],
       "steps": [
         {
@@ -258,9 +252,8 @@
       "title": "The paywall",
       "summary": "Dark and loud, still honest: both prices, the trial, then Health in context.",
       "skills": [
-        "paywall",
-        "consent-and-permissions",
-        "motion-styles"
+        "ungenerated-flows",
+        "ungenerated-motion"
       ],
       "steps": [
         {
@@ -290,9 +283,9 @@
       "title": "The microphone",
       "summary": "The phrase first, then the ask, then the first word heard.",
       "skills": [
-        "consent-and-permissions",
-        "bubbly-motion",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "steps": [
         {
@@ -322,9 +315,8 @@
       "title": "The first plant",
       "summary": "One photo, a name, a schedule that grows in, and the shelf.",
       "skills": [
-        "setup-and-tour",
-        "consent-and-permissions",
-        "motion-styles"
+        "ungenerated-flows",
+        "ungenerated-motion"
       ],
       "steps": [
         {
@@ -354,9 +346,8 @@
       "title": "The first bake",
       "summary": "One question, the day drawn as a schedule, one coach mark.",
       "skills": [
-        "setup-and-tour",
-        "consent-and-permissions",
-        "motion-styles"
+        "ungenerated-flows",
+        "ungenerated-motion"
       ],
       "steps": [
         {
@@ -386,9 +377,9 @@
       "title": "Leaving, for budget",
       "summary": "Seven screens, from the plan to coming back a month later.",
       "skills": [
-        "cancel-flow",
-        "human-copy",
-        "no-slop"
+        "ungenerated-flows",
+        "ungenerated-foundation",
+        "ungenerated-review"
       ],
       "steps": [
         {
@@ -442,9 +433,9 @@
       "title": "Leaving, for another app",
       "summary": "No offer for someone who has moved on: their data, in one tap.",
       "skills": [
-        "cancel-flow",
-        "human-copy",
-        "motion-styles"
+        "ungenerated-flows",
+        "ungenerated-foundation",
+        "ungenerated-motion"
       ],
       "steps": [
         {
@@ -474,9 +465,9 @@
       "title": "Leaving, for a break",
       "summary": "A break the App Store allows: renewal off, phrases kept, a reminder.",
       "skills": [
-        "cancel-flow",
-        "bubbly-motion",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "steps": [
         {

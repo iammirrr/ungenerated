@@ -43,9 +43,9 @@
       "what": "A sourdough companion that bakes on your starter's schedule, not the recipe's.",
       "step": "The opening",
       "skills": [
-        "opening-hook",
-        "continuity",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "kit": {
         "font": "Young Serif",
@@ -93,25 +93,25 @@
         "notes": [
           {
             "text": "A feature carousel with dots for an opening.",
-            "skill": "opening-hook",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 86
           },
           {
             "text": "Emoji for icons, in glass cards on a blurred blob.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 22,
             "y": 52
           },
           {
             "text": "“Your AI-powered companion”: a heading any app could use.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 33
           },
           {
             "text": "Get Started before anything has been shown.",
-            "skill": "opening-hook",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 94
           }
@@ -122,25 +122,25 @@
         "notes": [
           {
             "text": "Fades in on the bread; the camera finds the jar, which carries every beat.",
-            "skill": "opening-hook",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 40
           },
           {
             "text": "The starter rises and the clock flows: the product at work, not described.",
-            "skill": "continuity",
+            "skill": "ungenerated-motion",
             "x": 72,
             "y": 66
           },
           {
             "text": "One short line per beat, rising out of a mask, in a baker’s words.",
-            "skill": "motion-styles",
+            "skill": "ungenerated-motion",
             "x": 50,
             "y": 20
           },
           {
             "text": "The button arrives only at the end.",
-            "skill": "opening-hook",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 92
           }
@@ -156,9 +156,9 @@
       "what": "A running coach that builds the first week from the run you already did.",
       "step": "A question",
       "skills": [
-        "onboarding-questions",
-        "interaction-feel",
-        "design-kit"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "kit": {
         "font": "Big Shoulders Display",
@@ -209,19 +209,19 @@
         "notes": [
           {
             "text": "“Step 3 of 12” tells people how long the form will take.",
-            "skill": "onboarding-questions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 12
           },
           {
             "text": "A goal list every fitness app asks, and nothing later uses.",
-            "skill": "onboarding-questions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 50
           },
           {
             "text": "Emoji rows, then Next, for a single pick.",
-            "skill": "interaction-feel",
+            "skill": "ungenerated-motion",
             "x": 50,
             "y": 92
           }
@@ -232,25 +232,25 @@
         "notes": [
           {
             "text": "Asks the thing itself, in one read.",
-            "skill": "onboarding-questions",
+            "skill": "ungenerated-flows",
             "x": 40,
             "y": 22
           },
           {
             "text": "A condensed face, every digit in its own fixed slot, so numbers never jitter.",
-            "skill": "design-kit",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 46
           },
           {
             "text": "A ruler you drag; it follows the finger and the value flows.",
-            "skill": "interaction-feel",
+            "skill": "ungenerated-motion",
             "x": 50,
             "y": 65
           },
           {
             "text": "The consequence updates as you drag: the laps, then week one’s easy runs.",
-            "skill": "onboarding-questions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 77
           }
@@ -269,9 +269,7 @@
       "category": "Diet",
       "icon": "ripe-icon",
       "skills": [
-        "onboarding-questions",
-        "plan-reveal",
-        "paywall"
+        "ungenerated-flows"
       ],
       "kit": {
         "font": "Bricolage Grotesque",
@@ -321,25 +319,25 @@
         "notes": [
           {
             "text": "“Lose up to 10 lbs in 30 days”: a crash promise as the headline, in gradient text.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 17
           },
           {
             "text": "A “metabolism type” and an 87% score nobody measured.",
-            "skill": "plan-reveal",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 35
           },
           {
             "text": "A 1,200-calorie day and food rules; not one of their answers shows up.",
-            "skill": "onboarding-questions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 49
           },
           {
             "text": "A ticking discount, an invented review and “Join 5M+ users”.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 66
           }
@@ -350,25 +348,25 @@
         "notes": [
           {
             "text": "Each answer flies up into its row and becomes the value, one after another.",
-            "skill": "plan-reveal",
+            "skill": "ungenerated-flows",
             "x": 74,
             "y": 42
           },
           {
             "text": "One check on the mark, one haptic. No confetti.",
-            "skill": "plan-reveal",
+            "skill": "ungenerated-flows",
             "x": 16,
             "y": 29
           },
           {
             "text": "Every number is theirs: 72 to 66 kg at half a kilo a week, and the date it lands on.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 78,
             "y": 69
           },
           {
             "text": "Called an estimate, in small print, right under the curve.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 77
           }
@@ -381,9 +379,9 @@
       "what": "A budget two people keep together, without a spreadsheet or an argument.",
       "step": "The plan",
       "skills": [
-        "plan-reveal",
-        "no-slop",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-review",
+        "ungenerated-foundation"
       ],
       "kit": {
         "font": "Schibsted Grotesk",
@@ -433,25 +431,25 @@
         "notes": [
           {
             "text": "Confetti for a plan nobody has read yet.",
-            "skill": "plan-reveal",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 14
           },
           {
             "text": "“Save up to $1,000/month*”: a round number from nowhere.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 62
           },
           {
             "text": "A donut of colours with no labels.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 42
           },
           {
             "text": "“Unlock your financial freedom”.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 91
           }
@@ -462,25 +460,25 @@
         "notes": [
           {
             "text": "Each answer glides straight into its row, one after another, and is wiped in.",
-            "skill": "plan-reveal",
+            "skill": "ungenerated-flows",
             "x": 86,
             "y": 45
           },
           {
             "text": "Every number comes from their answers, and adds up: £4,630 in, £4,218 out, £412 put away.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 62,
             "y": 72
           },
           {
             "text": "“This is how your month will work”, not “Your plan is ready”.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 40,
             "y": 18
           },
           {
             "text": "One check on the card’s mark, one haptic. No confetti.",
-            "skill": "plan-reveal",
+            "skill": "ungenerated-flows",
             "x": 10,
             "y": 26
           }
@@ -496,9 +494,9 @@
       "what": "Sleep sounds and a wind-down that learns how long you take to drift off.",
       "step": "The paywall",
       "skills": [
-        "paywall",
-        "motion-system",
-        "no-slop"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-review"
       ],
       "kit": {
         "font": "Cormorant Garamond",
@@ -546,25 +544,25 @@
         "notes": [
           {
             "text": "A countdown on an offer that is always there.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 30
           },
           {
             "text": "A struck-out price nobody ever paid.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 44
           },
           {
             "text": "The close button is a faint × in the corner.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 9,
             "y": 8
           },
           {
             "text": "Sparkle ticks instead of three lines that matter.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 63
           }
@@ -575,25 +573,25 @@
         "notes": [
           {
             "text": "Every price visible before any tap.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 54
           },
           {
             "text": "The trial timeline, with real dates: today, the reminder, the first charge.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 68
           },
           {
             "text": "What’s due today rolls when the plan changes, slowly: calm never overshoots.",
-            "skill": "motion-styles",
+            "skill": "ungenerated-motion",
             "x": 86,
             "y": 79
           },
           {
             "text": "One button that names the outcome, then Restore purchases.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 86
           }
@@ -609,9 +607,9 @@
       "what": "Italian you say out loud, a phrase at a time, to a coach that listens.",
       "step": "A permission",
       "skills": [
-        "consent-and-permissions",
-        "bubbly-motion",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "kit": {
         "font": "Baloo 2",
@@ -661,19 +659,19 @@
         "notes": [
           {
             "text": "Asks for the microphone at launch, before any reason is visible.",
-            "skill": "consent-and-permissions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 47
           },
           {
             "text": "“This app requires microphone access”: a reason that says nothing.",
-            "skill": "consent-and-permissions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 55
           },
           {
             "text": "A gradient logo and a spinner while the system asks.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 22
           }
@@ -684,25 +682,25 @@
         "notes": [
           {
             "text": "Asked where the reason is visible: the phrase you’re about to say.",
-            "skill": "consent-and-permissions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 34
           },
           {
             "text": "The mic squishes under the finger; the words light as they’re heard.",
-            "skill": "bubbly-motion",
+            "skill": "ungenerated-motion",
             "x": 50,
             "y": 62
           },
           {
             "text": "What it does and never does, in one line.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 78
           },
           {
             "text": "Continue opens the real system alert, its words untouched.",
-            "skill": "consent-and-permissions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 92
           }
@@ -718,9 +716,9 @@
       "what": "Watering, light and repotting for every plant you own, from one photo.",
       "step": "Leaving",
       "skills": [
-        "cancel-flow",
-        "human-copy",
-        "no-slop"
+        "ungenerated-flows",
+        "ungenerated-foundation",
+        "ungenerated-review"
       ],
       "kit": {
         "font": "Gloock",
@@ -768,19 +766,19 @@
         "notes": [
           {
             "text": "Confirmshaming: “No thanks, I don't care about my plants”.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 93
           },
           {
             "text": "A 50% countdown that answers a question nobody asked.",
-            "skill": "cancel-flow",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 58
           },
           {
             "text": "Guilt as the headline, a crying emoji as the hero.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 28
           }
@@ -791,25 +789,25 @@
         "notes": [
           {
             "text": "One question, four specific answers, no “Other”.",
-            "skill": "cancel-flow",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 40
           },
           {
             "text": "The offer matches the answer: budget gets the whole menu, every price visible.",
-            "skill": "cancel-flow",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 52
           },
           {
             "text": "Their own numbers: what they made stays theirs.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 20
           },
           {
             "text": "Continue to cancel is a full button, in the same place on every screen.",
-            "skill": "cancel-flow",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 93
           }

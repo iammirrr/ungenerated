@@ -2,7 +2,7 @@
 
 Seven made-up apps, each with its own kit and its own motion style, shown through fifteen full
 flows: three openings, three onboardings, three paywalls, three setups and three ways out. They run
-on the design-board template's engine and are published as the
+on the ungenerated-flows template's engine and are published as the
 [project pages](https://iammirrr.github.io/ungenerated/#projects) and the
 [example board](https://iammirrr.github.io/ungenerated/board/).
 

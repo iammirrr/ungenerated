@@ -107,3 +107,13 @@ main > section.hero { margin-top: 48px; }
 
 /* The README posters (?still): no bar over the crops. */
 .is-still .top { display: none; }
+
+/* Icons, the store and the audits */
+.more { display: grid; gap: 28px; }
+.more-fig { margin: 0; }
+.more-fig img { display: block; width: 100%; height: auto; border-radius: 20px; }
+.more-fig figcaption { margin-top: 10px; color: var(--muted); font-size: 15px; }
+.more-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.more-table th { text-align: left; font-weight: 600; padding: 10px 12px 10px 0; }
+.more-table td { padding: 10px 12px 10px 0; border-top: 1px solid var(--line, rgba(0,0,0,.08)); vertical-align: top; }
+.more-table td:first-child { color: var(--muted); }

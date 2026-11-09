@@ -1,8 +1,11 @@
 {
   "name": "ungenerated",
-  "version": "0.1.0",
-  "description": "Design mobile apps with Claude: a live design board, a motion system, onboarding and paywall patterns, a no-slop checklist, the cancel flow, and native demos built from the board.",
-  "author": { "name": "Mir", "url": "https://github.com/iammirrr" },
+  "version": "0.2.0",
+  "description": "Make mobile apps with Claude that don't look generated: the kit, screen motion, every flow on a live board, a no-slop review, on-brand icons, the App Store listing (ASO, screenshots, trailer, banners) and nine pre-launch audits.",
+  "author": {
+    "name": "Mir",
+    "url": "https://github.com/iammirrr"
+  },
   "homepage": "https://iammirrr.github.io/ungenerated/",
   "repository": "https://github.com/iammirrr/ungenerated",
   "license": "MIT"

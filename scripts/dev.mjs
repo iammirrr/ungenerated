@@ -26,7 +26,7 @@ createServer(async (req, res) => {
     const send = (body, type) => { res.writeHead(200, { 'content-type': type, 'cache-control': 'no-store' }); res.end(body); };
     if (rel === 'board.config.js') return send(boardConfig(readExamples(root)), TYPES['.js']);
     if (rel === 'css/kits.css') return send(kitsCss(readExamples(root)), TYPES['.css']);
-    for (const base of [join(root, 'examples'), join(root, 'skills/design-board/template')]) {
+    for (const base of [join(root, 'examples'), join(root, 'skills/ungenerated-flows/template')]) {
       const f = join(base, rel);
       if (await exists(f)) return send(await readFile(f), TYPES[extname(f)] || 'application/octet-stream');
     }
