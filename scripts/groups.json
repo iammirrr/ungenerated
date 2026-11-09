@@ -1,57 +1,7 @@
 {
   "groups": [
-    {
-      "title": "Start here",
-      "skills": [
-        "app-design-workflow",
-        "app-concept"
-      ]
-    },
-    {
-      "title": "Foundation",
-      "skills": [
-        "design-kit",
-        "motion-system",
-        "interaction-feel",
-        "bubbly-motion",
-        "continuity",
-        "real-icons-and-devices",
-        "human-copy"
-      ]
-    },
-    {
-      "title": "The board",
-      "skills": [
-        "design-board",
-        "app-research",
-        "design-review",
-        "visual-qa"
-      ]
-    },
-    {
-      "title": "The flow",
-      "skills": [
-        "opening-hook",
-        "onboarding-questions",
-        "story-screens",
-        "plan-reveal",
-        "account-signup",
-        "paywall",
-        "consent-and-permissions",
-        "setup-and-tour",
-        "app-screens",
-        "cancel-flow"
-      ]
-    },
-    {
-      "title": "Quality",
-      "skills": [
-        "no-slop",
-        "accessibility-pass",
-        "native-port",
-        "board-to-app",
-        "app-store-assets"
-      ]
-    }
+    { "title": "Design", "skills": ["ungenerated-foundation", "ungenerated-motion", "ungenerated-flows", "ungenerated-review"] },
+    { "title": "Icons and the store", "skills": ["ungenerated-icons", "ungenerated-store"] },
+    { "title": "Audits", "skills": ["ungenerated-audit", "ungenerated-audit-payments", "ungenerated-audit-security", "ungenerated-audit-privacy", "ungenerated-audit-code", "ungenerated-audit-analytics", "ungenerated-audit-ai", "ungenerated-audit-app-review", "ungenerated-audit-performance"] }
   ]
 }

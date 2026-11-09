@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{NAME}} · Ungenerated</title>
+<meta name="description" content="{{WHAT}} An example project designed with the Ungenerated skills: before and after, every screen, the kit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="{{FONTS}}">
+<link rel="stylesheet" href="../base.css">
+<link rel="stylesheet" href="../home.css">
+<link rel="stylesheet" href="../project.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="logo" href="../">Ungenerated</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="../#projects">Projects</a>
+      <a href="../#skills">Skills</a>
+      <a href="{{REPO}}">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pj">
+
+<section class="wrap pj-head">
+  <div class="pj-title">{{ICON}}<div><h1>{{NAME}}</h1><p>{{CATEGORY}} · <a href="../skills/motion-styles.html">{{STYLE}} motion</a> · {{FONT}}</p></div></div>
+  <p class="pj-what">{{WHAT}}</p>
+</section>
+
+<section class="wrap pj-sec" aria-label="Before and after">
+  <div class="stage hero-stage">
+    <figure class="side">
+      <figcaption><b>Before</b><span>Claude alone</span></figcaption>
+      <div class="phone"><iframe title="Before: Claude alone" tabindex="-1" data-src="../board/embed.html?paused#{{BEFORE}}"></iframe></div>
+    </figure>
+    <figure class="side">
+      <figcaption><b>After</b><span>With the skills</span></figcaption>
+      <div class="phone"><iframe title="After: with the skills" tabindex="-1" data-src="../board/embed.html?paused#{{AFTER}}"></iframe></div>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap pj-sec" id="screens">
+  <h2>Screens</h2>
+  <div class="fl" data-player data-flows="{{FLOW_IDS}}"></div>
+</section>
+
+<section class="wrap pj-sec" id="kit">
+  <h2>Kit</h2>
+  <iframe class="pj-kit" title="The kit, before and after" data-src="../board/kitsheet.html#{{ID}}" loading="lazy"></iframe>
+</section>
+
+{{PICTURES}}
+
+<nav class="wrap" aria-label="Other projects"><div class="pj-next">{{PAGER}}</div></nav>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in"><span>Rebuilt from <a href="{{REPO}}">the repository</a> on every change · {{WHEN}}</span><span>MIT licence. {{NAME}} is made up.</span></div>
+</footer>
+
+<script>{{DATA}}</script>
+<script src="../flows.js"></script>
+<script src="../project.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* App Store screenshots, made by hand: what every screenshot shares. Brand values live in theme.css (made by new.mjs).
+   A screenshot is one page, one .f frame of 440 x 956 CSS px, shot at 3x (1320 x 2868, iPhone 6.9"). */
+* { box-sizing: border-box; margin: 0; }
+html, body { background: #111; }
+html:not(.shot) body { display: grid; place-items: center; min-height: 100vh; }
+html:not(.shot) .f { zoom: var(--z, 1); }
+html.shot .f { zoom: var(--fit, 1); }
+.f { position: relative; width: 440px; height: 956px; overflow: hidden; font-family: var(--display); }
+.f.brand { color: var(--brand-ink); background:
+  radial-gradient(60% 34% at 18% 8%, var(--brand-light) 0, transparent 72%),
+  linear-gradient(180deg, var(--brand) 0%, var(--brand-deep) 100%); }
+.f.white { color: var(--ink); background: radial-gradient(70% 40% at 85% 6%, var(--brand-wash) 0, transparent 70%), var(--paper); }
+/* one headline style for the whole set: two short lines, heavy, one word boxed; never a shadow */
+h1 { position: absolute; left: 0; right: 0; top: 54px; text-align: center; font-weight: 900; letter-spacing: -0.035em; line-height: .92; font-size: 64px; z-index: 30; }
+h1 > span { display: block; }
+h1 .box { display: inline-block; padding: 0 14px 6px; border-radius: 18px; transform: rotate(-3deg); margin-left: 4px; }
+.brand h1 .box { background: var(--brand-ink); color: var(--brand); }
+.white h1 .box { background: var(--brand); color: #fff; }
+/* the phone holds a real screen (native/ or a capture of the web app) */
+.phone { position: absolute; border-radius: 46px; background: #0d0d10; padding: 10px; box-shadow: 0 0 0 2px #3c3c43, 0 0 0 3px #7a7a82, 0 30px 60px rgba(40, 20, 10, .32); }
+.phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 37px; display: block; }
+.card { position: absolute; background: #fff; color: var(--ink); border-radius: 22px; box-shadow: 0 18px 44px rgba(40, 20, 10, .22); }
+.ui { font-family: var(--ui); }
+.lab { font: 800 10px/1 var(--ui); letter-spacing: .09em; text-transform: uppercase; color: #a6a2a8; }
+.said { background: var(--said-bg); color: var(--said-ink); border-radius: 8px; padding: 3px 8px; display: inline; -webkit-box-decoration-break: clone; box-decoration-break: clone; }

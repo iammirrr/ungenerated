@@ -1,0 +1,51 @@
+/* A project page: the app, before and after, its screens, its kit, its pictures. */
+
+.pj-head { padding-top: clamp(36px, 6vw, 72px); }
+main.pj > section.pj-head { margin-top: 0; }
+.pj-title { display: flex; align-items: center; gap: 16px; }
+.pj-title h1 { font-size: clamp(32px, 4.4vw, 46px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; }
+.pj-title p { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
+.pj-title p a { color: var(--muted); }
+.pj-head .pj-ic { width: 64px; height: 64px; font-size: 34px; }
+.pj-what { max-width: 36em; margin: 18px 0 0; font-size: 17px; color: var(--muted); }
+
+main.pj > section.pj-sec { margin-top: 72px; }
+main.pj > section.pj-sec:first-of-type { margin-top: 40px; }
+.pj-sec h2 { margin-bottom: 18px; }
+
+/* Screens: the player, wide. */
+.pj .fl-stage { grid-template-columns: minmax(0, 320px) minmax(0, 1fr); }
+
+/* The kit sheet sizes itself. */
+.pj-kit { display: block; width: 100%; height: 1200px; border: 0; }
+
+/* Pictures: the ChatGPT prompts, ready to paste. */
+.pics-how { max-width: 52em; margin: -8px 0 18px; color: var(--muted); }
+.prompt { position: relative; margin: 0; padding: 14px 16px 16px; border-radius: 14px; background: var(--soft); }
+.prompt-name { margin: 0 0 6px; font-size: 13.5px; font-weight: 600; }
+.prompt pre { margin: 0; padding-right: 130px; white-space: pre-wrap; font: 13px/1.6 var(--mono); color: var(--muted); }
+.prompt .copy { top: 12px; right: 12px; }
+.pics { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; margin-top: 12px; }
+.pic-card { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; align-items: start; padding: 14px; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--line); }
+.pic-thumb { width: 64px; aspect-ratio: var(--r, 1); display: grid; place-items: center; overflow: hidden; border-radius: 10px; background: var(--soft); font: 500 11px var(--mono); color: var(--faint); }
+.pic-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pic-txt { min-width: 0; }
+.pic-txt b { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.35; }
+.pic-txt code { display: inline-block; margin-top: 4px; font-size: 11.5px; color: var(--muted); }
+.pic-txt p { margin: 8px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+.pic-txt .copy { position: static; margin-top: 10px; height: 28px; font-size: 12.5px; }
+
+/* Previous and next. */
+.pj-next { display: flex; justify-content: space-between; gap: 12px; margin-top: 96px; padding-top: 22px; border-top: 1px solid var(--line); }
+.pj-next a { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.pj-next a small { display: block; font-size: 12.5px; color: var(--faint); }
+.pj-next a b { display: block; font-size: 16px; font-weight: 600; }
+.pj-next a.is-next { margin-left: auto; text-align: right; flex-direction: row-reverse; }
+.pj-next .pj-ic { width: 40px; height: 40px; font-size: 21px; }
+
+@media (max-width: 720px) { .pj .fl-stage { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) {
+  .prompt pre { padding-right: 0; padding-top: 36px; }
+  .prompt-name { position: absolute; top: 18px; left: 16px; }
+  .pics { grid-template-columns: minmax(0, 1fr); }
+}

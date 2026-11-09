@@ -1,11 +1,14 @@
 {
   "name": "ungenerated",
-  "owner": { "name": "Mir", "url": "https://github.com/iammirrr" },
+  "owner": {
+    "name": "Mir",
+    "url": "https://github.com/iammirrr"
+  },
   "plugins": [
     {
       "name": "ungenerated",
       "source": "./",
-      "description": "Design mobile apps with Claude: a live design board, a motion system, onboarding and paywall patterns, a no-slop checklist, the cancel flow, and native demos built from the board."
+      "description": "Make mobile apps with Claude that don't look generated: the kit, screen motion, every flow on a live board, a no-slop review, on-brand icons, the App Store listing (ASO, screenshots, trailer, banners) and nine pre-launch audits."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "about": "Six made-up apps, each designed twice from the same brief: once the way a model designs by default (the generated draft), once with these skills. The board in this folder renders them; scripts/build-site.mjs turns this file into the page, the board's config and the kit styles.",
+  "about": "Seven made-up apps, each with its own kit and motion style, shown through full flows (flows.json) and one generated draft each for contrast. scripts/board-config.mjs turns these files into the board's config, the kit styles and the page's data.",
   "generated": {
     "name": "The default kit",
     "what": "What every model reaches for when nobody says otherwise.",
@@ -33,7 +33,8 @@
       "Emoji where icons should be",
       "rounded-2xl and shadow-lg on every card",
       "A glow behind the hero"
-    ]
+    ],
+    "sample": "Your Personalized Plan is Ready! 🎉"
   },
   "apps": [
     {
@@ -42,9 +43,9 @@
       "what": "A sourdough companion that bakes on your starter's schedule, not the recipe's.",
       "step": "The opening",
       "skills": [
-        "opening-hook",
-        "continuity",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "kit": {
         "font": "Young Serif",
@@ -82,32 +83,35 @@
           ]
         ],
         "mood": "Warm, slow, a kitchen at seven in the morning",
-        "weight": 400
+        "weight": 400,
+        "sample": "Bread on its own clock.",
+        "iconBg": "#BF4F1A",
+        "iconInk": "#FBF6EC"
       },
       "before": {
         "id": "loaf-generated",
         "notes": [
           {
             "text": "A feature carousel with dots for an opening.",
-            "skill": "opening-hook",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 86
           },
           {
             "text": "Emoji for icons, in glass cards on a blurred blob.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 22,
             "y": 52
           },
           {
             "text": "“Your AI-powered companion”: a heading any app could use.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 33
           },
           {
             "text": "Get Started before anything has been shown.",
-            "skill": "opening-hook",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 94
           }
@@ -117,31 +121,34 @@
         "id": "loaf-opening",
         "notes": [
           {
-            "text": "One hero, the jar, carries every beat.",
-            "skill": "opening-hook",
+            "text": "Fades in on the bread; the camera finds the jar, which carries every beat.",
+            "skill": "ungenerated-flows",
             "x": 50,
-            "y": 45
+            "y": 40
           },
           {
-            "text": "The starter rises and the clock moves: the product at work, not described.",
-            "skill": "continuity",
-            "x": 70,
-            "y": 64
+            "text": "The starter rises and the clock flows: the product at work, not described.",
+            "skill": "ungenerated-motion",
+            "x": 72,
+            "y": 66
           },
           {
-            "text": "One short line per beat, in a baker's words.",
-            "skill": "human-copy",
+            "text": "One short line per beat, rising out of a mask, in a baker’s words.",
+            "skill": "ungenerated-motion",
             "x": 50,
-            "y": 17
+            "y": 20
           },
           {
             "text": "The button arrives only at the end.",
-            "skill": "opening-hook",
+            "skill": "ungenerated-flows",
             "x": 50,
-            "y": 93
+            "y": 92
           }
         ]
-      }
+      },
+      "style": "cinematic",
+      "category": "Baking",
+      "icon": "loaf-icon"
     },
     {
       "id": "stride",
@@ -149,9 +156,9 @@
       "what": "A running coach that builds the first week from the run you already did.",
       "step": "A question",
       "skills": [
-        "onboarding-questions",
-        "interaction-feel",
-        "design-kit"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "kit": {
         "font": "Big Shoulders Display",
@@ -191,26 +198,30 @@
         "mood": "Loud, fast, a track at night",
         "weight": 800,
         "case": "uppercase",
-        "track": "0"
+        "track": "0",
+        "tone": "light",
+        "sample": "Week one, from your run.",
+        "iconBg": "#0E0F0C",
+        "iconInk": "#D4FF3F"
       },
       "before": {
         "id": "stride-generated",
         "notes": [
           {
             "text": "“Step 3 of 12” tells people how long the form will take.",
-            "skill": "onboarding-questions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 12
           },
           {
             "text": "A goal list every fitness app asks, and nothing later uses.",
-            "skill": "onboarding-questions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 50
           },
           {
             "text": "Emoji rows, then Next, for a single pick.",
-            "skill": "interaction-feel",
+            "skill": "ungenerated-motion",
             "x": 50,
             "y": 92
           }
@@ -221,27 +232,143 @@
         "notes": [
           {
             "text": "Asks the thing itself, in one read.",
-            "skill": "onboarding-questions",
+            "skill": "ungenerated-flows",
             "x": 40,
-            "y": 18
+            "y": 22
           },
           {
-            "text": "A ruler you drag; the thumb glides, the value flows.",
-            "skill": "interaction-feel",
+            "text": "A condensed face, every digit in its own fixed slot, so numbers never jitter.",
+            "skill": "ungenerated-foundation",
             "x": 50,
-            "y": 60
+            "y": 46
           },
           {
-            "text": "The consequence updates as you drag: laps, then week one.",
-            "skill": "onboarding-questions",
+            "text": "A ruler you drag; it follows the finger and the value flows.",
+            "skill": "ungenerated-motion",
             "x": 50,
-            "y": 76
+            "y": 65
           },
           {
-            "text": "A condensed face with tabular figures for every number.",
-            "skill": "design-kit",
+            "text": "The consequence updates as you drag: the laps, then week one’s easy runs.",
+            "skill": "ungenerated-flows",
             "x": 50,
-            "y": 39
+            "y": 77
+          }
+        ]
+      },
+      "style": "snappy",
+      "category": "Running",
+      "icon": "stride-icon"
+    },
+    {
+      "id": "ripe",
+      "name": "Ripe",
+      "what": "Meals you already like, planned around a weight you can keep.",
+      "step": "The plan",
+      "style": "fluid",
+      "category": "Diet",
+      "icon": "ripe-icon",
+      "skills": [
+        "ungenerated-flows"
+      ],
+      "kit": {
+        "font": "Bricolage Grotesque",
+        "fontCss": "\"Bricolage Grotesque\", ui-sans-serif, system-ui, sans-serif",
+        "body": "same",
+        "ground": "#FFF4D6",
+        "panel": "#FFFBEF",
+        "inset": "#F7E8BF",
+        "hover": "#EFDDAE",
+        "ink": "#3A2629",
+        "inkStrong": "#22161A",
+        "inkMuted": "#7A6468",
+        "inkQuiet": "#A38D90",
+        "accent": "#E0315B",
+        "accentText": "#C21F4A",
+        "btn": "#E0315B",
+        "btnDown": "#C92650",
+        "btnInk": "#FFF8EE",
+        "radius": 24,
+        "weight": 700,
+        "track": "-0.035em",
+        "swatches": [
+          [
+            "Butter",
+            "#FFF4D6"
+          ],
+          [
+            "Cream",
+            "#FFFBEF"
+          ],
+          [
+            "Raspberry",
+            "#E0315B"
+          ],
+          [
+            "Fig",
+            "#22161A"
+          ]
+        ],
+        "mood": "Fresh, bright, a fruit stall in the morning",
+        "sample": "How you’ll get to 66 kg.",
+        "iconBg": "#FFF4D6",
+        "iconInk": "#E0315B"
+      },
+      "before": {
+        "id": "ripe-generated",
+        "notes": [
+          {
+            "text": "“Lose up to 10 lbs in 30 days”: a crash promise as the headline, in gradient text.",
+            "skill": "ungenerated-review",
+            "x": 50,
+            "y": 17
+          },
+          {
+            "text": "A “metabolism type” and an 87% score nobody measured.",
+            "skill": "ungenerated-flows",
+            "x": 50,
+            "y": 35
+          },
+          {
+            "text": "A 1,200-calorie day and food rules; not one of their answers shows up.",
+            "skill": "ungenerated-flows",
+            "x": 50,
+            "y": 49
+          },
+          {
+            "text": "A ticking discount, an invented review and “Join 5M+ users”.",
+            "skill": "ungenerated-review",
+            "x": 50,
+            "y": 66
+          }
+        ]
+      },
+      "after": {
+        "id": "ripe-plan",
+        "notes": [
+          {
+            "text": "Each answer flies up into its row and becomes the value, one after another.",
+            "skill": "ungenerated-flows",
+            "x": 74,
+            "y": 42
+          },
+          {
+            "text": "One check on the mark, one haptic. No confetti.",
+            "skill": "ungenerated-flows",
+            "x": 16,
+            "y": 29
+          },
+          {
+            "text": "Every number is theirs: 72 to 66 kg at half a kilo a week, and the date it lands on.",
+            "skill": "ungenerated-review",
+            "x": 78,
+            "y": 69
+          },
+          {
+            "text": "Called an estimate, in small print, right under the curve.",
+            "skill": "ungenerated-foundation",
+            "x": 50,
+            "y": 77
           }
         ]
       }
@@ -252,9 +379,9 @@
       "what": "A budget two people keep together, without a spreadsheet or an argument.",
       "step": "The plan",
       "skills": [
-        "plan-reveal",
-        "no-slop",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-review",
+        "ungenerated-foundation"
       ],
       "kit": {
         "font": "Schibsted Grotesk",
@@ -294,32 +421,35 @@
         "mood": "Plain, exact, a kitchen table with the bills on it",
         "body": "same",
         "weight": 700,
-        "track": "-0.045em"
+        "track": "-0.045em",
+        "sample": "This is how your month will work.",
+        "iconBg": "#F2B705",
+        "iconInk": "#111110"
       },
       "before": {
         "id": "halves-generated",
         "notes": [
           {
             "text": "Confetti for a plan nobody has read yet.",
-            "skill": "plan-reveal",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 14
           },
           {
             "text": "“Save up to $1,000/month*”: a round number from nowhere.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 62
           },
           {
             "text": "A donut of colours with no labels.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 42
           },
           {
             "text": "“Unlock your financial freedom”.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 91
           }
@@ -329,31 +459,34 @@
         "id": "halves-plan",
         "notes": [
           {
-            "text": "Each answer glides straight into its row, one after another.",
-            "skill": "plan-reveal",
-            "x": 72,
-            "y": 46
+            "text": "Each answer glides straight into its row, one after another, and is wiped in.",
+            "skill": "ungenerated-flows",
+            "x": 86,
+            "y": 45
           },
           {
-            "text": "Every number comes from their answers, and adds up: £4,630 in, £412 left.",
-            "skill": "no-slop",
-            "x": 72,
-            "y": 74
+            "text": "Every number comes from their answers, and adds up: £4,630 in, £4,218 out, £412 put away.",
+            "skill": "ungenerated-review",
+            "x": 62,
+            "y": 72
           },
           {
             "text": "“This is how your month will work”, not “Your plan is ready”.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 40,
-            "y": 15
+            "y": 18
           },
           {
-            "text": "One check on the card's mark, one haptic. No confetti.",
-            "skill": "plan-reveal",
-            "x": 86,
-            "y": 27
+            "text": "One check on the card’s mark, one haptic. No confetti.",
+            "skill": "ungenerated-flows",
+            "x": 10,
+            "y": 26
           }
         ]
-      }
+      },
+      "style": "precise",
+      "category": "Money for two",
+      "icon": "halves-icon"
     },
     {
       "id": "lull",
@@ -361,9 +494,9 @@
       "what": "Sleep sounds and a wind-down that learns how long you take to drift off.",
       "step": "The paywall",
       "skills": [
-        "paywall",
-        "motion-system",
-        "no-slop"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-review"
       ],
       "kit": {
         "font": "Cormorant Garamond",
@@ -401,32 +534,35 @@
           ]
         ],
         "mood": "Quiet, unhurried, the hour before sleep",
-        "weight": 600
+        "weight": 600,
+        "sample": "Here’s tonight.",
+        "iconBg": "#121D33",
+        "iconInk": "#D9822B"
       },
       "before": {
         "id": "lull-generated",
         "notes": [
           {
             "text": "A countdown on an offer that is always there.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 30
           },
           {
             "text": "A struck-out price nobody ever paid.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 44
           },
           {
             "text": "The close button is a faint × in the corner.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 9,
             "y": 8
           },
           {
             "text": "Sparkle ticks instead of three lines that matter.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 63
           }
@@ -437,30 +573,33 @@
         "notes": [
           {
             "text": "Every price visible before any tap.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
-            "y": 47
+            "y": 54
           },
           {
             "text": "The trial timeline, with real dates: today, the reminder, the first charge.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
-            "y": 70
+            "y": 68
           },
           {
-            "text": "Money rolls when the plan changes.",
-            "skill": "motion-system",
-            "x": 80,
-            "y": 43
+            "text": "What’s due today rolls when the plan changes, slowly: calm never overshoots.",
+            "skill": "ungenerated-motion",
+            "x": 86,
+            "y": 79
           },
           {
             "text": "One button that names the outcome, then Restore purchases.",
-            "skill": "paywall",
+            "skill": "ungenerated-flows",
             "x": 50,
-            "y": 91
+            "y": 86
           }
         ]
-      }
+      },
+      "style": "calm",
+      "category": "Sleep",
+      "icon": "lull-icon"
     },
     {
       "id": "parla",
@@ -468,9 +607,9 @@
       "what": "Italian you say out loud, a phrase at a time, to a coach that listens.",
       "step": "A permission",
       "skills": [
-        "consent-and-permissions",
-        "bubbly-motion",
-        "human-copy"
+        "ungenerated-flows",
+        "ungenerated-motion",
+        "ungenerated-foundation"
       ],
       "kit": {
         "font": "Baloo 2",
@@ -509,26 +648,30 @@
         ],
         "mood": "Bright, bubbly, a café counter in Bologna",
         "body": "same",
-        "weight": 800
+        "weight": 800,
+        "tone": "light",
+        "sample": "Say it out loud.",
+        "iconBg": "#E4472E",
+        "iconInk": "#FFFFFF"
       },
       "before": {
         "id": "parla-generated",
         "notes": [
           {
             "text": "Asks for the microphone at launch, before any reason is visible.",
-            "skill": "consent-and-permissions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 47
           },
           {
             "text": "“This app requires microphone access”: a reason that says nothing.",
-            "skill": "consent-and-permissions",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 55
           },
           {
             "text": "A gradient logo and a spinner while the system asks.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 22
           }
@@ -538,31 +681,34 @@
         "id": "parla-mic",
         "notes": [
           {
-            "text": "Asked where the reason is visible: the phrase you're about to say.",
-            "skill": "consent-and-permissions",
+            "text": "Asked where the reason is visible: the phrase you’re about to say.",
+            "skill": "ungenerated-flows",
             "x": 50,
-            "y": 30
+            "y": 34
           },
           {
-            "text": "The mic squishes under the finger; the words light as they're heard.",
-            "skill": "bubbly-motion",
+            "text": "The mic squishes under the finger; the words light as they’re heard.",
+            "skill": "ungenerated-motion",
             "x": 50,
-            "y": 58
+            "y": 62
           },
           {
             "text": "What it does and never does, in one line.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 78
           },
           {
-            "text": "Then the real system sheet, untouched.",
-            "skill": "consent-and-permissions",
+            "text": "Continue opens the real system alert, its words untouched.",
+            "skill": "ungenerated-flows",
             "x": 50,
-            "y": 90
+            "y": 92
           }
         ]
-      }
+      },
+      "style": "bubbly",
+      "category": "Language",
+      "icon": "parla-icon"
     },
     {
       "id": "fern",
@@ -570,9 +716,9 @@
       "what": "Watering, light and repotting for every plant you own, from one photo.",
       "step": "Leaving",
       "skills": [
-        "cancel-flow",
-        "human-copy",
-        "no-slop"
+        "ungenerated-flows",
+        "ungenerated-foundation",
+        "ungenerated-review"
       ],
       "kit": {
         "font": "Gloock",
@@ -610,60 +756,66 @@
           ]
         ],
         "mood": "Green, patient, a windowsill in spring",
-        "weight": 400
+        "weight": 400,
+        "sample": "Your plants are all here.",
+        "iconBg": "#DFE6D8",
+        "iconInk": "#16221A"
       },
       "before": {
         "id": "fern-generated",
         "notes": [
           {
             "text": "Confirmshaming: “No thanks, I don't care about my plants”.",
-            "skill": "no-slop",
+            "skill": "ungenerated-review",
             "x": 50,
             "y": 93
           },
           {
             "text": "A 50% countdown that answers a question nobody asked.",
-            "skill": "cancel-flow",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 58
           },
           {
             "text": "Guilt as the headline, a crying emoji as the hero.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 28
           }
         ]
       },
       "after": {
-        "id": "fern-leaving",
+        "id": "fern-offer",
         "notes": [
           {
             "text": "One question, four specific answers, no “Other”.",
-            "skill": "cancel-flow",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 40
           },
           {
             "text": "The offer matches the answer: budget gets the whole menu, every price visible.",
-            "skill": "cancel-flow",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 52
           },
           {
             "text": "Their own numbers: what they made stays theirs.",
-            "skill": "human-copy",
+            "skill": "ungenerated-foundation",
             "x": 50,
             "y": 20
           },
           {
             "text": "Continue to cancel is a full button, in the same place on every screen.",
-            "skill": "cancel-flow",
+            "skill": "ungenerated-flows",
             "x": 50,
             "y": 93
           }
         ]
-      }
+      },
+      "style": "organic",
+      "category": "Plant care",
+      "icon": "fern-icon"
     }
   ]
 }

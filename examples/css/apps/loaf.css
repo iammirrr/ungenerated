@@ -1,0 +1,152 @@
+/* ---------------------------------------------------------------- Loaf (cinematic) */
+
+.k-loaf .ph-body { padding-top: 59px; }
+.k-loaf em { font-style: normal; color: var(--accent-text); }
+.lf-top { flex: none; display: flex; align-items: center; height: 44px; margin: 0 -14px; }
+
+/* Type: Young Serif for what you read first, the system face for the rest. */
+.lf-h { margin: 22px 0 0; font: 400 32px/1.12 var(--font-display); letter-spacing: -0.02em; color: var(--ink-strong); text-wrap: balance; }
+.lf-h.is-one { margin-top: 6px; font-size: 36px; }
+.lf-eyebrow { margin: 8px 0 0; font: 600 11.5px/1.2 var(--font); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+
+/* ---------------------------------------------------------------- the opening: one take, a camera on a rig */
+
+.lf-cine { position: absolute; inset: 0; overflow: hidden; }
+.lf-night { position: absolute; inset: 0; background: var(--ink-strong); }
+.ph .lf-over { z-index: 51; }
+.lf-world { position: absolute; left: 0; top: 0; width: 390px; }
+
+/* Shot one: the crumb in a letterbox, the first line under it like a title card. */
+.lf-crumb { position: absolute; left: 0; right: 0; top: 104px; height: 494px; overflow: hidden; }
+.lf-crumb-pic { position: absolute; left: 0; right: 0; top: -24px; bottom: -24px; }
+.lf-film { position: absolute; left: 24px; right: 24px; top: 626px; margin: 0; font: 400 38px/1.1 var(--font-display); letter-spacing: -0.02em; color: var(--ink-strong); text-align: center; }
+.lf-film.is-top { top: 92px; font-size: 34px; }
+.lf-film-sub { position: absolute; left: 24px; right: 24px; top: 724px; margin: 0; font-size: 16px; line-height: 1.4; color: var(--ink-muted); text-align: center; }
+
+/* Shot two, one screen down (the script sets each top from the tilt): the jar, the clock, the rise, the plan. */
+.lf-clock { position: absolute; left: 50%; translate: -50% 0; display: flex; align-items: center; gap: 7px; height: 36px; padding: 0 15px; border-radius: 999px; background: var(--panel); color: var(--ink); font: 600 15px var(--font); white-space: nowrap; box-shadow: 0 1px 0 var(--hair); }
+.lf-clock .ic { color: var(--accent); }
+.lf-clock-t { min-width: 66px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.lf-op-chart { position: absolute; left: 24px; width: 342px; }
+.lf-op-call { position: absolute; left: 24px; right: 24px; }
+.lf-op-foot { position: absolute; left: 24px; right: 24px; bottom: 42px; }
+
+/* The jar: glass, the starter inside, a rubber band where it was fed, the 2× it is rising to. */
+.lf-jar { position: absolute; left: 50%; width: 170px; height: 222px; margin-left: -85px; transform-origin: 50% 100%; }
+.lf-jar-shadow { position: absolute; left: 8px; right: 8px; bottom: -8px; height: 18px; border-radius: 50%; background: color-mix(in srgb, var(--ink-strong) 16%, transparent); filter: blur(6px); }
+.lf-lid { position: absolute; top: 0; left: 22px; right: 22px; height: 30px; z-index: 2; display: flex; flex-direction: column; justify-content: space-evenly; padding: 3px 0; border-radius: 9px 9px 5px 5px; background: #8f8170; box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12); }
+.lf-lid i { display: block; height: 3px; margin: 0 6px; border-radius: 2px; background: rgba(255, 255, 255, 0.2); }
+.lf-lid::after { content: ''; position: absolute; left: -4px; right: -4px; bottom: -4px; height: 7px; border-radius: 4px; background: #7d705f; }
+.lf-glass::after { content: ''; position: absolute; top: 30px; bottom: 44px; right: 15px; width: 3px; border-radius: 2px; background: rgba(255, 255, 255, 0.38); }
+.lf-glass { position: absolute; top: 24px; left: 0; right: 0; height: 196px; overflow: hidden; border-radius: 30px 30px 42px 42px; background: color-mix(in srgb, var(--panel) 62%, transparent); box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--ink) 15%, transparent), inset 0 -10px 18px color-mix(in srgb, var(--ink) 6%, transparent); }
+.lf-starter { position: absolute; left: 0; right: 0; top: 0; height: 196px; background: #e9d7b3; }
+.lf-surface { position: absolute; left: -10px; right: -10px; top: -9px; height: 18px; border-radius: 50%; background: #f3e5c8; box-shadow: inset 0 -2px 0 rgba(122, 102, 85, 0.12); }
+.lf-bub { position: absolute; border-radius: 50%; background: rgba(255, 250, 240, 0.7); box-shadow: inset 0 0 0 1px rgba(122, 102, 85, 0.24); }
+.lf-shine { position: absolute; top: 18px; bottom: 28px; left: 17px; width: 9px; border-radius: 6px; background: rgba(255, 255, 255, 0.55); }
+.lf-band { position: absolute; top: 24px; left: -5px; right: -5px; height: 7px; margin-top: -3px; border-radius: 4px; background: var(--accent); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12); }
+.lf-twice { position: absolute; top: 24px; right: -46px; display: flex; align-items: center; gap: 6px; margin-top: -9px; font: 600 13px var(--font); color: var(--ink-muted); }
+.lf-twice i { width: 30px; height: 0; border-top: 2px dashed var(--ink-quiet); }
+
+/* The rise: the line as observed, the forecast dashed, a soft ground under it. */
+.lf-plot-wrap { position: relative; }
+.lf-plot { position: relative; }
+.lf-plot svg { display: block; overflow: visible; }
+.lf-line { fill: none; stroke: var(--accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.lf-line.is-forecast { stroke-width: 2; stroke-dasharray: 2 6; opacity: 0.7; }
+.lf-area { fill: var(--accent-soft); }
+.lf-peak-dot { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--ground); }
+.lf-peak-dot.is-small { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; box-shadow: 0 0 0 3px var(--panel); }
+.lf-peak-tag { position: absolute; padding: 4px 9px; border-radius: 8px; background: var(--ink-strong); color: var(--ground); font: 600 12.5px var(--font); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.lf-axis { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--hair-2); font: 500 12px var(--font); color: var(--ink-quiet); }
+
+/* The plan, as a call sheet: three columns, hairlines, no boxes. */
+.lf-call { display: grid; grid-template-columns: repeat(3, 1fr); }
+.lf-call div { padding: 2px 0 4px; text-align: center; }
+.lf-call div + div { box-shadow: inset 1px 0 0 var(--hair-2); }
+.lf-call small { display: block; font: 600 11px/1.2 var(--font); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+.lf-call b { display: block; margin-top: 6px; font: 400 22px/1.1 var(--font-display); color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------------- 1 · the last feed */
+
+.lf-letter { flex: none; position: relative; height: 216px; margin: 6px -24px 0; overflow: hidden; }
+.lf-letter-pic { position: absolute; inset: -12px 0; }
+.lf-h.is-center { margin-top: 30px; text-align: center; }
+.lf-when { margin-top: 24px; text-align: center; }
+.lf-when small { display: block; font: 600 11.5px/1.2 var(--font); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+.lf-when-row { display: flex; align-items: baseline; justify-content: center; gap: 8px; margin-top: 6px; }
+.lf-when-t { font: 400 68px/1 var(--font-display); letter-spacing: -0.03em; color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.lf-when-ap { font: 400 24px/1 var(--font-display); color: var(--ink-muted); }
+.lf-ribbon { position: relative; flex: none; height: 62px; margin: 18px -24px 0; overflow: hidden; touch-action: none; cursor: grab; -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent); mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent); }
+.lf-strip { position: absolute; left: 0; top: 0; bottom: 0; }
+.lf-tick { position: absolute; top: 12px; width: 2px; height: 12px; margin-left: -1px; border-radius: 1px; background: var(--hair-2); }
+.lf-tick.is-half { height: 18px; top: 9px; background: color-mix(in srgb, var(--ink) 26%, transparent); }
+.lf-tick.is-hour { height: 26px; top: 5px; background: var(--ink-muted); }
+.lf-tick-label { position: absolute; top: 38px; translate: -50% 0; font: 600 12.5px var(--font); color: var(--ink-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.lf-needle { position: absolute; left: 195px; top: 0; width: 3px; height: 34px; margin-left: -1.5px; border-radius: 2px; background: var(--accent); }
+.lf-meaning { margin: 16px 0 0; text-align: center; font-size: 16px; color: var(--ink-muted); }
+.lf-meaning b { color: var(--ink-strong); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------------- 2 · the day as a schedule */
+
+.lf-sched { margin-top: 18px; }
+.lf-step { display: grid; grid-template-columns: 74px 1fr auto; align-items: center; gap: 12px; min-height: 84px; }
+.lf-step.is-done { min-height: 40px; }
+.lf-step-time b { display: inline; font: 400 25px/1 var(--font-display); color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.lf-step-time small { display: inline; margin-left: 3px; font: 500 13px var(--font); color: var(--ink-muted); }
+.lf-step.is-done .lf-step-time b { font-size: 19px; color: var(--ink-muted); }
+.lf-step-text b { display: block; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink-strong); }
+.lf-step-text small { display: block; margin-top: 2px; font-size: 13.5px; color: var(--ink-muted); }
+.lf-step.is-done .lf-step-text b { font-weight: 500; color: var(--ink-muted); }
+.lf-step-pic { width: 64px; height: 80px; border-radius: 14px; }
+.lf-step-done { display: grid; place-items: center; width: 26px; height: 26px; margin-right: 19px; border-radius: 50%; background: var(--inset); color: var(--ink-muted); }
+.lf-link { display: grid; grid-template-columns: 74px 1fr; gap: 12px; align-items: center; height: 26px; }
+.lf-link i { justify-self: start; width: 2px; height: 22px; margin-left: 18px; border-radius: 1px; background: var(--hair-2); }
+.lf-link span { font: 500 12.5px var(--font); color: var(--ink-quiet); font-variant-numeric: tabular-nums; }
+.lf-ask { margin: 0 0 6px; font-size: 15.5px; line-height: 1.35; color: var(--ink); text-align: center; }
+
+/* A notification, drawn as iOS draws it, so the reason is on screen before the ask. */
+.lf-notif { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 14px; padding: 13px 14px; border-radius: 22px; background: rgba(255, 255, 255, 0.78); box-shadow: 0 8px 26px color-mix(in srgb, var(--ink-strong) 12%, transparent), 0 0 0 0.5px color-mix(in srgb, var(--ink-strong) 8%, transparent); font-family: -apple-system, "SF Pro Text", ui-sans-serif, system-ui, sans-serif; color: #000; letter-spacing: -0.01em; transition: opacity 400ms ease; }
+.lf-notif .app-ic { flex: none; border-radius: 9px; font-size: 19px; }
+.lf-notif-text { flex: 1 1 auto; min-width: 0; }
+.lf-notif-top { display: flex; justify-content: space-between; align-items: baseline; }
+.lf-notif-top b { font-size: 13px; font-weight: 600; color: rgba(60, 60, 67, 0.6); text-transform: uppercase; letter-spacing: 0.02em; }
+.lf-notif-top span { font-size: 13px; color: rgba(60, 60, 67, 0.6); }
+.lf-notif strong { display: block; margin-top: 2px; font-size: 15px; font-weight: 600; }
+.lf-notif p { margin: 1px 0 0; font-size: 15px; line-height: 1.3; }
+
+/* ---------------------------------------------------------------- 3 · Today */
+
+.lf-mast { margin: 2px 0 0; font: 400 44px/1.05 var(--font-display); letter-spacing: -0.025em; color: var(--ink-strong); }
+.lf-peakcard { position: relative; margin-top: 16px; padding: 16px 20px 14px; border-radius: 22px; background: var(--panel); box-shadow: 0 1px 0 var(--hair); }
+.lf-card-eyebrow { margin: 0; font: 600 11px/1.2 var(--font); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); }
+.lf-card-h { margin: 8px 0 0; font: 400 27px/1.1 var(--font-display); letter-spacing: -0.02em; color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.lf-card-sub { margin: 4px 0 0; font-size: 14px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.lf-spark { position: relative; height: 64px; margin-top: 16px; }
+.lf-now { position: absolute; top: -2px; bottom: 0; width: 0; border-left: 1.5px solid var(--ink-strong); }
+.lf-now small { position: absolute; top: -6px; left: 6px; font: 600 11px var(--font); color: var(--ink-strong); }
+.lf-spark-tag { position: absolute; translate: -50% 0; font: 600 12px var(--font); color: var(--accent-text); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.lf-sec { display: flex; align-items: baseline; justify-content: space-between; margin-top: 26px; }
+.lf-sec b { font: 400 21px var(--font-display); color: var(--ink-strong); }
+.lf-sec span { font-size: 13px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.lf-shots { display: flex; gap: 12px; margin: 12px -24px 0 0; overflow: hidden; }
+.lf-shot { position: relative; flex: none; width: 196px; margin: 0; }
+.lf-shot-pic { width: 196px; height: 245px; border-radius: 22px; }
+.lf-shot-next { position: absolute; top: 12px; left: 12px; padding: 5px 10px; border-radius: 999px; background: var(--panel); color: var(--ink-strong); font: 600 12px var(--font); }
+.lf-shot figcaption { display: flex; align-items: baseline; gap: 8px; margin-top: 10px; }
+.lf-shot figcaption b { font: 400 20px var(--font-display); color: var(--ink-strong); font-variant-numeric: tabular-nums; }
+.lf-shot figcaption span { font-size: 14px; color: var(--ink-muted); }
+.lf-tabs { position: absolute; z-index: 40; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(3, 1fr); height: 84px; padding: 7px 18px 0; background: color-mix(in srgb, var(--ground) 86%, transparent); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: inset 0 0.5px 0 var(--hair-2); }
+.lf-tab { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--ink-quiet); }
+.lf-tab small { font: 500 10.5px var(--font); }
+.lf-tab.is-on { color: var(--accent); }
+
+/* The coach mark, in the style: a slow dim, a window with the card's own radius, a note under it. */
+.lf-coach .lf-coach-hole { box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--panel) 80%, transparent), 0 0 0 1400px color-mix(in srgb, var(--ink-strong) 58%, transparent); }
+.lf-coach .lf-coach-hole::after { display: none; }
+.lf-coach-tip { position: absolute; left: 24px; right: 24px; padding: 16px 18px 14px; border-radius: 22px; background: var(--panel); box-shadow: 0 18px 40px color-mix(in srgb, var(--ink-strong) 28%, transparent); pointer-events: auto; }
+.lf-coach-arrow { position: absolute; top: -6px; width: 14px; height: 14px; margin-left: -7px; border-radius: 3px; background: var(--panel); transform: rotate(45deg); }
+.lf-coach-tip b { display: block; font: 400 21px/1.15 var(--font-display); color: var(--ink-strong); }
+.lf-coach-tip p { margin: 6px 0 0; font-size: 14.5px; line-height: 1.4; color: var(--ink-muted); }
+.lf-coach-row { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; }
+.lf-coach-ok { height: 40px; padding: 0 18px; border-radius: 999px; background: var(--btn); color: var(--btn-ink); font: 600 14.5px var(--font); }
+.lf-coach-ok.is-down { background: var(--btn-down); }

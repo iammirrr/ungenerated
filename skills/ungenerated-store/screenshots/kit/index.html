@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>App Store screenshots</title>
+<style>body{margin:0;background:#121214;color:#f4f1ea;font:600 13px/1.4 -apple-system,system-ui,sans-serif}
+.top{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:12px 22px;background:rgba(18,18,20,.95);border-bottom:1px solid rgba(255,255,255,.1)}
+.top h1{font-size:17px;margin:0}.top small{color:#8d8a92}
+.seg{display:inline-flex;background:#1c1c20;border-radius:10px;padding:3px}.seg button{font:600 13px -apple-system,system-ui,sans-serif;color:#f4f1ea;background:none;border:0;padding:7px 14px;border-radius:8px;cursor:pointer}.seg button.on{background:#f4f1ea;color:#121214}
+.rail{display:flex;gap:22px;padding:22px 22px 40px;overflow-x:auto;align-items:flex-start}
+.slot{flex:0 0 auto;display:flex;flex-direction:column;gap:6px}.slot h2{font-size:13px;margin:0 0 4px;color:#f4f1ea}
+.v{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+/* each screenshot is 440 x 956, scaled with a transform (zoom on an iframe doesn't reach its page) */
+.box{width:calc(var(--cw,440px) * var(--s,.4));height:calc(var(--ch,956px) * var(--s,.4));overflow:hidden;border-radius:12px;outline:3px solid transparent;outline-offset:3px}
+.v.picked .box{outline-color:#ef7a45}
+iframe{width:var(--cw,440px);height:var(--ch,956px);border:0;display:block;transform:scale(var(--s,.4));transform-origin:0 0}
+.meta{display:flex;align-items:center;gap:8px;color:#8d8a92}.meta a{color:#8d8a92}
+.use{font:700 12px -apple-system,system-ui,sans-serif;border:1px solid rgba(255,255,255,.15);background:#1c1c20;color:#f4f1ea;border-radius:8px;padding:5px 9px;cursor:pointer}
+.v.picked .use{background:#ef7a45;border-color:#ef7a45;color:#fff}
+body.final .v:not(.picked){display:none}body.final .use{display:none}  #lang { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 10px; border: 1px solid #0002; background: #fff; }
+</style></head><body>
+<div class="top"><h1>App Store screenshots</h1><div class="seg"><button data-m="all">All versions</button><button data-m="final">Final set</button></div><div class="seg" id="dev"></div><select id="lang" title="See the set in another language (strings/, translate.mjs)"><option value="en">English</option></select><small>Edit right here: click, drag, Shift-click for more. “Use this” picks the version that ships; the export follows the picks.</small></div>
+<div class="rail" id="rail"></div>
+<script>
+// The board: every screenshot slot with its versions (A designed, B true to the app, …), each editable in place.
+// The picked version per slot is kept by serve.mjs in edits.json ("__pick:<slot>"); Final set shows only those.
+(async () => {
+  const cfg = await (await fetch('screens.json', { cache: 'no-store' })).json();
+  let picks = {};
+  const dir = location.pathname.replace(/[^/]*$/, '').replace(/^\//, '');
+  try { const s = await (await fetch('/__edits?dir=' + encodeURIComponent(dir), { cache: 'no-store' })).json(); for (const [k, v] of Object.entries(s)) if (k.startsWith('__pick:')) picks[k.slice(7)] = v; } catch {}
+  document.querySelector('.top h1').textContent = cfg.title || 'App Store screenshots';
+  let lang = localStorage.getItem('shots-lang') || 'en';
+  // the App Store's screenshot sizes: each shows the set at its own proportions (the frame scaled to the height, the field
+  // edge to edge), exactly as shoot.mjs exports it
+  const DEVICES = [['iphone69', 'iPhone 6.9″', 1320, 2868], ['iphone65', '6.5″', 1284, 2778], ['iphone63', '6.3″', 1206, 2622], ['iphone55', '5.5″', 1242, 2208], ['ipad13', 'iPad 13″', 2064, 2752], ['ipad129', 'iPad 12.9″', 2048, 2732], ['mac', 'Mac', 2880, 1800]];
+  let dev = localStorage.getItem('shots-dev') || 'iphone69';
+  if (!DEVICES.some((x) => x[0] === dev)) dev = 'iphone69';
+  let cw = 440, ch = 956;
+  const setDev = () => { const [, , W, H] = DEVICES.find((x) => x[0] === dev); const k = Math.min(W / 440, H / 956); cw = W / k; ch = H / k; document.documentElement.style.setProperty('--cw', cw + 'px'); document.documentElement.style.setProperty('--ch', ch + 'px'); };
+  setDev();
+  const devs = document.getElementById('dev');
+  devs.innerHTML = DEVICES.map(([id, name, W, H]) => `<button data-d="${id}" title="${W} × ${H}">${name}</button>`).join('');
+  let mode = localStorage.getItem('shots-mode') || 'all';
+  const fit = () => document.documentElement.style.setProperty('--s', mode === 'final' ? Math.min(1, (innerHeight - 150) / ch) : Math.min(1, (innerHeight - 180) / (2 * ch + 60)));
+  const draw = () => {
+    document.body.classList.toggle('final', mode === 'final');
+    document.querySelectorAll('.seg button[data-m]').forEach((b) => b.classList.toggle('on', b.dataset.m === mode));
+    fit();
+  };
+  document.getElementById('rail').innerHTML = cfg.slots.map((s, i) => `<div class="slot"><h2>${i + 1} · ${s.caption}</h2>${s.versions.map((v, j) => `<div class="v${(picks[i + 1] ?? 0) === j ? ' picked' : ''}" data-slot="${i + 1}" data-j="${j}"><div class="box"><iframe data-file="${v.file}" data-ipad="${v.ipad || ''}" src="${(dev.startsWith('ipad') && v.ipad) || v.file}.html?embed=1&lang=${lang}&w=${cw}&dev=${dev}" scrolling="no"></iframe></div><div class="meta"><button class="use">${(picks[i + 1] ?? 0) === j ? '✓ Picked' : 'Use this'}</button>${v.label} <a href="${v.file}.html" target="_blank">open alone</a></div></div>`).join('')}</div>`).join('');
+  document.querySelectorAll('.use').forEach((b) => b.onclick = () => {
+    const v = b.closest('.v'), slot = v.dataset.slot, j = +v.dataset.j;
+    picks[slot] = j;
+    fetch('/__edits', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ dir, key: '__pick:' + slot, value: j }) });
+    v.parentElement.querySelectorAll('.v').forEach((x) => { const on = x === v; x.classList.toggle('picked', on); x.querySelector('.use').textContent = on ? '✓ Picked' : 'Use this'; });
+  });
+  document.querySelectorAll('.seg button[data-m]').forEach((b) => b.onclick = () => { mode = b.dataset.m; localStorage.setItem('shots-mode', mode); draw(); });
+  const markDev = () => devs.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b.dataset.d === dev));
+  markDev();
+  devs.querySelectorAll('button').forEach((b) => b.onclick = () => { dev = b.dataset.d; localStorage.setItem('shots-dev', dev); setDev(); markDev(); fit(); document.querySelectorAll('#rail iframe').forEach((fr) => { fr.src = fr.src.replace(/[^/]*\.html/, ((dev.startsWith('ipad') && fr.dataset.ipad) || fr.dataset.file) + '.html').replace(/([?&]w=)[^&]*/, '$1' + cw).replace(/([?&]dev=)[^&]*/, '$1' + dev); }); });
+  const ls = document.getElementById('lang');
+  try {
+    const names = new Intl.DisplayNames(['en'], { type: 'language' });
+    const REGION = (l) => (/^(hi|bn|gu|kn|ml|mr|or|pa|ta|te|ur)/.test(l) ? 'South Asia' : /^(ja|ko|zh|th|vi|id|ms)/.test(l) ? 'East and Southeast Asia' : /^(ar|he|tr)/.test(l) ? 'Middle East' : 'Europe and the Americas');
+    const all = await (await fetch('strings/langs.json', { cache: 'no-store' })).json();
+    for (const g of ['Europe and the Americas', 'South Asia', 'East and Southeast Asia', 'Middle East']) {
+      const og = document.createElement('optgroup'); og.label = g;
+      all.filter((l) => REGION(l) === g).map((l) => [l, `${names.of(l)} · ${l}`]).sort((a, b) => a[1].localeCompare(b[1])).forEach(([l, n]) => og.append(new Option(n, l)));
+      if (og.children.length) ls.append(og);
+    }
+  } catch {}
+  ls.value = [...ls.options].some((o) => o.value === lang) ? lang : 'en';
+  ls.onchange = () => { lang = ls.value; localStorage.setItem('shots-lang', lang); document.querySelectorAll('#rail iframe').forEach((fr) => { fr.src = fr.src.replace(/lang=[^&]*/, 'lang=' + lang); }); };
+  addEventListener('resize', fit);
+  draw();
+})();
+</script></body></html>
