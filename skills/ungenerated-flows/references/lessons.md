@@ -123,6 +123,12 @@ disagreed, the newer one is here and the condition is said. Best first within ea
   the phone "cancelled" while the store kept billing. (Comma, Nov 2026)
 - **Offers must be grantable.** A plan switch, a lighter plan, a real promotional offer; never
   "half off" with nothing behind it. (Comma, Nov 2026)
+- **The cancel flow's discount is the store's own promotional offer on the plan they're on**, at
+  the same prices as the paywall's one-time offer (one set of numbers to check the margin on).
+  Offer it for price, a pause and "something else"; where a better fix exists (formats → request
+  content, too much → a lighter rhythm), offer that instead. Show it only when the store returns
+  it, in the store's currency; taking it is the store's sheet, and the flow moves on only when the
+  store says they stayed: "I WANT YOU TO GIVE THE DISCOUNTS ON CANCEL FLOW AS WELL". (Comma, Nov 2026)
 - **Deleting the account is separate from cancelling.** Export first, hold to delete, and say the
   subscription isn't cancelled by it. Refuse signed out before clearing anything. (Comma, Oct and
   Nov 2026)
