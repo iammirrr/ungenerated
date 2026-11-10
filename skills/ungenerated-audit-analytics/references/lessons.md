@@ -57,3 +57,19 @@ Lessons from wiring analytics into Comma (iOS, PostHog and RevenueCat), Flamely 
 **22. Run paywall experiments through the subscription service**, so variants, prices and results stay in one place. Why: "make A/B testing screens from the RevenueCat as well". Comma, Oct 2026.
 
 **23. Propose analytics fixes; never push them silently.** They change the numbers the owner reads. Comma, Nov 2026.
+
+## What the numbers can and can't see (Flamely, 5 Nov 2026)
+
+**24. Where the consent question sits decides what you can ever measure.** Flamely's "Help improve Flamely" tick was screen 8 of 19, so analytics could only ever see screens 8–19: anyone who quit at sign-in or on screens 1–7 was invisible, and the funnel looked better than it was. Measure early drop-off from the server instead: the app synced its onboarding progress (the current step) for every account, consent or not, because it is account data. State in every report which part of the journey analytics can see. Flamely, Nov 2026.
+
+**25. Opt-in analytics are thin by design; say how many people could send data before showing a number.** In its first week of releases, one person on a released app had sent anything: the owner. Released apps sent nothing at all before the build that carried the keys. Sign-ups, trials and payments come from the server for every account; analytics add the in-app detail for those who agreed. Flamely, Nov 2026.
+
+**26. The analytics tool's own dashboards are built for websites.** PostHog's starter dashboard counts page views, so a desktop or mobile app that never sends page views looks dead. Build the app's own dashboard while wiring analytics (opening, onboarding per step, the core action, versions in use) and make it the project's home dashboard. Why: "I'm not even seeing snippets of anything ... on the post hog". Flamely, Nov 2026.
+
+**27. Know the project's default filters before saying "nothing arrived".** PostHog's "filter out test accounts" was on by default and hid every test build's events, so the owner's own testing showed nothing on the charts while the raw events were there. Flamely, Nov 2026.
+
+**28. Check what the tool adds at ingestion, not just what the app sends.** Analytics services can add city, postcode and coordinates from the IP on their side; Flamely's events carried `$geoip_disable` and none, which matched its "no location" promise. Query the stored properties to prove it, and if countries are wanted, keep the country only (a transformation that drops the rest) and update the privacy policy first. Why: "we do need to keep the countries intact". Flamely, Nov 2026.
+
+**29. Product analytics can't tell you age or gender.** Google Analytics gets them from Google's ad tracking, which needs a cookie banner and sends visitors' data to Google. Ad platforms show the age and gender of people who clicked in their own reports; asking in onboarding is a design decision. Why: "if we can get their age groups, like even the Google analytics give better stats". Flamely, Nov 2026.
+
+**30. Chart events the code sends even before anyone has sent them.** An event nobody triggered yet is missing from the tool's event list; build its chart from the verified name in the code so it fills when data arrives, and say it is empty until then. Flamely, Nov 2026.

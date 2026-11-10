@@ -73,3 +73,11 @@ Then read the wrapper if the app has one (a `Telemetry` or `track` helper): the 
 30. ★ Dashboards that answer the owner's questions exist and are linked in the project docs: acquisition (installs or visits by source and country), onboarding drop-off by screen, paywall conversion by plan and variant, trial to paid, offer take rate, cancel reasons and keep rate by step, revenue and refunds (from the server), core-action activation and week-1 retention, errors in key flows.
 
 Coverage line for the report: "Analytics: 30 of 30 checked; N events in code, M arriving, K dead, J unknown; funnels: onboarding ✅, paywall ❌ (2 gaps), …".
+
+## 8. What the data can and can't see
+
+- **Consent position:** where in the journey does tracking start? Mark every screen before it as "invisible to analytics" and measure it from the server instead (synced onboarding progress, accounts created, server-side events).
+- **Coverage:** how many people can send events at all (opt-in rate, builds that carry the keys, test builds filtered out)? Put the number next to every chart in the report.
+- **Default filters:** the project's "filter test accounts" and similar defaults; confirm before concluding an event never arrived.
+- **Ingestion enrichment:** query stored events for IP, GeoIP (`$geoip_*`), user agent and anything the tool adds server-side; compare with the privacy policy.
+- **The home dashboard:** one dashboard built for this app's own events (opening, onboarding per step, the core action, paywall, versions), set as the project's default; a website-style starter dashboard on an app is a finding.

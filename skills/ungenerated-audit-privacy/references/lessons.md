@@ -57,3 +57,9 @@ Lessons from launching Comma (iOS, AI writing), Flamely (Mac/Windows/iOS), Pip (
 **22. Check the launch traps nobody tests**: an age gate (COPPA), self-hosted fonts (GDPR), session replay with consent and masking (CIPA), unsubscribe link and postal address (CAN-SPAM), renewal terms by the button, a DMCA agent for uploads. Why: "the hidden 53k mistake are usually the things nobody thought to test ... FOR ALL THESE LEGAL SHIT EVEN THINGS I MISSED". Flamely, Nov 2026.
 
 **23. Cancel feedback stays private even when the feedback board is public.** Comma, Nov 2026.
+
+**24. A new data point changes the policy first, then the code.** Collecting countries from the IP meant replacing Flamely's "without your IP address or your location" line with the exact new wording, in the app's policy and the website's together, a new version and date, and the existing re-consent screen once; the owner approves the wording before anything ships. Flamely, Nov 2026.
+
+**25. The app's tracking switch can promise less than the vendor collects.** Check the vendor's own enrichment (GeoIP on ingestion, IP storage, session replay defaults) in its project settings and in stored events, not just the SDK call in the code. Flamely, Nov 2026.
+
+**26. A public feedback board is user content.** Posts are shown publicly once approved, so it needs the takedown contact and, in the US, a registered DMCA agent like any upload feature. Flamely, Nov 2026.

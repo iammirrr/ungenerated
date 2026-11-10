@@ -77,3 +77,9 @@ Lessons from the code of Comma (SwiftUI app and a web design board), Flamely (Ma
 **31. Don't let several agents edit one tree at once without lanes; keep to two or three.** Why: a tree stopped compiling because lanes were mid-edit. Pip, Nov 2026; Flamely, Oct 2026.
 
 **32. Code from a delegated model is reviewed and tested before it's applied;** a thinking-only answer is not delivered code. Comma, Nov 2026.
+
+**33. An "insert or ignore" that later code depends on must only be ignorable because the row already exists.** Flamely's desktop created a new account's profile with `INSERT OR IGNORE`; the table had `UNIQUE(email)`, and an older profile on the computer held the email (the account had been deleted and made again), so nothing was inserted and the next statement failed its foreign key. The app showed only "Could not activate local data for this account" on Windows, and it worked on the Mac, which never had the old profile. Same code, different leftover data: check what's on the failing machine. Flamely B-220, Nov 2026.
+
+**34. A catch-all error message hides the cause; keep the real reason where you can read it.** The sign-in failure above was diagnosed from the code, because the app logged the cause only in test builds. Flamely, Nov 2026.
+
+**35. A test for a fix must fail without the fix; check it once.** The first test for the bug above passed without the fix, because reading a missing row returned "null" just like the expected empty email. Flamely, Nov 2026.

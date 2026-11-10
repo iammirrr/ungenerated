@@ -61,3 +61,9 @@ Lessons from building and launching Comma (iOS, Supabase backend), Flamely (Mac/
 **23. Do the checks yourself when a connector or key on the machine allows it**; send back only the steps that need the owner's hands (a dashboard behind their login, rotating a key, Touch ID), with exact click-by-click steps. Why: "if there is any connector connected to you that you can use for this, probably you don't really need my permission". Comma, Oct 2026.
 
 **24. Start from the app profile, report everything, wait for approval, then fix.** Why: "all skill should start from apps ... COVER EVERYTHING AUDIT AND TELL USER AND AFTER APPROVAL THESE SKILL FIX THESE". Flamely, Nov 2026.
+
+**25. List what is deployed, not just what is in the repo.** Flamely's database project still ran four functions that weren't in the repository (`admin_wipe_paddle`, `admin_seed_paddle_catalog`, …). They turned out to be retired stubs that only answer 410 "gone", but a deployed function nobody owns is where a hole hides: read each one, and delete them before launch. Flamely, Nov 2026.
+
+**26. When the deploy is an upload of a bundled file, read the deployed copy back and probe it.** After uploading a payment webhook through the database connector, Flamely compared the stored source with the bundle and sent an unsigned request (it must answer 401) before trusting it. Flamely, Nov 2026.
+
+**27. A connector that refuses destructive SQL is a guard, not an obstacle.** The database connector declined deleting user accounts; the owner did it in the dashboard. Never work around it with another route. Flamely, Nov 2026.
