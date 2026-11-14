@@ -130,3 +130,8 @@ are examples only.
   able to see the animations that we made on the browser in the app." (Comma, Oct–Nov 2026)
 - **For ambient motion natively, drive one timeline at a modest rate** and animate values, not state on
   every frame; it kept a 120 Hz phone cool. (Flamely, Oct 2026)
+- **Hand the hero from one section to the next.** When one section takes a single item apart and the next shows the
+  collection, open the collection on that same item alone, then let the rest arrive around it ring by ring as you scroll
+  (pinned, the count climbing), ending at a generous size. An endless auto-scrolling loop of tiles reads as filler.
+  "Every reel has a shape ... should be really nicely translating to that library that grows ... it's just moving like
+  vertically ... an endless loop." (Comma, Nov 2026)
