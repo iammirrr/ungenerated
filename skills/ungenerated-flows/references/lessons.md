@@ -179,3 +179,12 @@ disagreed, the newer one is here and the condition is said. Best first within ea
   animations that we made on the browser in the app." (Comma, Nov 2026)
 - **Native chrome for navigation.** The platform's own tab bar, sheets and alerts: "I wanna keep
   iOS native navigation, the liquid glass one." (Flamely and Comma, Oct–Nov 2026)
+- **Support is a help window, not a policy page.** Questions down the left, the open answer on the
+  right (a one-line answer as its title, then the detail, then one reassuring note); on a phone the
+  same questions open in place. Write each as a `<details>` so it works without script and links by
+  id (`/support/#cancel`), and put "email us" and "ask for a feature or report a bug" above it. The
+  support page and the public feedback board share one header with two tabs. "I have a feedback
+  board ... really nice-looking support sections ... make it for this one as well." (Comma, Nov 2026)
+- **A board that was built is not a board that works.** Ship the backend with the page, then post,
+  approve, vote and unvote from the real page, and delete the test rows; an undeployed board on a
+  live site just says "Could not connect". (Comma, Nov 2026)
