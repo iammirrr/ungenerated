@@ -188,3 +188,17 @@ disagreed, the newer one is here and the condition is said. Best first within ea
 - **A board that was built is not a board that works.** Ship the backend with the page, then post,
   approve, vote and unvote from the real page, and delete the test rows; an undeployed board on a
   live site just says "Could not connect". (Comma, Nov 2026)
+
+- **The opening's problem includes the AI shortcut.** If the app helps people write, the pain isn't only the blank page:
+  many already ask a chatbot and get the lines everyone says. Show both on the same page, one after the other, so the
+  ones who already use AI see why it fails. "call a chat GPT, make me a script and it will write a really shit script."
+  (Comma, Nov 2026)
+- **Waiting on AI is never a still screen.** Even a fast model takes seconds; in the onboarding show the app's own
+  working state (the light, the character, short honest status lines), and hand off without a blink when the answer
+  lands. "It is like looking like a very weird pause, a big pause." (Comma, Nov 2026)
+- **A topic question is one thing at a time.** Not a wall of tag pills plus sub-tags plus a free-text box: pick the
+  topic, then the screen becomes only its parts (or a strip you swipe with the pick shown large). "These tabs don't look
+  good ... it's too much going on in this screen." (Comma, Nov 2026)
+- **A one-time offer is a moment.** It lands with confetti and particles, the character arrives and stays put (a loop
+  drifting across the sky reads as weird), and the free time is large. "I was expecting some confetti ... crazy
+  particles. Our character looks so weird, it's like floating." (Comma, Nov 2026)

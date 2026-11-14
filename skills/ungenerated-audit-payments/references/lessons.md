@@ -105,3 +105,8 @@ These came from running the whole subscription life against the real server with
 **40. Never test with a live key, even when the owner pastes one.** Ask for the sandbox key (in Paddle it starts `pdl_sdbx_apikey_`, made at sandbox-vendors.paddle.com), stored in the ignored env file, and tell the owner to delete the live one. A key's ID (`apikey_…`) is not the key; the API refuses it. Flamely, Nov 2026.
 
 **41. Still open in Flamely, and in most apps: a new trial per new account.** An email alias (`you+1@gmail.com`), a new Google account, or deleting the account and signing up again gives 7 more days, unless a ledger of used trials (a hash of the normalised email plus the provider customer id) survives account deletion. Decide it before launch; it needs a new table. Flamely, Nov 2026.
+
+**42. Never trust `NSDecimalNumber(decimal:).intValue` for a price ratio.** For a long quotient (20 / 8.3325 =
+2.4002400…, 38 digits) it returns 0, so a one-time offer said "0 weeks free" on TestFlight. Convert through
+`doubleValue` and round, floor any "free time" at 1, and test the label with the store's real prices, not a Debug
+fallback string. (Comma, Nov 2026)
